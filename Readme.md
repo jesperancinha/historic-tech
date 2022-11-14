@@ -8,6 +8,10 @@ This repo serves to support all of the code to backup all my talks. Have a look 
 
 Please have a look at file [Inspiration](./Inspiration.md) to find out what inspired the name of this repo.
 
+## References
+
+- [Ex Ordo's How to write an abstract for a conference](https://www.exordo.com/blog/how-to-write-an-abstract-for-a-conference/)
+
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
