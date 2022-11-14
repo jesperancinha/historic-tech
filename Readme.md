@@ -10,6 +10,7 @@ Please have a look at file [Inspiration](./Inspiration.md) to find out what insp
 
 ## References
 
+- [How to Write an Abstract by Philip Koopman, Carnegie Mellon University](http://users.ece.cmu.edu/~koopman/essays/abstract.html)
 - [Ex Ordo's How to write an abstract for a conference](https://www.exordo.com/blog/how-to-write-an-abstract-for-a-conference/)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
