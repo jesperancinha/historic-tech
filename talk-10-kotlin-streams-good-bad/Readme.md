@@ -1,5 +1,7 @@
 # Kotlin Streams with or without Kafka or RabbitMQ
 
+> Under construction...
+
 # Quick Intro
 
 In the last 5 years, we have not seen such a sophisticated and fast evolution of technology as the one Kotlin is going
