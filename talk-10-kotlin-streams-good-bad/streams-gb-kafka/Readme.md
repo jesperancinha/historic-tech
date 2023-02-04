@@ -1,18 +1,4 @@
-# Talk Draft Support Repo
-
-## Introduction
-
-This repo serves to support all of the code to backup all my talks. Have a look in the submodules for more info
-
-## Inspiration
-
-Please have a look at file [Inspiration](./Inspiration.md) to find out what inspired the name of this repo.
-
-## References
-
--   [NLJUG speaker academy 2022 - session 1](https://www.slideshare.net/BertJanSchrijver/nljug-speaker-academy-2022-session-1)
--   [How to Write an Abstract by Philip Koopman, Carnegie Mellon University](http://users.ece.cmu.edu/~koopman/essays/abstract.html)
--   [Ex Ordo's How to write an abstract for a conference](https://www.exordo.com/blog/how-to-write-an-abstract-for-a-conference/)
+# streams-gb-kafka
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
