@@ -14,7 +14,7 @@ Please have a look at file [Inspiration](./Inspiration.md) to find out what insp
 -   [How to Write an Abstract by Philip Koopman, Carnegie Mellon University](http://users.ece.cmu.edu/~koopman/essays/abstract.html)
 -   [Ex Ordo's How to write an abstract for a conference](https://www.exordo.com/blog/how-to-write-an-abstract-for-a-conference/)
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)

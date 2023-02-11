@@ -10,7 +10,7 @@ to) and get is to be interpreted in our Kotlin code and of course how can we com
 applications. In the end we will have a discussion with the audience to raise awareness of Kotlin Native and to
 understand where it can be used.
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)

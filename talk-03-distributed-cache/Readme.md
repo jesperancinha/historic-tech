@@ -11,7 +11,7 @@ still remain reliable in reaching an optimal SLA. This session combines a thorou
 and how can we apply it considering a distributed cache system like Hazelcast. We'll have a look at data grids and how
 can we populate them efficiently using Kotlin as the backbone of our services.
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)

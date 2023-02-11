@@ -9,7 +9,7 @@ different running application examples and how they can respond to event trigger
 and how that plays out in terms of performance. We will also draw a few comparisons to understand how reactive
 architecture works. We'll talk about channels, sinks, streaming, consumers, and much more.
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)

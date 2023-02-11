@@ -6,7 +6,7 @@ The Kotlin language allows us to easily create streams where events can be emitt
 REST endpoints. In this session we'll take a look at examples of how to work with event streams in Kotlin, how can we
 apply algorithms with it, and make it work within a Spring Framework environment.
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)

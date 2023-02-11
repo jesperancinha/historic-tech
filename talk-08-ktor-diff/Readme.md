@@ -9,7 +9,7 @@ can implement Ktor using the different layers of the onion design pattern (data,
 attempt to answer a few questions: Do we need to implement REST services this way? Do we have to follow the onion design
 pattern? How exactly Ktor makes a difference?
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)

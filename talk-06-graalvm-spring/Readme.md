@@ -11,7 +11,7 @@ faster? What are its pitfalls? What is AOT? In this session, I want to make an i
 application running in GraalVM and another running in a traditional way. Then I want to show comparisons between startup
 times, runtime performance, and a range of other metrics to illustrate the differences.
 
-## About me 👨🏽‍💻🚀🏳️‍🌈
+## About me
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)
