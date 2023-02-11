@@ -3,6 +3,12 @@
 ## Introduction
 
 This repo serves to support all of the code to backup all my talks. Have a look in the submodules for more info
+ 
+
+## Structure
+
+- [Talks](./talks) - All materials for current applications to talks and/or actual talks
+- [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
 
 ## Inspiration
 
