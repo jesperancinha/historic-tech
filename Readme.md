@@ -1,4 +1,6 @@
-# Talk Draft Support Repo
+# Live and Video support repo
+
+[![ASNGIASAGF Build](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever/actions/workflows/asngiasagf.yml/badge.svg)](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever/actions/workflows/asngiasagf.yml)
 
 ## Introduction
 
