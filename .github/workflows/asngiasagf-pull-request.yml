@@ -3,9 +3,9 @@ name: ASNGIASAGF Pull Request
 on:
   push:
     branches:
-      - '!master'
+      - '!main'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
