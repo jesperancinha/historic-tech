@@ -2,7 +2,7 @@ package org.jesperancinha.youtube.spoton.domain
 
 import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 import java.time.LocalDateTime
-import java.util.UUID
+import java.util.*
 
 data class SpotOn(
     val id : UUID,
