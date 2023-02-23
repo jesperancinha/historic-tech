@@ -9,12 +9,14 @@ This repo serves to support all of the code to backup all my talks. Have a look 
 
 ## Structure
 
-- [Talks](./talks) - All materials for current applications to talks and/or actual talks
-- [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
+-   [Talks](./talks) - All materials for current applications to talks and/or actual talks
+-   [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
 
 ## Inspiration
 
 Please have a look at file [Inspiration](./Inspiration.md) to find out what inspired the name of this repo.
+
+Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints&Tricks.md) for details on how to setup java versions
 
 ## References
 
