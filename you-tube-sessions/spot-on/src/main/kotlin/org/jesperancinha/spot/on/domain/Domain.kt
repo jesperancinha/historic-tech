@@ -1,7 +1,7 @@
 package org.jesperancinha.spot.on.domain
 
-import org.springframework.data.repository.CrudRepository
-import java.util.UUID
+import org.springframework.data.repository.kotlin.CoroutineCrudRepository
+import java.util.*
 
 data class SpotOn(
     val id: UUID,
@@ -10,4 +10,4 @@ data class SpotOn(
     val intro:String,
 )
 
-interface SpotOnRepository : CrudRepository<SpotOn, UUID>
+interface SpotOnRepository: CoroutineCrudRepository<SpotOn, UUID>
