@@ -16,7 +16,6 @@ class SpotOnController(
 ) {
 
     @PostMapping
-
     suspend fun postSpotOn(@RequestBody spotOnDto: SpotOnDto) = spotOnService.upsert(spotOnDto)
 
     @GetMapping
