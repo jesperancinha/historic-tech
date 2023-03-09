@@ -1,0 +1,1 @@
+INSERT INTO SPOT_ON(url, name, intro) VALUES ('http://localhost:8080', 'The power of cats', 'Do not mess with cat');;
