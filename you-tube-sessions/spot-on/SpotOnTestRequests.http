@@ -1,0 +1,25 @@
+POST http://localhost:8080/api/spoton/v1/articles
+Content-Type: application/json
+
+{
+  "url": "http://localhost:8090",
+  "name": "Big house cats",
+  "intro": "They are adorable"
+}
+
+###
+GET http://localhost:8080/api/spoton/v1/articles
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/api/spoton/v1/articles
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "412a9239-0f4d-4614-afa9-a27788a10cb4",
+  "url": "http://localhost:8090",
+  "name": "Big house cats",
+  "intro": "They are adorable and very clean"
+}
