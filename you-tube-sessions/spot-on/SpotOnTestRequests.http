@@ -23,3 +23,13 @@ Content-Type: application/json
   "name": "Big house cats",
   "intro": "They are adorable and very clean"
 }
+
+###
+
+PATCH http://localhost:8080/api/spoton/v1/articles/
+Accept: application/json
+Content-Type: application/json-patch+json
+
+{
+  "op": "replace"
+}
