@@ -23,13 +23,19 @@ Content-Type: application/json
   "name": "Big house cats",
   "intro": "They are adorable and very clean"
 }
+###
+
+PATCH http://localhost:8080/api/spoton/v1/articles/671f8cda-0bdf-4dcc-b874-3795424ef25d
+Accept: application/json
+Content-Type: application/json
+
+{
+  "op": "replace",
+  "path": "url",
+  "value": "http://localhostlocalhost:8090"
+}
 
 ###
 
-PATCH http://localhost:8080/api/spoton/v1/articles/
-Accept: application/json
-Content-Type: application/json-patch+json
+HEAD http://localhost:8080/api/spoton/v1/articles/b5db52b4-d640-4a68-9109-b19ca24cc1bc
 
-{
-  "op": "replace"
-}

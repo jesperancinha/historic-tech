@@ -34,6 +34,8 @@ class SpotOnService(
             throw RuntimeException("This endpoint only performs updates to the URL parameter")
         }
     }
+
+    suspend fun getSpotOnById(id: UUID) = spotOnRepository.findById(id)
 }
 
 private fun SpotOn.applyPatch(jsonObject: JsonNode)  =

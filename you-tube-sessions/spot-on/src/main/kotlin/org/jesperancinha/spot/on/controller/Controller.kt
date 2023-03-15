@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
 
@@ -31,5 +32,8 @@ class SpotOnController(
     @PatchMapping("{id}")
     suspend fun patchSpotOn(@RequestBody jsonObject: JsonNode,@PathVariable id: UUID) = spotOnService
         .patchUpdateUrl(id, jsonObject)
+
+    @RequestMapping(method = [RequestMethod.HEAD], value = ["{id}"])
+    suspend fun headSpotOn(@PathVariable id: UUID) = spotOnService.getSpotOnById(id)
 
 }
