@@ -47,7 +47,7 @@ Exchange metadata
 ## References
 
 
-- [How to make PUT Requests](https://cassiomolin.com/2019/06/10/using-http-patch-in-spring/)
+- [How to make PATCH Requests](https://cassiomolin.com/2019/06/10/using-http-patch-in-spring/)
 - [Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content](https://www.rfc-editor.org/rfc/rfc7231)
 - [PATCH Method for HTTP](https://www.rfc-editor.org/rfc/rfc5789)
 - [JavaScript Object Notation (JSON) Patch](https://www.rfc-editor.org/rfc/rfc6902)
