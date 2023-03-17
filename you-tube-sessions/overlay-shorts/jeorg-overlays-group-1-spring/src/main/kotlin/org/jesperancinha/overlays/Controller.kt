@@ -17,7 +17,7 @@ class Controller(
     suspend fun endPointWithServiceCall(): ResponseEntity<String>  {
         val whoAmI = OService.run {
             println("Endpoint run is being access via service of type: $javaClass")
-            whoAmI()
+            "I am ${whoAmI()} wrapped by proxy $javaClass)"
         }
         println(whoAmI)
         return ResponseEntity.ok(whoAmI)
@@ -27,7 +27,7 @@ class Controller(
     suspend fun endPointWithLiteralReceiverCall(): ResponseEntity<String> {
         val whoAmI = OService.call {
             println("Endpoint literal is being access via service of type: $javaClass")
-            whoAmI()
+            "I am ${whoAmI()} but I have no wrapper $javaClass)"
         }
         print(whoAmI)
         return ResponseEntity.ok(whoAmI)
