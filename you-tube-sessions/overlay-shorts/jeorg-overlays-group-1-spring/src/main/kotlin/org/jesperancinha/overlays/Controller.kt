@@ -10,21 +10,23 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping
 class Controller(
     @Autowired
-    val service: Service
+    val OService: OService
 ) {
 
     @GetMapping("run")
-    suspend fun endPointWithServiceCall(): ResponseEntity<String> {
-        println("Endpoint run is being access via service of type: ${this.service.javaClass}")
-        val whoAmI = service.whoAmI()
+    suspend fun endPointWithServiceCall(): ResponseEntity<String>  {
+        val whoAmI = OService.run {
+            println("Endpoint run is being access via service of type: $javaClass")
+            whoAmI()
+        }
         println(whoAmI)
         return ResponseEntity.ok(whoAmI)
     }
 
     @GetMapping("literal")
     suspend fun endPointWithLiteralReceiverCall(): ResponseEntity<String> {
-        val whoAmI = service.call {
-            println("Endpoint literal is being access via service of type: ${this.javaClass}")
+        val whoAmI = OService.call {
+            println("Endpoint literal is being access via service of type: $javaClass")
             whoAmI()
         }
         print(whoAmI)
