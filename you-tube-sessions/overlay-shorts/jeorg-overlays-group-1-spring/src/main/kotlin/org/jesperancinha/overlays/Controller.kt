@@ -33,5 +33,15 @@ class Controller(
         return ResponseEntity.ok(whoAmI)
         
     }
+    @GetMapping("literal/works")
+    suspend fun endPointWithLiteralReceiverCallThatWorks(): ResponseEntity<String> {
+        val whoAmI = OService.callWorks {
+            println("Endpoint literal is being access via service of type: $javaClass")
+            "I am ${whoAmI()} but now I have a  wrapper $javaClass)"
+        }
+        print(whoAmI)
+        return ResponseEntity.ok(whoAmI)
+
+    }
 }
 

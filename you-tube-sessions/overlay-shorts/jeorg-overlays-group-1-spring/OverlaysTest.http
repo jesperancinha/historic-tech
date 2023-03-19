@@ -3,3 +3,7 @@ GET http://localhost:8080/run
 ###
 
 GET http://localhost:8080/literal
+
+###
+
+GET http://localhost:8080/literal/works

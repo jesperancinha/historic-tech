@@ -10,3 +10,5 @@ class OService {
     suspend fun whoAmI() = "I am $this"
     suspend fun call(function: suspend OService.() -> String) = function()
 }
+
+inline fun OService.callWorks(block: OService.() -> String): String = block()
