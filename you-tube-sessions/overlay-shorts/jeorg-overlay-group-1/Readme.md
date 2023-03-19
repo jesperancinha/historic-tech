@@ -6,9 +6,10 @@
 
 Supports videos:
 
-1 - https://youtube.com/shorts/SXtCXfO3d6M?feature=share - (https://www.youtube.com/watch?v=SXtCXfO3d6M)
+1 - https://youtube.com/shorts/WGJ7cKyVJZU?feature=share - (https://www.youtube.com/watch?v=WGJ7cKyVJZU)
 
-2 - https://youtube.com/shorts/WGJ7cKyVJZU?feature=share - (https://www.youtube.com/watch?v=WGJ7cKyVJZU)
+2 - https://youtube.com/shorts/SXtCXfO3d6M?feature=share - (https://www.youtube.com/watch?v=SXtCXfO3d6M)
+
 
 #### Overlay 2
 
