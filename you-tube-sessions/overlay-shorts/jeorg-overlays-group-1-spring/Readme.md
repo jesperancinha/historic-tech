@@ -6,8 +6,8 @@
 
 Supports videos:
 
-1 - https://youtube.com/shorts/E3JXLy9TBSw
-2 - https://youtube.com/shorts/oiHS1NUjx0g
+1 - https://youtube.com/shorts/E3JXLy9TBSw - Function Literals With Receiver
+2 - https://youtube.com/shorts/oiHS1NUjx0g - Inline Solution for Function Literals With Receiver
 
 ## References
 
