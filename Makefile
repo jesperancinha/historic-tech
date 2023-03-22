@@ -5,3 +5,4 @@ build:
 	cd you-tube-sessions/long-videos/spot-on && gradle build -x test
 	cd you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 && gradle build -x test
 	cd you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring && gradle build -x test
+	cd you-tube-sessions/overlay-shorts/coroutines-demo && gradle build -x test
