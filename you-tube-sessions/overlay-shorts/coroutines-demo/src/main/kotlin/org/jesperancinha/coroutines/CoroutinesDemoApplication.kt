@@ -53,7 +53,7 @@ private suspend fun defaultUnconfinedTest(
                     Thread.sleep(blockingExecutionTime)
                     val count = Thread.getAllStackTraces()
                         .keys.filter { it.state == Thread.State.RUNNABLE }.count {
-                            it.name.contains("DefaultDispatcher")
+                            it.name.contains("DefaultDispatcher") || it.name.contains("main")
                         }
                     if (it == threadCount / 2)
                         logger.info("Halfway we are running $count Threads")
