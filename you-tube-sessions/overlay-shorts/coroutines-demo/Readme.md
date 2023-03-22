@@ -1,21 +1,15 @@
-# Overlays Group 1 for Spring
+# coroutines-demo
 
-## Project Layout
+## Introduction
 
-##### Overlay 1
+This is a coroutines test count demo
 
-Supports videos:
+## Info
 
-1 - https://youtube.com/shorts/E3JXLy9TBSw - [Function Literals With Receiver](https://www.youtube.com/watch?v=E3JXLy9TBSw)
+The usage of `Thread.sleep` in this example is to illustrate how dispatchers make use of threads.
+It is used <ins>only</ins> for demonstration purposes.
 
-2 - https://youtube.com/shorts/oiHS1NUjx0g - [Inline Solution for Function Literals With Receiver](https://www.youtube.com/watch?v=oiHS1NUjx0g)
-
-3 - https://www.youtube.com/watch?v=ydctulq-i4k - [JESC - E04 - Inline to the rescue when using Spring Beans and function literals with receivers](https://www.youtube.com/watch?v=ydctulq-i4k)
-## References
-
--   https://blog.kotlin-academy.com/programmer-dictionary-function-literal-with-receiver-vs-function-type-with-receiver-cc21dba0f4ff
--   https://kotlinexpertise.com/function-literals-with-receiver/
-
+It is not recommended and it is considered to be an anti-pattern to use `Thread.sleep` because this will block the `Thread`. Use `delay` instead. It will schedule the coroutine to continue later on.
 ## About me
 
 <div align="center">

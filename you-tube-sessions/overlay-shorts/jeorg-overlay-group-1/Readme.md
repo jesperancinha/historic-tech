@@ -13,7 +13,6 @@ Supports videos:
 
 #### Overlay 2
 
-
 ## About me
 
 <div align="center">
