@@ -32,5 +32,5 @@ have support materials that are available on this repo and on repo [jeorg-kotlin
 - Q1 - https://www.youtube.com/shorts/6LRUIdKsUo4
 - Q2 - https://www.youtube.com/shorts/1LCzZY5SQvM
 - A1of2 - https://www.youtube.com/shorts/B-Eq7AuvzVE
-- A2of2 - https://www.youtube.com/shorts/dhNiCpQmpm4
+- A2of2 - https://www.youtube.com/shorts/u0P4wrH1_M8
 > Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
