@@ -28,7 +28,7 @@ have support materials that are available on this repo and on repo [jeorg-kotlin
 - A2 - https://www.youtube.com/shorts/PCuRO97ZegM
 > Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
 
-#### Q-JESC-05-A - Dispatchers.IO parallelism
+#### Q-JESC-05 - Dispatchers.IO parallelism
 - Q1 - https://www.youtube.com/shorts/6LRUIdKsUo4
 - Q2 - https://www.youtube.com/shorts/1LCzZY5SQvM
 - A1of2 - https://www.youtube.com/shorts/B-Eq7AuvzVE
