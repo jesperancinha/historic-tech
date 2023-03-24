@@ -10,6 +10,7 @@ The usage of `Thread.sleep` in this example is to illustrate how dispatchers mak
 It is used <ins>only</ins> for demonstration purposes.
 
 It is not recommended and it is considered to be an anti-pattern to use `Thread.sleep` because this will block the `Thread`. Use `delay` instead. It will schedule the coroutine to continue later on.
+
 ## About me
 
 <div align="center">
