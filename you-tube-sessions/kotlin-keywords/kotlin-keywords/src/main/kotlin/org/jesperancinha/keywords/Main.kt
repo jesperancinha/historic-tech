@@ -21,7 +21,6 @@ package org.jesperancinha.keywords
  * noinline
  * open
  * operator
- * out
  * reified
  * sealed
  * suspend
