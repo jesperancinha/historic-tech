@@ -26,6 +26,13 @@ class Card<out A : Account, in M : Money>(
         addMoneyForecast(money)
         return yearlyRate(account)
     }
+
+    fun addMoneyForecastThis(money: Money, yearlyRate: A.() -> M): Money {
+        addMoneyForecast(money)
+        return yearlyRate(account)
+    }
+
+    override fun toString() = "Welcome to your account"
 }
 
 
@@ -44,6 +51,20 @@ class Episode1 {
             runInlineExample()
             runContravariantExample()
             runCovariantExample()
+            runThisReceiverExample()
+        }
+
+        private fun runThisReceiverExample() {
+            val account = DebitAccount()
+            val debitCard = Card<DebitAccount, Note>(account)
+            debitCard.addMoneyForecast(Note()) { debitAccount ->
+                logger.info(debitCard.toString())
+                Note()
+            }
+            debitCard.addMoneyForecastThis(Note()) {
+                logger.info(this.toString())
+                Note()
+            }
         }
 
         private fun runCovariantExample() {
