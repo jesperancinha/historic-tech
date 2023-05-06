@@ -17,9 +17,15 @@ open class Note : Money()
 open class Coin : Money()
 
 class Card<out A : Account, in M : Money>(
-    private val account: A
+    private val account: A,
 ) {
-    fun addMoney( money: Money) = account
+    fun addMoney(money: Money) = account
+
+    fun addMoneyForecast(money: Money) = Account()
+    fun addMoneyForecast(money: Money, yearlyRate: (A) -> M): Money {
+        addMoneyForecast(money)
+        return yearlyRate(account)
+    }
 }
 
 
@@ -44,7 +50,7 @@ class Episode1 {
             val account = DebitAccount()
             val debitCard = Card<DebitAccount, Money>(account)
             val creditAccount = CreditAccount()
-            val creditCard = Card<CreditAccount, Money> (creditAccount)
+            val creditCard = Card<CreditAccount, Money>(creditAccount)
         }
 
         private fun runContravariantExample() {
