@@ -1,3 +1,3 @@
 
-rootProject.name = "kotlin-keywords"
+rootProject.name = "jeorg-kotlin-keywords"
 

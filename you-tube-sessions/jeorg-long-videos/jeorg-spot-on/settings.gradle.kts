@@ -1,1 +1,1 @@
-rootProject.name = "spot-on"
+rootProject.name = "jeorg-xspot-on"
