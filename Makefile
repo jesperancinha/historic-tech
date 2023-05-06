@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-GRADLE_VERSION := 8.1.1
+GRADLE_VERSION ?= 8.1.1
 
 b: build
 build:
@@ -45,7 +45,9 @@ upgrade-gradle:
 	else \
 		sdk install gradle $$gradleOnlineVersion; \
 		sdk use gradle $$gradleOnlineVersion; \
-	fi
+	fi; \
+	export GRADLE_VERSION=$$gradleOnlineVersion; \
+	make upgrade
 install-linux:
 	sudo apt-get install jq
 	sudo apt-get install curl
