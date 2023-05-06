@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.8.0"
     application
+    id("jacoco")
 }
 
 group = "org.example"
@@ -24,4 +25,15 @@ kotlin {
 
 application {
     mainClass.set("MainKt")
+}
+
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+    }
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }

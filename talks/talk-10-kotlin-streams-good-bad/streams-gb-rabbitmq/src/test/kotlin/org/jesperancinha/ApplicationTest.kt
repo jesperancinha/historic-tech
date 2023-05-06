@@ -10,4 +10,5 @@ import io.ktor.server.testing.*
 import org.jesperancinha.plugins.*
 
 class ApplicationTest {
+
 }

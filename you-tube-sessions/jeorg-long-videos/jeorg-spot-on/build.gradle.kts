@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.0.4"
 	id("io.spring.dependency-management") version "1.1.0"
+	id("jacoco")
 	kotlin("jvm") version "1.8.10"
 	kotlin("plugin.spring") version "1.8.10"
 }
@@ -32,6 +33,18 @@ tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "17"
+	}
+}
+
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
+
+
+
+tasks.jacocoTestReport {
+	reports {
+		xml.required.set(true)
 	}
 }
 

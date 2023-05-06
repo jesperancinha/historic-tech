@@ -10,6 +10,19 @@ build:
 	cd you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 && gradle build -x test
 	cd you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring && gradle build -x test
 	cd you-tube-sessions/overlay-shorts/coroutines-demo && gradle build -x test
+build-local: build-talks build-youtube
+build-talks: ./talk*
+		for d in $^ ; do \
+  			cd $${d}; \
+  			make b; \
+  			cd ..; \
+		done
+build-youtube: ./you-tube*
+		for d in $^ ; do \
+			cd $${d}; \
+			make b; \
+			cd ..; \
+		done
 upgrade:
 	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka && gradle wrapper --gradle-version $(GRADLE_VERSION)
 	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq && gradle wrapper --gradle-version $(GRADLE_VERSION)
