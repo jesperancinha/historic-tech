@@ -5,12 +5,12 @@ import org.slf4j.LoggerFactory
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
 
 open class Account(
-    val moneyCollection: List<Money> = mutableListOf()
+    val moneyCollection: List<Money>
 )
 
-class DebitAccount : Account()
+class DebitAccount(moneyCollection: List<Money> = emptyList()) : Account(moneyCollection)
 
-class CreditAccount : Account()
+class CreditAccount(moneyCollection: List<Money> = emptyList()) : Account(moneyCollection)
 
 open class Money
 
@@ -27,7 +27,7 @@ class Card<out A : Account, in M : Money>(
 
     fun addMoney(money: Money) = account
 
-    fun addMoneyForecast(money: Money) = Account()
+    fun addMoneyForecast(money: Money) = account
     fun addMoneyForecast(money: Money, yearlyRate: (A) -> M): Money {
         addMoneyForecast(money)
         return yearlyRate(account)
@@ -61,7 +61,7 @@ class Episode1 {
         }
 
         private fun runThisReceiverExample() {
-            val account = DebitAccount()
+            val account = DebitAccount(listOf(Note()))
             val debitCard = Card<DebitAccount, Note>(account)
             debitCard.addMoneyForecast(Note()) { debitAccount ->
                 logger.info(debitCard.toString())
@@ -74,9 +74,9 @@ class Episode1 {
         }
 
         private fun runCovariantExample() {
-            val account = DebitAccount()
+            val account = DebitAccount(mutableListOf(Note()))
             val debitCard = Card<DebitAccount, Money>(account)
-            val creditAccount = CreditAccount()
+            val creditAccount = CreditAccount(listOf(Note()))
             val creditCard = Card<CreditAccount, Money>(creditAccount)
         }
 
