@@ -4,7 +4,9 @@ import org.slf4j.LoggerFactory
 
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
 
-open class Account
+open class Account(
+    val moneyCollection: List<Money> = mutableListOf()
+)
 
 class DebitAccount : Account()
 
@@ -19,6 +21,10 @@ open class Coin : Money()
 class Card<out A : Account, in M : Money>(
     private val account: A,
 ) {
+    init {
+        if(account.moneyCollection.isEmpty()) throw RuntimeException("Account may not be empty!")
+    }
+
     fun addMoney(money: Money) = account
 
     fun addMoneyForecast(money: Money) = Account()
@@ -41,8 +47,8 @@ class Card<out A : Account, in M : Money>(
  * in
  * out
  * this
- * init
  * receiver
+ * init
  */
 class Episode1 {
     companion object {
