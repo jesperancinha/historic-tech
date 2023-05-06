@@ -15,4 +15,4 @@ val logger: Logger = LoggerFactory
 class Episode1 {
 }
 
-inline fun processMortgage() =
+inline fun processMortgage() {}
