@@ -17,6 +17,8 @@ class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
  *
  * annotation
  * crossinline
+ * inline
+ * noinline
  * companion
  * Invokes
  */
