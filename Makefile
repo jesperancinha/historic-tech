@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 GRADLE_VERSION ?= 8.1.1
-
+MODULES := talks you-tube-sessions
 b: build
 build:
 	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka && gradle build -x test
@@ -31,6 +31,12 @@ upgrade:
 	cd you-tube-sessions/jeorg-overlay-shorts/jeorg-overlay-group-1 && gradle wrapper --gradle-version $(GRADLE_VERSION)
 	cd you-tube-sessions/jeorg-overlay-shorts/jeorg-overlays-group-1-spring && gradle wrapper --gradle-version $(GRADLE_VERSION)
 	cd you-tube-sessions/jeorg-overlay-shorts/coroutines-demo && gradle wrapper --gradle-version $(GRADLE_VERSION)
+local-pipeline:
+	@for module in $(MODULES); do \
+  		cd $$module; \
+  		make b; \
+  		cd ..; \
+	done
 upgrade-gradle:
 	sudo apt upgrade
 	sudo apt update

@@ -28,6 +28,8 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.9.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
 }
 
 tasks.jacocoTestReport {
