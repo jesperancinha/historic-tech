@@ -34,7 +34,7 @@ open class Note : Money()
 
 open class Coin : Money()
 
-class Card<out A : Account, in M : Money>(
+open class Card<out A : Account, in M : Money>(
     private val account: A,
 ) {
     init {
