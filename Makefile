@@ -1,15 +1,22 @@
 SHELL := /bin/bash
 GRADLE_VERSION ?= 8.1.1
 MODULES := talks you-tube-sessions
+MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
+					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \
+					you-tube-sessions/long-videos/spot-on \
+					you-tube-sessions/long-videos/kotlin-keywords \
+					you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 \
+					you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring \
+					you-tube-sessions/overlay-shorts/coroutines-demo
 b: build
 build:
-	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka && gradle build -x test
-	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq && gradle build -x test
-	cd you-tube-sessions/long-videos/spot-on && gradle build -x test
-	cd you-tube-sessions/long-videos/kotlin-keywords && gradle build -x test
-	cd you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 && gradle build -x test
-	cd you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring && gradle build -x test
-	cd you-tube-sessions/overlay-shorts/coroutines-demo && gradle build -x test
+	@for location in $(MODULE_LOCATIONS); do \
+  		export CURRENT=$(shell pwd); \
+  		echo "Building $$location..."; \
+		cd $$location; \
+		gradle build -x test; \
+		cd $$CURRENT; \
+	done
 build-local: build-talks build-youtube
 build-talks: ./talk*
 		for d in $^ ; do \
@@ -24,13 +31,13 @@ build-youtube: ./you-tube*
 			cd ..; \
 		done
 upgrade:
-	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka && gradle wrapper --gradle-version $(GRADLE_VERSION)
-	cd talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq && gradle wrapper --gradle-version $(GRADLE_VERSION)
-	cd you-tube-sessions/long-videos/spot-on && gradle wrapper --gradle-version $(GRADLE_VERSION)
-	cd you-tube-sessions/long-videos/kotlin-keywords && gradle wrapper --gradle-version $(GRADLE_VERSION)
-	cd you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 && gradle wrapper --gradle-version $(GRADLE_VERSION)
-	cd you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring && gradle wrapper --gradle-version $(GRADLE_VERSION)
-	cd you-tube-sessions/overlay-shorts/coroutines-demo && gradle wrapper --gradle-version $(GRADLE_VERSION)
+	@for location in $(MODULE_LOCATIONS); do \
+  		export CURRENT=$(shell pwd); \
+  		echo "Upgrading $$location..."; \
+		cd $$location; \
+		gradle wrapper --gradle-version $(GRADLE_VERSION); \
+		cd $$CURRENT; \
+	done
 local-pipeline:
 	@for module in $(MODULES); do \
   		cd $$module; \
