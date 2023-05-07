@@ -2,7 +2,6 @@ package org.jesperancinha.keywords.episodes
 
 /**
  * infix
- * inline
  * inner
  * internal
  * lateinit
