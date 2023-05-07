@@ -1,16 +1,32 @@
 package org.jesperancinha.keywords.episodes
 
 import org.slf4j.LoggerFactory
+import java.util.UUID
 
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
 
 open class Account(
-    val moneyCollection: List<Money>
-)
+    val moneyCollection: List<Money>,
+    private val accountNumber: UUID = UUID.randomUUID()
+) {
+    init {
+        logger.info("Created with number $accountNumber")
+    }
+}
 
-class DebitAccount(moneyCollection: List<Money> = emptyList()) : Account(moneyCollection)
+class DebitAccount(
+    moneyCollection: List<Money> = emptyList()
+) : Account(moneyCollection) {
+    init {
+        logger.info("Debit account created!")
+    }
+}
 
-class CreditAccount(moneyCollection: List<Money> = emptyList()) : Account(moneyCollection)
+class CreditAccount(moneyCollection: List<Money> = emptyList()) : Account(moneyCollection) {
+    init {
+        logger.info("Credit account created!")
+    }
+}
 
 open class Money
 
@@ -22,7 +38,7 @@ class Card<out A : Account, in M : Money>(
     private val account: A,
 ) {
     init {
-        if(account.moneyCollection.isEmpty()) throw RuntimeException("Account may not be empty!")
+        if (account.moneyCollection.isEmpty()) throw RuntimeException("Account may not be empty!")
     }
 
     fun addMoney(money: Money) = account
@@ -58,6 +74,16 @@ class Episode1 {
             runContravariantExample()
             runCovariantExample()
             runThisReceiverExample()
+            runInitExample()
+        }
+
+        private fun runInitExample() {
+            runCatching {
+                Card<DebitAccount, Note>(DebitAccount(emptyList()))
+            }.onFailure {
+                logger.error("It fails because the account is empty and therefore we cannot make a card with it", it)
+            }
+            Card<DebitAccount, Note>(DebitAccount(listOf(Note())))
         }
 
         private fun runThisReceiverExample() {

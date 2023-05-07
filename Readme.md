@@ -2,6 +2,10 @@
 
 [![ASNGIASAGF Build](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever/actions/workflows/asngiasagf.yml/badge.svg)](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever/actions/workflows/asngiasagf.yml)
 
+[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever.svg)](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever)
+[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever.svg)](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever)
+[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever.svg)](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever)
+
 ## Introduction
 
 This repo serves to support all of the code to backup all my talks. Have a look in the submodules for more info

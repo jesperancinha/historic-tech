@@ -1,5 +1,7 @@
 package org.jesperancinha.keywords
 
+import org.jesperancinha.keywords.episodes.Episode1
+
 /**
  * inline
  * in
@@ -35,5 +37,6 @@ fun main(args: Array<String>) {
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
 
+    Episode1.main(emptyArray())
 
 }
