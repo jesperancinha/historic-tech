@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 b: build
 build:
 	for d in *; do \
