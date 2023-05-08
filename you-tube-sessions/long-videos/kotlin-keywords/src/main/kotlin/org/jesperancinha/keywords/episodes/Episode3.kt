@@ -8,4 +8,11 @@ package org.jesperancinha.keywords.episodes
  * noinline
  */
 class Episode3 {
+
+    companion object{
+        @JvmStatic
+        fun main(args: Array<String>) {
+
+        }
+    }
 }
