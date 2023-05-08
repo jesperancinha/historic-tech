@@ -27,10 +27,10 @@ class Episode2 {
         @JvmStatic
         fun main(args: Array<String>) {
             val expressCardA: ExpressCard<DebitAccount, Note> =
-                ExpressCard(DebitAccount(listOf(Note()), "Express Card Holder A"))
+                ExpressCard(DebitAccount("Express Card Holder A", listOf(Note())))
 
             val expressCardB: ExpressCard<DebitAccount, Note> =
-                ExpressCard(DebitAccount(listOf(Note()), "Express Card Holder B"))
+                ExpressCard(DebitAccount("Express Card Holder B", listOf(Note())))
 
             attendClients("A","B")
             processCard {

@@ -1,7 +1,6 @@
 package org.jesperancinha.keywords.episodes
 
 /**
- * open
  * operator
  * reified
  * sealed

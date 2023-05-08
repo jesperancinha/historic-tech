@@ -16,8 +16,8 @@ open class Account(
 }
 
 class DebitAccount(
-    moneyCollection: List<Money> = emptyList(),
-    name :String
+    name: String,
+    moneyCollection: List<Money> = emptyList()
 ) : Account(moneyCollection, name) {
     init {
         logger.info("Debit account created!")
@@ -25,8 +25,8 @@ class DebitAccount(
 }
 
 class CreditAccount(
-    moneyCollection: List<Money> = emptyList(),
-    name: String
+    name: String,
+    moneyCollection: List<Money> = emptyList()
 ) : Account(moneyCollection, name) {
     init {
         logger.info("Credit account created!")
@@ -70,6 +70,7 @@ open class Card<out A : Account, in M : Money>(
  * this
  * receiver
  * init
+ * open
  */
 class Episode1 {
     companion object {
@@ -84,15 +85,15 @@ class Episode1 {
 
         private fun runInitExample() {
             runCatching {
-                Card<DebitAccount, Note>(DebitAccount(emptyList(), "Test Debit Holder"))
+                Card<DebitAccount, Note>(DebitAccount("Test Debit Holder", emptyList()))
             }.onFailure {
                 logger.error("It fails because the account is empty and therefore we cannot make a card with it", it)
             }
-            Card<DebitAccount, Note>(DebitAccount(listOf(Note()), "Test Debit Holder"))
+            Card<DebitAccount, Note>(DebitAccount("Test Debit Holder", listOf(Note())))
         }
 
         private fun runThisReceiverExample() {
-            val account = DebitAccount(listOf(Note()), "Test Debit Holder")
+            val account = DebitAccount("Test Debit Holder", listOf(Note()))
             val debitCard = Card<DebitAccount, Note>(account)
             debitCard.addMoneyForecast(Note()) { debitAccount ->
                 logger.info(debitCard.toString())
@@ -105,9 +106,9 @@ class Episode1 {
         }
 
         private fun runCovariantExample() {
-            val account = DebitAccount(mutableListOf(Note()), "Test Debit Holder")
+            val account = DebitAccount("Test Debit Holder", mutableListOf(Note()))
             val debitCard = Card<DebitAccount, Money>(account)
-            val creditAccount = CreditAccount(listOf(Note()), "Test Credit Holder")
+            val creditAccount = CreditAccount("Test Credit Holder", listOf(Note()))
             val creditCard = Card<CreditAccount, Money>(creditAccount)
         }
 
