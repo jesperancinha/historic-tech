@@ -7,7 +7,8 @@ val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
 
 open class Account(
     val moneyCollection: List<Money>,
-    private val accountNumber: UUID = UUID.randomUUID()
+    val name: String,
+    private val accountNumber: UUID = UUID.randomUUID(),
 ) {
     init {
         logger.info("Created with number $accountNumber")
@@ -15,14 +16,18 @@ open class Account(
 }
 
 class DebitAccount(
-    moneyCollection: List<Money> = emptyList()
-) : Account(moneyCollection) {
+    moneyCollection: List<Money> = emptyList(),
+    name :String
+) : Account(moneyCollection, name) {
     init {
         logger.info("Debit account created!")
     }
 }
 
-class CreditAccount(moneyCollection: List<Money> = emptyList()) : Account(moneyCollection) {
+class CreditAccount(
+    moneyCollection: List<Money> = emptyList(),
+    name: String
+) : Account(moneyCollection, name) {
     init {
         logger.info("Credit account created!")
     }
@@ -79,15 +84,15 @@ class Episode1 {
 
         private fun runInitExample() {
             runCatching {
-                Card<DebitAccount, Note>(DebitAccount(emptyList()))
+                Card<DebitAccount, Note>(DebitAccount(emptyList(), "Test Debit Holder"))
             }.onFailure {
                 logger.error("It fails because the account is empty and therefore we cannot make a card with it", it)
             }
-            Card<DebitAccount, Note>(DebitAccount(listOf(Note())))
+            Card<DebitAccount, Note>(DebitAccount(listOf(Note()), "Test Debit Holder"))
         }
 
         private fun runThisReceiverExample() {
-            val account = DebitAccount(listOf(Note()))
+            val account = DebitAccount(listOf(Note()), "Test Debit Holder")
             val debitCard = Card<DebitAccount, Note>(account)
             debitCard.addMoneyForecast(Note()) { debitAccount ->
                 logger.info(debitCard.toString())
@@ -100,9 +105,9 @@ class Episode1 {
         }
 
         private fun runCovariantExample() {
-            val account = DebitAccount(mutableListOf(Note()))
+            val account = DebitAccount(mutableListOf(Note()), "Test Debit Holder")
             val debitCard = Card<DebitAccount, Money>(account)
-            val creditAccount = CreditAccount(listOf(Note()))
+            val creditAccount = CreditAccount(listOf(Note()), "Test Credit Holder")
             val creditCard = Card<CreditAccount, Money>(creditAccount)
         }
 

@@ -17,6 +17,14 @@ build:
 		gradle build -x test; \
 		cd $$CURRENT; \
 	done
+upgrade:
+	@for location in $(MODULE_LOCATIONS); do \
+  		export CURRENT=$(shell pwd); \
+  		echo "Upgrading $$location..."; \
+		cd $$location; \
+		gradle wrapper --gradle-version $(GRADLE_VERSION); \
+		cd $$CURRENT; \
+	done
 build-local: build-talks build-youtube
 build-talks: ./talk*
 		for d in $^ ; do \
@@ -30,14 +38,6 @@ build-youtube: ./you-tube*
 			make b; \
 			cd ..; \
 		done
-upgrade:
-	@for location in $(MODULE_LOCATIONS); do \
-  		export CURRENT=$(shell pwd); \
-  		echo "Upgrading $$location..."; \
-		cd $$location; \
-		gradle wrapper --gradle-version $(GRADLE_VERSION); \
-		cd $$CURRENT; \
-	done
 local-pipeline:
 	@for module in $(MODULES); do \
   		cd $$module; \
@@ -59,7 +59,7 @@ upgrade-gradle:
 		sdk install gradle $$gradleOnlineVersion; \
 		sdk use gradle $$gradleOnlineVersion; \
 		export GRADLE_VERSION=$$gradleOnlineVersion; \
-	fi; \
+	fi;
 	make upgrade
 install-linux:
 	sudo apt-get install jq
