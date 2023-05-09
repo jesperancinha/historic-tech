@@ -102,6 +102,7 @@ class Episode1 {
             val account = DebitAccount("Test Debit Holder", listOf(Note()))
             val debitCard = Card<DebitAccount, Note>(account)
             debitCard.addMoneyForecast(Note()) { debitAccount ->
+                logger.info("$debitAccount")
                 logger.info(debitCard.toString())
                 Note()
             }
