@@ -1,4 +1,4 @@
-b: build
+cb: build
 build: ./streams*
 		for d in $^ ; do \
   			cd $${d}; \

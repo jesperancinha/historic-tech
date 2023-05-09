@@ -3,6 +3,7 @@ GRADLE_VERSION ?= 8.1.1
 MODULES := talks you-tube-sessions
 MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \
+					talks/talk-10-kotlin-streams-good-bad/streams-gb-single \
 					you-tube-sessions/long-videos/spot-on \
 					you-tube-sessions/long-videos/kotlin-keywords \
 					you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 \
