@@ -26,6 +26,7 @@ class Episode3 {
 }
 
 private infix fun CreditAccount.incasso(debitAccount: DebitAccount) {
+    println(debitAccount)
     println("Money is being payed back!")
 }
 

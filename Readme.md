@@ -8,7 +8,9 @@
 
 ## Introduction
 
-This repo serves to support all of the code to backup all my talks. Have a look in the submodules for more info
+This repo serves to support all the code to back up all my talks and videos (there has been no successful application yet, so they are all preparation materials at this point).
+
+Have a look in the submodules for more info
  
 
 ## Structure
