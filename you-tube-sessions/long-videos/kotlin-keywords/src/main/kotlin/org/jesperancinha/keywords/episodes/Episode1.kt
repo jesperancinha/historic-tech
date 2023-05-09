@@ -6,19 +6,25 @@ import java.util.UUID
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
 
 open class Account(
-    val moneyCollection: List<Money>,
     val name: String,
+    val moneyCollection: List<Money>,
     private val accountNumber: UUID = UUID.randomUUID(),
 ) {
     init {
         logger.info("Created with number $accountNumber")
     }
+
+    fun add(note: Note): Account = Account(
+        name = this.name,
+        moneyCollection = this.moneyCollection + note
+    )
+
 }
 
 class DebitAccount(
     name: String,
     moneyCollection: List<Money> = emptyList()
-) : Account(moneyCollection, name) {
+) : Account(name, moneyCollection) {
     init {
         logger.info("Debit account created!")
     }
@@ -27,7 +33,7 @@ class DebitAccount(
 class CreditAccount(
     name: String,
     moneyCollection: List<Money> = emptyList()
-) : Account(moneyCollection, name) {
+) : Account(name, moneyCollection) {
     init {
         logger.info("Credit account created!")
     }
@@ -40,7 +46,7 @@ open class Note : Money()
 open class Coin : Money()
 
 open class Card<out A : Account, in M : Money>(
-    private val account: A,
+    val account: A,
 ) {
     init {
         if (account.moneyCollection.isEmpty()) throw RuntimeException("Account may not be empty!")
