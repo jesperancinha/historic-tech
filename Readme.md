@@ -26,9 +26,16 @@ Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-s
 
 ## References
 
+<details>
+
+<summary>Online References</summary>
+
+---
 -   [NLJUG speaker academy 2022 - session 1](https://www.slideshare.net/BertJanSchrijver/nljug-speaker-academy-2022-session-1)
 -   [How to Write an Abstract by Philip Koopman, Carnegie Mellon University](http://users.ece.cmu.edu/~koopman/essays/abstract.html)
 -   [Ex Ordo's How to write an abstract for a conference](https://www.exordo.com/blog/how-to-write-an-abstract-for-a-conference/)
+---
+</details>
 
 ## About me
 
