@@ -2,6 +2,7 @@ package org.jesperancinha.keywords.episodes
 
 import kotlinx.coroutines.*
 import java.math.BigDecimal
+import java.math.BigDecimal.ZERO
 import kotlin.system.measureTimeMillis
 
 sealed class BonusCard {
@@ -76,9 +77,21 @@ class Episode4 {
                 }
                 logger.info("It took $time milliseconds to execute!")
             }
+
+            val cardValue = findCardRate(cardA.account.moneyCollection)
+            logger.info("The card rate is $cardValue")
+        }
+
+        private tailrec fun findCardRate(moneyList: List<Money>, total: BigDecimal = ZERO): BigDecimal {
+            if (moneyList.size == 1) {
+                return moneyList.last().value.multiply(BigDecimal.valueOf(0.01)).add(total)
+            }
+            val multiply = moneyList.first().value.multiply(BigDecimal.valueOf(0.01))
+            return findCardRate(moneyList.takeLast(moneyList.size - 1), total.add(multiply))
         }
     }
 }
+
 
 suspend fun create10BonusCards() = (1 until 10).map { BonusCard.DiscountCard() }
 inline fun <reified T : Account> createDoubleNoteAccount(account: T): T = when (account.moneyCollection.size) {

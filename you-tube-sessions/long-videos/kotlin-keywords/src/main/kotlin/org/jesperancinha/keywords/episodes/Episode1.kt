@@ -1,6 +1,7 @@
 package org.jesperancinha.keywords.episodes
 
 import org.slf4j.LoggerFactory
+import java.math.BigDecimal
 import java.util.UUID
 
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
@@ -47,7 +48,9 @@ class CreditAccount(
     )
 }
 
-open class Money
+open class Money {
+    val value:BigDecimal = 10.toBigDecimal()
+}
 
 open class Note : Money()
 
