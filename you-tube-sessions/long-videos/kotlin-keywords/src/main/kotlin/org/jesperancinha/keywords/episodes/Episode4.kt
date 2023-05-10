@@ -23,7 +23,6 @@ sealed class BonusCard {
  * sealed
  * suspend
  * tailrec
- * vararg
  */
 class Episode4 {
 

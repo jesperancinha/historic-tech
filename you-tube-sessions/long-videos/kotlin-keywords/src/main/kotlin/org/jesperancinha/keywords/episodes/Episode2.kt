@@ -20,6 +20,7 @@ class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
  * noinline
  * companion
  * Invokes
+ * vararg
  */
 class Episode2 {
 
@@ -33,6 +34,8 @@ class Episode2 {
                 ExpressCard(DebitAccount("Express Card Holder B", listOf(Note())))
 
             attendClients("A","B")
+            val clients = arrayOf("A", "B")
+            attendClients(*clients)
             processCard {
                 println("Processing Card A")
                 println(expressCardA)
