@@ -1,5 +1,17 @@
 package org.jesperancinha.keywords.episodes
 
+sealed class BonusCard {
+    object DiscountCard : BonusCard()
+
+    object HalfBonusCard : BonusCard() {
+        object DoubleBonusCard : BonusCard()
+    }
+
+    init {
+        println("${this.javaClass.simpleName.replace("Card","")} Card Created!")
+    }
+}
+
 /**
  * operator
  * reified
@@ -40,6 +52,9 @@ class Episode4 {
                 logger.error("This fails because while we are preserving the type and no error occurs during compilation\nthe runtime fails because an incorrect cast ends up being made")
             }
 
+            BonusCard.DiscountCard
+            BonusCard.HalfBonusCard
+            BonusCard.HalfBonusCard.DoubleBonusCard
         }
     }
 }

@@ -3,6 +3,15 @@ package org.jesperancinha.keywords
 import org.jesperancinha.keywords.episodes.Episode1
 
 /**
+ * None of these classes are possible to create, because they are declared as being subclasses of sealed class BonusCard and that means that the subclasses need to be in the same module and in the same package.
+ * This is because the sealed class is only known at compile time. Once compiled, there is no way to create subclasses of the sealed class.
+ */
+//class ImpossibleCard : BonusCard() {
+//    class AlsoNotPossibleCard : BonusCard()
+//}
+
+
+/**
  * inline
  * in
  * out
