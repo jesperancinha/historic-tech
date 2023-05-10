@@ -5,38 +5,46 @@ import java.util.UUID
 
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
 
-open class Account(
+abstract class Account(
     val name: String,
     val moneyCollection: List<Money>,
     private val accountNumber: UUID = UUID.randomUUID(),
 ) {
+
     init {
         logger.info("Created with number $accountNumber")
     }
 
-    fun add(note: Note): Account = Account(
-        name = this.name,
-        moneyCollection = this.moneyCollection + note
-    )
+    abstract fun add(note: Note): Account
 
 }
 
 class DebitAccount(
     name: String,
-    moneyCollection: List<Money> = emptyList()
+    moneyCollection: List<Money> = emptyList(),
 ) : Account(name, moneyCollection) {
     init {
         logger.info("Debit account created!")
     }
+
+    override fun add(note: Note): DebitAccount = DebitAccount(
+        name = this.name,
+        moneyCollection = this.moneyCollection + note
+    )
 }
 
 class CreditAccount(
     name: String,
-    moneyCollection: List<Money> = emptyList()
+    moneyCollection: List<Money> = emptyList(),
 ) : Account(name, moneyCollection) {
     init {
         logger.info("Credit account created!")
     }
+
+    override fun add(note: Note): CreditAccount = CreditAccount(
+        name = this.name,
+        moneyCollection = this.moneyCollection + note
+    )
 }
 
 open class Money
