@@ -1,6 +1,6 @@
 package org.jesperancinha.keywords
 
-import org.jesperancinha.keywords.episodes.Episode1
+import org.jesperancinha.keywords.episodes.*
 
 /**
  * None of these classes are possible to create, because they are declared as being subclasses of sealed class BonusCard and that means that the subclasses need to be in the same module and in the same package.
@@ -46,6 +46,12 @@ fun main(args: Array<String>) {
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
 
-    Episode1.main(emptyArray())
+    CardsAndMortgages.main(emptyArray())
+    CardsAndMortgagesJava.main(emptyArray())
+    Episode2.main(emptyArray())
+    Episode3.main(emptyArray())
+    Episode4.main(emptyArray())
+
+
 
 }

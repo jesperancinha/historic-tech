@@ -4,7 +4,7 @@ import org.slf4j.LoggerFactory
 import java.math.BigDecimal
 import java.util.UUID
 
-val logger: org.slf4j.Logger = LoggerFactory.getLogger(Episode1::class.java)
+val logger: org.slf4j.Logger = LoggerFactory.getLogger(CardsAndMortgages::class.java)
 
 abstract class Account(
     val name: String,
@@ -89,7 +89,7 @@ open class Card<out A : Account, in M : Money>(
  * init
  * open
  */
-class Episode1 {
+class CardsAndMortgages {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
