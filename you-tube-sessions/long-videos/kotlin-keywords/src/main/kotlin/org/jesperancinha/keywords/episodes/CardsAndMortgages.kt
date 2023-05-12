@@ -2,7 +2,7 @@ package org.jesperancinha.keywords.episodes
 
 import org.slf4j.LoggerFactory
 import java.math.BigDecimal
-import java.util.UUID
+import java.util.*
 
 val logger: org.slf4j.Logger = LoggerFactory.getLogger(CardsAndMortgages::class.java)
 
@@ -101,8 +101,7 @@ class CardsAndMortgages {
         @JvmStatic
         fun main(args: Array<String>) {
             runInlineExample()
-            runContravariantExample()
-            runCovariantExample()
+            runVarianceExample()
             runThisReceiverExample()
             runInitExample()
         }
@@ -130,14 +129,22 @@ class CardsAndMortgages {
             }
         }
 
-        private fun runCovariantExample() {
-            val account = DebitAccount("Test Debit Holder", mutableListOf(Note()))
-            val debitCard = Card<DebitAccount, Money>(account)
-            val creditAccount = CreditAccount("Test Credit Holder", listOf(Note()))
-            val creditCard = Card<CreditAccount, Money>(creditAccount)
-        }
+        @SuppressWarnings("unchecked")
+        private fun runVarianceExample() {
+            val account = DebitAccount("Test Debit Holder", listOf(Note()))
+            val card: Card<Account,Note> = Card<DebitAccount, Money>(account)
+            card.addMoney(Note())
+           logger.info("{}", card.account)
+            val debitCard = card as Card<DebitAccount,Note>
+            debitCard.addMoney(Note())
+           logger.info("{}", debitCard.account)
+           logger.info("{}", debitCard.account.specialString())
 
-        private fun runContravariantExample() {
+            val creditAccount = CreditAccount("Test Credit Holder", listOf(Note()))
+            val creditCard: Card<CreditAccount,Money> = Card(creditAccount)
+            creditCard.addMoney(Note())
+            creditCard.addMoney(Coin())
+            creditCard.addMoney(Money())
         }
 
 
