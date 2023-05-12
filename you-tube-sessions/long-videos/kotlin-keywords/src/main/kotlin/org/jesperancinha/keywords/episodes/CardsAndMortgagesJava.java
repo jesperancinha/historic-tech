@@ -13,9 +13,13 @@ public class CardsAndMortgagesJava {
 
         logger.info("Starting Java example!");
         var account = new DebitAccount("Test Debit Holder", List.of(new Note()));
-        CardJava<? super DebitAccount, ? extends Money> debitCard = new CardJava<Account, Money>(account);
+        CardJava<? extends Account, ? super Note> debitCard = new CardJava<DebitAccount, Money>(account);
+        debitCard.addMoney(new Note());
 
         var creditAccount = new CreditAccount("Test Credit Holder", List.of(new Note()));
-        CardJava<? super DebitAccount, ? extends Money> creditCard = new CardJava<>(creditAccount);
+        CardJava<? extends CreditAccount, ? super Money> creditCard = new CardJava<>(creditAccount);
+        creditCard.addMoney(new Note());
+        creditCard.addMoney(new Coin());
+        creditCard.addMoney(new Money());
     }
 }
