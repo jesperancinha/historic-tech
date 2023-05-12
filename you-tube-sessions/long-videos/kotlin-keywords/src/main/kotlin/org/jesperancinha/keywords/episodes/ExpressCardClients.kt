@@ -22,7 +22,7 @@ class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
  * Invokes
  * vararg
  */
-class Episode2 {
+class ExpressCardClients {
 
     companion object {
         @JvmStatic

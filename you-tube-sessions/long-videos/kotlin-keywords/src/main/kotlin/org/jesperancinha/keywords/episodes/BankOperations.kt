@@ -28,7 +28,7 @@ class Bank(
  * by
  * lateinit
  */
-class Episode3 {
+class BankOperations {
 
     val bank by lazy { Bank(listOf()) }
 
@@ -44,25 +44,25 @@ class Episode3 {
         }
 
         private fun runLateInitVarExample() {
-            val episode3 = Episode3()
+            val bankOperations = BankOperations()
             runCatching {
-                logger.info("${episode3.anotherBank}")
+                logger.info("${bankOperations.anotherBank}")
             }.onFailure {
                 logger.error("This fails because although it compiles, we never assigned it a value")
                 logger.error("It cannot also have a null value")
             }
             logger.info("If we assign it now")
-            episode3.anotherBank = Bank(listOf())
-            logger.info("${episode3.anotherBank}")
+            bankOperations.anotherBank = Bank(listOf())
+            logger.info("${bankOperations.anotherBank}")
             logger.info("It works now because the variable is assigned.")
         }
 
         private fun runByExample() {
             logger.info("We create this episode and nothing happens!")
-            val episode3 = Episode3()
-            logger.info("$episode3")
+            val bankOperations = BankOperations()
+            logger.info("$bankOperations")
             logger.info("We now just access the bank!")
-            episode3.bank
+            bankOperations.bank
             logger.info("Works like a charm!")
         }
 

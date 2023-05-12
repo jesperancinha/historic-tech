@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 class CardsAndMortgagesTest {
 
     @Test
-    fun `should run episode 1 without errors`() {
+    fun `should run cards and mortgages without errors`() {
         CardsAndMortgages.main(emptyArray())
     }
 }

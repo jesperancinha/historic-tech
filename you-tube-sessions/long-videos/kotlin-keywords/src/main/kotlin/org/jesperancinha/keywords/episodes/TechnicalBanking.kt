@@ -24,7 +24,7 @@ sealed class BonusCard {
  * suspend
  * tailrec
  */
-class Episode4 {
+class TechnicalBanking {
 
     companion object {
 

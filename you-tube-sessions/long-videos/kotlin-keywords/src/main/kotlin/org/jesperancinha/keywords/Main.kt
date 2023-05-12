@@ -48,9 +48,9 @@ fun main(args: Array<String>) {
 
     CardsAndMortgages.main(emptyArray())
     CardsAndMortgagesJava.main(emptyArray())
-    Episode2.main(emptyArray())
-    Episode3.main(emptyArray())
-    Episode4.main(emptyArray())
+    ExpressCardClients.main(emptyArray())
+    BankOperations.main(emptyArray())
+    TechnicalBanking.main(emptyArray())
 
 
 
