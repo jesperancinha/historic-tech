@@ -1,6 +1,5 @@
 package org.jesperancinha.keywords.episodes;
 
-import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class CardJava<A extends Account, M extends Money> {
@@ -28,6 +27,10 @@ public class CardJava<A extends Account, M extends Money> {
     @Override
     public String toString() {
         return "Welcome to your account";
+    }
+
+    public A getAccount() {
+        return account;
     }
 
 }

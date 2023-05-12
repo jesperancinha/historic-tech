@@ -18,6 +18,7 @@ abstract class Account(
 
     abstract fun add(note: Note): Account
 
+    override fun toString(): String = "This the account interface!"
 }
 
 class DebitAccount(
@@ -32,6 +33,10 @@ class DebitAccount(
         name = this.name,
         moneyCollection = this.moneyCollection + note
     )
+
+    override fun toString(): String = "This the debit account interface!"
+
+    fun specialString(): String = "This the special debit account interface function!"
 }
 
 class CreditAccount(
@@ -46,10 +51,12 @@ class CreditAccount(
         name = this.name,
         moneyCollection = this.moneyCollection + note
     )
+
+    override fun toString(): String = "This the credit account interface!"
 }
 
 open class Money {
-    val value:BigDecimal = 10.toBigDecimal()
+    val value: BigDecimal = 10.toBigDecimal()
 }
 
 open class Note : Money()
