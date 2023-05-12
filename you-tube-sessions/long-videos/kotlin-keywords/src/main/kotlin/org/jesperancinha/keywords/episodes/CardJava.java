@@ -8,7 +8,7 @@ public class CardJava<A extends Account, M extends Money> {
     private A account;
 
     public CardJava(A account) {
-        if (account.getMoneyCollection().isEmpty()) throw new RuntimeException("Account may not be empty!")
+        if (account.getMoneyCollection().isEmpty()) throw new RuntimeException("Account may not be empty!");
         this.account = account;
     }
 
