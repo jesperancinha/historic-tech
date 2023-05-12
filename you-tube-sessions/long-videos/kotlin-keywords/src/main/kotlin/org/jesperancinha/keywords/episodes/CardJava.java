@@ -1,32 +1,33 @@
 package org.jesperancinha.keywords.episodes;
 
-public class CardJava<A, M> {
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+
+public class CardJava<A extends Account, M extends Money> {
 
     private A account;
 
     public CardJava(A account) {
+        if (account.getMoneyCollection().isEmpty()) throw new RuntimeException("Account may not be empty!")
         this.account = account;
     }
-//    val account: A,
-//            ) {
-//        init {
-//            if (account.moneyCollection.isEmpty()) throw RuntimeException("Account may not be empty!")
-//        }
-//
-//        fun addMoney(money: Money) = account
-//
-//        fun addMoneyForecast(money: Money) = account
-//        fun addMoneyForecast(money: Money, yearlyRate: (A) -> M): Money {
-//            addMoneyForecast(money)
-//            return yearlyRate(account)
-//        }
-//
-//        fun addMoneyForecastThis(money: Money, yearlyRate: A.() -> M): Money {
-//            addMoneyForecast(money)
-//            return yearlyRate(account)
-//        }
-//
-//        override fun toString() = "Welcome to your account"
-//    }
+
+    public A addMoney(M money) {
+        return account;
+    }
+
+    public A addMoneyForecast(M money) {
+        return account;
+    }
+
+    public M addMoneyForecast(M money, Function<A, M> yearlyRate) {
+        addMoneyForecast(money);
+        return yearlyRate.apply(account);
+    }
+
+    @Override
+    public String toString() {
+        return "Welcome to your account";
+    }
 
 }
