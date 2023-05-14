@@ -7,7 +7,7 @@ annotation class GoldenCard
 class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
 
 /**
- * Multiplatform
+ * Multiplatform (please check kotlin-keywords-app for details)
  * actual
  * expect
  *
