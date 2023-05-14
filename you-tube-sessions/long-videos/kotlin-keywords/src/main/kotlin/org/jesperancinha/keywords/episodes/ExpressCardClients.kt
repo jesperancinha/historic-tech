@@ -22,6 +22,9 @@ class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
  * Invokes
  * vararg
  */
+
+external fun foo(x: Int): Double
+
 class ExpressCardClients {
 
     companion object {
