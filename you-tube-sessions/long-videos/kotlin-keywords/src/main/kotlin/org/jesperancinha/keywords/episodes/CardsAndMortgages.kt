@@ -66,7 +66,12 @@ open class Coin : Money()
 open class Card<out A : Account, in M : Money>(
     val account: A,
 ) {
+    constructor(account: A, message: String) : this(account) {
+        logger.info(message)
+    }
+
     init {
+        logger.info("Initializing card with account \"{}\"", account)
         if (account.moneyCollection.isEmpty()) throw RuntimeException("Account may not be empty!")
     }
 
@@ -112,7 +117,7 @@ class CardsAndMortgages {
             }.onFailure {
                 logger.error("It fails because the account is empty and therefore we cannot make a card with it", it)
             }
-            Card<DebitAccount, Note>(DebitAccount("Test Debit Holder", listOf(Note())))
+            Card<DebitAccount, Note>(DebitAccount("Test Debit Holder", listOf(Note())), "A great card!")
         }
 
         private fun runThisReceiverExample() {
@@ -132,16 +137,16 @@ class CardsAndMortgages {
         @SuppressWarnings("unchecked")
         private fun runVarianceExample() {
             val account = DebitAccount("Test Debit Holder", listOf(Note()))
-            val card: Card<Account,Note> = Card<DebitAccount, Money>(account)
+            val card: Card<Account, Note> = Card<DebitAccount, Money>(account)
             card.addMoney(Note())
-           logger.info("{}", card.account)
-            val debitCard = card as Card<DebitAccount,Note>
+            logger.info("{}", card.account)
+            val debitCard = card as Card<DebitAccount, Note>
             debitCard.addMoney(Note())
-           logger.info("{}", debitCard.account)
-           logger.info("{}", debitCard.account.specialString())
+            logger.info("{}", debitCard.account)
+            logger.info("{}", debitCard.account.specialString())
 
             val creditAccount = CreditAccount("Test Credit Holder", listOf(Note()))
-            val creditCard: Card<CreditAccount,Money> = Card(creditAccount)
+            val creditCard: Card<CreditAccount, Money> = Card(creditAccount)
             creditCard.addMoney(Note())
             creditCard.addMoney(Coin())
             creditCard.addMoney(Money())

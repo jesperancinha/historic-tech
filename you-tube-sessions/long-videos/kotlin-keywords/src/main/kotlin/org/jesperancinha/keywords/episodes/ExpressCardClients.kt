@@ -25,8 +25,19 @@ class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
 class ExpressCardClients {
 
     companion object {
+
+        operator fun invoke() {
+            logger.info("One ExpressCardClients has been created with invoke!")
+        }
+        operator fun invoke(message:String) {
+            logger.info("One ExpressCardClients has been created with invoke and a message: \"{}\"", message)
+        }
+
         @JvmStatic
         fun main(args: Array<String>) {
+            ExpressCardClients()
+            invoke()
+            ExpressCardClients("Please make some soup")
             val expressCardA: ExpressCard<DebitAccount, Note> =
                 ExpressCard(DebitAccount("Express Card Holder A", listOf(Note())))
 
