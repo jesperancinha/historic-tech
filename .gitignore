@@ -46,3 +46,8 @@ gradle-wrapper.jar
 
 # Others
 .attach*
+
+# Native
+*.dll
+*.o
+

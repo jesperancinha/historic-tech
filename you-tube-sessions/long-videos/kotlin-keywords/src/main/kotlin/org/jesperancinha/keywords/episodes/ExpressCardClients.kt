@@ -1,5 +1,7 @@
 package org.jesperancinha.keywords.episodes
 
+import DozenCount
+
 
 annotation class GoldenCard
 
@@ -23,21 +25,35 @@ class ExpressCard<A : Account, M : Money>(account: A) : Card<A, M>(account)
  * vararg
  */
 
-external fun foo(x: Int): Double
-
 class ExpressCardClients {
 
     companion object {
 
+        init {
+            System.load(
+                ExpressCardClients::class.java.getResource("/DozenCount.dll")
+                    ?.path
+            )
+
+        }
+
         operator fun invoke() {
             logger.info("One ExpressCardClients has been created with invoke!")
         }
-        operator fun invoke(message:String) {
+
+        operator fun invoke(message: String) {
             logger.info("One ExpressCardClients has been created with invoke and a message: \"{}\"", message)
         }
 
+
         @JvmStatic
         fun main(args: Array<String>) {
+            runCatching {
+
+                logger.info(DozenCount.product(100f, 2f).toString())
+            }.onFailure {
+                logger.error("There has been an error!", it)
+            }
             ExpressCardClients()
             invoke()
             ExpressCardClients("Please make some soup")
@@ -47,7 +63,7 @@ class ExpressCardClients {
             val expressCardB: ExpressCard<DebitAccount, Note> =
                 ExpressCard(DebitAccount("Express Card Holder B", listOf(Note())))
 
-            attendClients("A","B")
+            attendClients("A", "B")
             val clients = arrayOf("A", "B")
             attendClients(*clients)
             processCard {
@@ -83,7 +99,8 @@ class ExpressCardClients {
  * We cannot use crossinline or noinline in regular parameters.
  * It in only allowed for function parameters
  */
-inline fun attendClients(vararg clients: String)  = println("Starting to attend clients ${clients.joinToString(",")}}")
+inline fun attendClients(vararg clients: String) = println("Starting to attend clients ${clients.joinToString(",")}}")
+
 /**
  * Note that this function is identified by IntelliJ as leading to performance issues
  */
@@ -103,7 +120,7 @@ inline fun processCard(crossinline cardProcess: () -> Unit) {
     // return cardProcess
 }
 
-fun transferCard( cardProcess: () -> Unit): () -> Unit {
+fun transferCard(cardProcess: () -> Unit): () -> Unit {
     val f = Runnable { cardProcess() }
     f.run()
     return cardProcess
