@@ -49,7 +49,6 @@ class ExpressCardClients {
         @JvmStatic
         fun main(args: Array<String>) {
             runCatching {
-
                 logger.info(DozenCount.product(100f, 2f).toString())
             }.onFailure {
                 logger.error("There has been an error!", it)
