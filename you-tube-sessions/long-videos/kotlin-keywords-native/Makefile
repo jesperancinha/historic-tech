@@ -1,8 +1,10 @@
-include ../../../Makefile
 SHELL := /bin/bash
 
-b: build
 build: build-jar build-lib-linux
+b: build
+build-run: build run
+run:
+	java -jar TimeDozen.jar
 build-jar:
 	kotlinc/bin/kotlinc -include-runtime -d TimeDozen.jar *.kt
 build-lib-linux:
