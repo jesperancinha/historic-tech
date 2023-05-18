@@ -1,4 +1,4 @@
-# Live and Video support repo
+# A Suitable Nice Guy In A Suitable Age Group Forever - Live and Video support repo
 
 [![ASNGIASAGF Build](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever/actions/workflows/asngiasagf.yml/badge.svg)](https://github.com/jesperancinha/a-suitable-nice-guy-in-a-suitable-age-group-forever/actions/workflows/asngiasagf.yml)
 
@@ -18,9 +18,7 @@ Have a look in the submodules for more info
 -   [Talks](./talks) - All materials for current applications to talks and/or actual talks
 -   [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
 
-## Inspiration
-
-Please have a look at file [Inspiration](./Inspiration.md) to find out what inspired the name of this repo.
+## Setup
 
 Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints&Tricks.md) for details on how to setup java versions
 
