@@ -1,6 +1,6 @@
 package org.jesperancinha.keywords
 
-import org.jesperancinha.keywords.episodes.*
+import org.jesperancinha.keywords.tutorial.*
 
 /**
  * None of these classes are possible to create, because they are declared as being subclasses of sealed class BonusCard and that means that the subclasses need to be in the same module and in the same package.

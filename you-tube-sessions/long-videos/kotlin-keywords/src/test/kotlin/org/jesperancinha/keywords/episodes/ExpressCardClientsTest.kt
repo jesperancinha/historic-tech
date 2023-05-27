@@ -1,5 +1,6 @@
 package org.jesperancinha.keywords.episodes
 
+import org.jesperancinha.keywords.tutorial.ExpressCardClients
 import org.junit.jupiter.api.Test
 
 class ExpressCardClientsTest {

@@ -1,4 +1,4 @@
-package org.jesperancinha.keywords.episodes;
+package org.jesperancinha.keywords.tutorial;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

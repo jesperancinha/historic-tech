@@ -1,5 +1,6 @@
 package org.jesperancinha.keywords.episodes
 
+import org.jesperancinha.keywords.tutorial.BankOperations
 import org.junit.jupiter.api.Test
 
 class BankOperationsTest {

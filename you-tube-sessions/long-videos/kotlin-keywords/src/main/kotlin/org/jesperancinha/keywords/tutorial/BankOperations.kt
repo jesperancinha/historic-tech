@@ -1,4 +1,4 @@
-package org.jesperancinha.keywords.episodes
+package org.jesperancinha.keywords.tutorial
 
 import java.time.LocalDate
 
