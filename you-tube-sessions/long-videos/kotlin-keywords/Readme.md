@@ -1,7 +1,18 @@
 # Kotlin keywords
 
+## Installation notes
+
+
+#### Linux
+
+```shell
+sudo apt-get install hugin
+```
+
 ## References
 
+-   [Hugin Plugin for GIMP](https://hugin.sourceforge.io/)
+-   [Pandora plugin for GIMP](https://www.shallowsky.com/software/pandora/)
 -   [Kotlin JNI for Native Code - How to call native code from Kotlin by Matt Moore](https://matt-moore.medium.com/kotlin-jni-for-native-code-835e93af7ddf)
 -   [Kotlin JNI Mix](https://github.com/jonnyzzz/kotlin-jni-mix)
 -   [Kotlin lang Operator Overloading](https://kotlinlang.org/docs/operator-overloading.html)
