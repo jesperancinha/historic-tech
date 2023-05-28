@@ -50,7 +50,7 @@ class MagazineReader {
                         }
                         logger.info("Favourite inline article1: $articleInline1WithHelp")
                         val articleInline2WithHelp 
-                            = findFavouriteArticleInlineWithHelp(magazine, 0) { 
+                            = findFavouriteArticleInlineWithHelp(magazine, 1) { 
                                 substring(0, 10)
                         }
                         logger.info("Favourite inline article2: $articleInline2WithHelp")
@@ -74,7 +74,7 @@ class MagazineReader {
                 .split("Article").takeLast(2)
                 .map {
                     it.split(":")[1]
-                        .trim()
+                        .trimArticleEnds()
                 }[i]
                 .apply { sleep(SLEEP_TIME) }
 
@@ -83,7 +83,7 @@ class MagazineReader {
                 .split("Article").takeLast(2)
                 .map {
                     it.split(":")[1]
-                        .trim()
+                        .trimArticleEnds()
                 }[i]
                 .apply { sleep(SLEEP_TIME) }
 
@@ -95,7 +95,7 @@ class MagazineReader {
                 .map {
                     it
                         .split(":")[1]
-                        .trim()
+                        .trimArticleEnds()
                 }[i]
                 .let { transform(it) }
                 .apply { sleep(SLEEP_TIME) }
@@ -109,11 +109,13 @@ class MagazineReader {
                 .map {
                     it
                         .split(":")[1]
-                        .trim()
+                        .trimArticleEnds()
                 }[i]
                 .let { transform(it) }
                 .apply { sleep(SLEEP_TIME) }
     }
 }
+
+private fun String.trimArticleEnds() = trim().replace("\n-","")
 
 // @formatter:on
