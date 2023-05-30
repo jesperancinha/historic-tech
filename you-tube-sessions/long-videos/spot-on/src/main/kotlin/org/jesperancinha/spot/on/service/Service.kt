@@ -5,7 +5,6 @@ import org.jesperancinha.spot.on.domain.SpotOn
 import org.jesperancinha.spot.on.domain.SpotOnRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.lang.RuntimeException
 import java.util.*
 
 class SpotOnDto(
