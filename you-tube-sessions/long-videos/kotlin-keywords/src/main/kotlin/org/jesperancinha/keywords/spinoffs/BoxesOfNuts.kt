@@ -20,13 +20,13 @@ class OutPinkBox() : Box<Almond>() {
     val nuts = (1..10).map { Almond() }.toMutableList()
 
     override fun removeNuts(number: Int): MutableList<Almond> =
-        nuts.subList(0, 3).also { nuts.removeAll(it) }
+        (1..number).map { nuts.removeAt(0) }.toMutableList()
 }
 
 class OutBlueBox() : Box<Macadamia>() {
     val nuts = (1..10).map { Macadamia() }.toMutableList()
     override fun removeNuts(number: Int): MutableList<Macadamia> =
-        nuts.subList(0, 3)
+        (1..number).map { nuts.removeAt(0) }.toMutableList()
 
 }
 
@@ -36,18 +36,19 @@ class OutGreenBox(
     val nuts: MutableList<Pistache> = (1..10).map { Pistache() }.toMutableList()
 
     override fun removeNuts(number: Int): MutableList<Pistache> =
-        nuts.subList(0, 3)
-
+        (1..number).map { nuts.removeAt(0) }.toMutableList()
 }
+
+fun removeNuts(nNuts: Int, box: Box<Nut>) = box.removeNuts(3)
+
 
 fun main() {
     val pinkBox = OutPinkBox()
     val blueBox = OutBlueBox()
     val greenBox = OutGreenBox()
 
-    removeNuts(nNuts = 3, box = pinkBox)
-    removeNuts(nNuts = 3, box = blueBox)
-    removeNuts(nNuts = 3, box = greenBox)
+    println(removeNuts(nNuts = 3, box = pinkBox).joinToString(",") { it.javaClass.simpleName })
+    println(removeNuts(nNuts = 3, box = blueBox).joinToString(",") { it.javaClass.simpleName })
+    println(removeNuts(nNuts = 3, box = greenBox).joinToString(",") { it.javaClass.simpleName })
 }
 
-fun removeNuts(nNuts: Int, box: Box<Nut>) = box.removeNuts(3)
