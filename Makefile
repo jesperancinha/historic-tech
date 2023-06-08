@@ -5,11 +5,12 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-single \
 					you-tube-sessions/long-videos/spot-on \
+					you-tube-sessions/long-videos/kotlin-keywords-app \
+					you-tube-sessions/long-videos/drinks-manager \
 					you-tube-sessions/long-videos/kotlin-keywords \
 					you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 \
 					you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring \
 					you-tube-sessions/overlay-shorts/coroutines-demo \
-					you-tube-sessions/long-videos/kotlin-keywords-app
 b: build
 build:
 	@for location in $(MODULE_LOCATIONS); do \
