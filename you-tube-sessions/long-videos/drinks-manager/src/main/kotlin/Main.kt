@@ -29,8 +29,14 @@ open class DrinksService<in DRINK : Drink, out BOX : Box> {
 
     fun sendDrink(drink: DRINK) = run { database[UUID.randomUUID()] = drink }
 
-    fun getBox(createBox: (Drink) ->  Box) = createBox(
-        requireNotNull(database.remove(database.keys.last())))
+    /**
+     * We force a cast to BOX for the purpose of the example
+     * Ideally this would return a BOX out of the database or perhaps
+     * Making the class abstract would be a better solution
+     */
+    @Suppress("UNCHECKED_CAST")
+    fun getBox(createBox: (Drink) -> Box): BOX = createBox(
+        requireNotNull(database.remove(database.keys.last()))) as BOX
 }
 
 
