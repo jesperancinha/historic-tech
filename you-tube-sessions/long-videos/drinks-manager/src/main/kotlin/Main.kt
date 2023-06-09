@@ -25,7 +25,7 @@ open class FamilyBox(drink: Drink) : CardboardBox()
 open class DeluxeBox(drink: Drink) : PlasticBox()
 
 open class DrinksService<in DRINK : Drink, out BOX : Box> {
-    val database by lazy { HashMap<UUID, Drink>() }
+    private val database by lazy { HashMap<UUID, Drink>() }
 
     fun sendDrink(drink: DRINK) = run { database[UUID.randomUUID()] = drink }
 
