@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class DrinksServiceJava<DRINK extends Drink, BOX extends Box> {
 
@@ -11,6 +11,8 @@ public class DrinksServiceJava<DRINK extends Drink, BOX extends Box> {
         database.put(UUID.randomUUID(), drink);
     }
 
-    public void getBox(Consumer<DRINK> o) {
+    @SuppressWarnings("unused")
+    public BOX getBox(Function<DRINK,BOX> drinks) {
+        return drinks.apply(database.remove(database.keySet().stream().findFirst().orElseThrow()));
     }
 }
