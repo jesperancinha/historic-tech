@@ -1,4 +1,4 @@
-name: ASNGIASAGF Build
+name: asnsei-the-right-waf  Build
 
 on:
   pull_request:
