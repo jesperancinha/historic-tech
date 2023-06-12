@@ -14,8 +14,18 @@ Have a look in the submodules for more info
 
 Read the [Inspiration](Inspiration.md) file for a small tale about the name of this project.
  
+How you can read this repo:
 
-## Structure
+- A Suitable Nice Software Engineer In The Right Working Age Forever
+
+For short:
+
+- asnsei-the-right-waf (Asnei The Right Waf)
+
+> Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
+
+
+## StructureSo much potential!
 
 -   [Talks](./talks) - All materials for current applications to talks and/or actual talks
 -   [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
