@@ -1,4 +1,4 @@
-# asnsei-the-right-waf  Background story
+# asnsei-the-right-waf Background story
 
 Let me start by saying that the small story I'm about to tell is an adaptation of a personal experience I had .
 
