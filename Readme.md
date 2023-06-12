@@ -20,7 +20,7 @@ How you can read this repo:
 
 For short:
 
-- asnsei-the-right-waf (Asnei The Right Waf)
+- asnsei-the-right-waf (Asnsei The Right Waf)
 
 > Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
 
