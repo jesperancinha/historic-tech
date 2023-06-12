@@ -11,6 +11,8 @@
 This repo serves to support all the code to back up all my talks and videos (there has been no successful application yet, so they are all preparation materials at this point).
 
 Have a look in the submodules for more info
+
+Read the [Inspiration](Inspiration.md) file for a small tale about the name of this project.
  
 
 ## Structure
