@@ -25,7 +25,7 @@ For short:
 > Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
 
 
-## StructureSo much potential!
+## Structure
 
 -   [Talks](./talks) - All materials for current applications to talks and/or actual talks
 -   [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
