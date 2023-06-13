@@ -1,6 +1,6 @@
 # Kotlin keywords Native
 
-## References
+## Source materials
 
 -   [Kotlin JNI for Native Code - How to call native code from Kotlin by Matt Moore](https://matt-moore.medium.com/kotlin-jni-for-native-code-835e93af7ddf)
 -   [Kotlin JNI Mix](https://github.com/jonnyzzz/kotlin-jni-mix)

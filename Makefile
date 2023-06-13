@@ -12,7 +12,8 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring \
 					you-tube-sessions/overlay-shorts/coroutines-demo \
 					experiments/test-app \
-					experiments/test-app-2
+					experiments/test-app-2 \
+					experiments/coroutine-builders
 b: build
 build:
 	@for location in $(MODULE_LOCATIONS); do \

@@ -9,7 +9,7 @@
 sudo apt-get install hugin
 ```
 
-## References
+## Source materials
 
 -   [Hugin Plugin for GIMP](https://hugin.sourceforge.io/)
 -   [Pandora plugin for GIMP](https://www.shallowsky.com/software/pandora/)

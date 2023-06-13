@@ -11,7 +11,7 @@ Supports videos:
 2 - https://youtube.com/shorts/oiHS1NUjx0g - [Inline Solution for Function Literals With Receiver](https://www.youtube.com/watch?v=oiHS1NUjx0g)
 
 3 - https://www.youtube.com/watch?v=ydctulq-i4k - [JESC - E04 - Inline to the rescue when using Spring Beans and function literals with receivers](https://www.youtube.com/watch?v=ydctulq-i4k)
-## References
+## Source materials
 
 -   https://blog.kotlin-academy.com/programmer-dictionary-function-literal-with-receiver-vs-function-type-with-receiver-cc21dba0f4ff
 -   https://kotlinexpertise.com/function-literals-with-receiver/

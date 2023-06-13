@@ -34,11 +34,11 @@ For short:
 
 Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints&Tricks.md) for details on how to setup java versions
 
-## References
+## Source materials
 
 <details>
 
-<summary>Online References</summary>
+<summary>Online Source materials</summary>
 
 ---
 -   [NLJUG speaker academy 2022 - session 1](https://www.slideshare.net/BertJanSchrijver/nljug-speaker-academy-2022-session-1)
