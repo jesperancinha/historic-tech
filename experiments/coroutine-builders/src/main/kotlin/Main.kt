@@ -23,24 +23,34 @@ fun main(args: Array<String>) {
 
         val futureScopeReturn = future {
             printCurrentContextInfo("Future")
+            1
         }
         futureScopeReturn.get()
 
         val coroutineScopeReturn = coroutineScope {
             printCurrentContextInfo("CoroutineScope")
+            1
         }
 
         val runBlockingReturn = runBlocking {
             printCurrentContextInfo("RunBlocking")
+            1
         }
         launchTest()
 
         val asyncReturn = async {
             printCurrentContextInfo("Async")
+            1
         }
 
+        printCurrentContextInfo("BeforeWithContext")
         val withContextReturn = withContext(Dispatchers.IO){
             printCurrentContextInfo("WithContext")
+            1
+        }
+
+        launch(newSingleThreadContext("Custom thread")) {
+            printCurrentContextInfo("Single Thread Context")
         }
 
         asyncReturn.await()
@@ -58,8 +68,10 @@ private fun CoroutineScope.printCurrentContextInfo(name: String) {
     println(name)
     println(this.coroutineContext)
     println(this)
+    println(this.coroutineContext.job)
     println(this.coroutineContext.job.key)
     println(Thread.currentThread())
+    println(Thread.currentThread().name)
     println((1..10).joinToString("") { "-" })
 }
 
