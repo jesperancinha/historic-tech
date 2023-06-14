@@ -1,4 +1,5 @@
 import kotlinx.coroutines.*
+import kotlinx.coroutines.future.future
 import java.time.LocalDateTime
 
 
@@ -14,13 +15,57 @@ import java.time.LocalDateTime
  */
 @OptIn(DelicateCoroutinesApi::class)
 fun main(args: Array<String>) {
+    CoroutineScope(Dispatchers.Unconfined).launch {
+
+    }
     GlobalScope.launch {
+        printCurrentContextInfo("Global")
 
-        coroutineScope { }
+        val futureScopeReturn = future {
+            printCurrentContextInfo("Future")
+        }
+        futureScopeReturn.get()
 
-        runBlocking { }
+        val coroutineScopeReturn = coroutineScope {
+            printCurrentContextInfo("CoroutineScope")
+        }
 
-        val launch = launch(start = CoroutineStart.LAZY) {
+        val runBlockingReturn = runBlocking {
+            printCurrentContextInfo("RunBlocking")
+        }
+        launchTest()
+
+        val asyncReturn = async {
+            printCurrentContextInfo("Async")
+        }
+
+        val withContextReturn = withContext(Dispatchers.IO){
+            printCurrentContextInfo("WithContext")
+        }
+
+        asyncReturn.await()
+
+        println(LocalDateTime.now())
+        Thread.sleep(2000)
+    }
+    println(LocalDateTime.now())
+    Thread.sleep(2000)
+    println(LocalDateTime.now())
+}
+
+private fun CoroutineScope.printCurrentContextInfo(name: String) {
+    println((1..10).joinToString("") { "-" })
+    println(name)
+    println(this.coroutineContext)
+    println(this)
+    println(this.coroutineContext.job.key)
+    println(Thread.currentThread())
+    println((1..10).joinToString("") { "-" })
+}
+
+private suspend fun launchTest() {
+    coroutineScope {
+        val launchReturn = launch(start = CoroutineStart.LAZY) {
             delay(100)
             println("LAZY! This will never print if we start lazy, except if we join it")
 
@@ -30,12 +75,6 @@ fun main(args: Array<String>) {
             println("NOT LAZY! This will always print if we don't start lazy.")
         }
         println("If we join it, it will start")
-        // This suspends the current coroutine.
-        launch.join()
-        println(LocalDateTime.now())
-        Thread.sleep(2000)
+        launchReturn.join()
     }
-    println(LocalDateTime.now())
-    Thread.sleep(2000)
-    println(LocalDateTime.now())
 }
