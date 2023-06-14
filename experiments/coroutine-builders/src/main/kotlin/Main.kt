@@ -68,6 +68,7 @@ private fun CoroutineScope.printCurrentContextInfo(name: String) {
     println(name)
     println(this.coroutineContext)
     println(this)
+    println(CoroutineScope(this.coroutineContext))
     println(this.coroutineContext.job)
     println(this.coroutineContext.job.key)
     println(Thread.currentThread())
@@ -77,14 +78,20 @@ private fun CoroutineScope.printCurrentContextInfo(name: String) {
 
 private suspend fun launchTest() {
     coroutineScope {
+        printCurrentContextInfo("launchTest1")
+        launch {
+            printCurrentContextInfo("launchTest10")
+        }
         val launchReturn = launch(start = CoroutineStart.LAZY) {
             delay(100)
             println("LAZY! This will never print if we start lazy, except if we join it")
+            printCurrentContextInfo("launchTest11")
 
         }
         launch(start = CoroutineStart.DEFAULT) {
             delay(50)
             println("NOT LAZY! This will always print if we don't start lazy.")
+            printCurrentContextInfo("launchTest12")
         }
         println("If we join it, it will start")
         launchReturn.join()
