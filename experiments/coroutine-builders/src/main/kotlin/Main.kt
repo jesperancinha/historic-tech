@@ -13,8 +13,7 @@ import java.time.LocalDateTime
  * Coroutine functions
  * coroutineScope
  */
-@OptIn(DelicateCoroutinesApi::class)
-fun main(args: Array<String>) {
+@OptIn(DelicateCoroutinesApi::class)fun main(args: Array<String>) {
     CoroutineScope(Dispatchers.Unconfined).launch {
 
     }
