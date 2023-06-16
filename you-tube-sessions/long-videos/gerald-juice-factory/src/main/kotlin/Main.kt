@@ -10,7 +10,7 @@ import kotlin.system.measureTimeMillis
  *
  * This is the case:
  *
- * 1 Billion bottles are stored in the warehouse.
+ * 50 million bottles are stored in the warehouse.
  * Each bottle is filled with approximately 1 Lt of Juice
  * The computer has stored and measured all individual quantities precisely
  * We want to know how much juice did we actually spent and what is the standard deviation of our results
