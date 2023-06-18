@@ -1,6 +1,7 @@
 import kotlinx.coroutines.*
 import kotlinx.coroutines.future.future
 import java.time.LocalDateTime
+import kotlin.coroutines.CoroutineContext
 import kotlin.system.measureTimeMillis
 
 
@@ -22,7 +23,7 @@ data class Donkey(
 @OptIn(DelicateCoroutinesApi::class)
 fun main(args: Array<String>) {
 
-    runBlocking {
+    CoroutineScope(Dispatchers.IO).launch {
         val donkeySpecies = listOf(
             Donkey(4, "Incinnakey"),
             Donkey(3, "Wallacy"),
@@ -46,26 +47,21 @@ fun main(args: Array<String>) {
             delay(100)
         }
         measureTimeMillis {
-            repeat(10000) {
+            repeat(1000) {
                 registerDonkeys(donkeySpecies.random())
             }
         }.let {
             println("It took $it milliseconds to register all Donkeys")
         }
         measureTimeMillis {
-            repeat(10000) {
+            repeat(1000) {
                 registerDonkeyRecords(donkeySpeciesWithRecords.random())
             }
         }.let { println("It took $it milliseconds to register all DonkeyRecords") }
 
     }
 
-    CoroutineScope(Dispatchers.Unconfined).launch {
-        delay(1000)
-    }
     GlobalScope.launch {
-        delay(10000)
-
         printCurrentContextInfo("Global")
 
         val futureScopeReturn = future {
