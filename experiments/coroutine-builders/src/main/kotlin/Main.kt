@@ -1,7 +1,13 @@
 import kotlinx.coroutines.*
 import kotlinx.coroutines.future.future
 import java.time.LocalDateTime
+import kotlin.system.measureTimeMillis
 
+
+data class Donkey(
+    val id: Long,
+    val name: String
+)
 
 /**
  * Coroutine builders:
@@ -13,18 +19,61 @@ import java.time.LocalDateTime
  * Coroutine functions
  * coroutineScope
  */
-@OptIn(DelicateCoroutinesApi::class)fun main(args: Array<String>) {
-    CoroutineScope(Dispatchers.Unconfined).launch {
+@OptIn(DelicateCoroutinesApi::class)
+fun main(args: Array<String>) {
+
+    runBlocking {
+        val donkeySpecies = listOf(
+            Donkey(4, "Incinnakey"),
+            Donkey(3, "Wallacy"),
+            Donkey(2, "Analonkey"),
+            Donkey(1, "Reetcoil"),
+            Donkey(0, "Cocoloco"),
+        )
+        val donkeySpeciesWithRecords = listOf(
+            DonkeyRecord(4, "Incinnakey"),
+            DonkeyRecord(3, "Wallacy"),
+            DonkeyRecord(2, "Analonkey"),
+            DonkeyRecord(1, "Reetcoil"),
+            DonkeyRecord(0, "Cocoloco"),
+        )
+        val registerDonkeys = fun(donkey: Donkey) = suspend {
+            println("Donkey ${donkey.id} with name ${donkey.name} has been registered!")
+            delay(100)
+        }
+        val registerDonkeyRecords = fun(donkey: DonkeyRecord) = suspend {
+            println("Donkey ${donkey.id} with name ${donkey.name} has been registered!")
+            delay(100)
+        }
+        measureTimeMillis {
+            repeat(10000) {
+                registerDonkeys(donkeySpecies.random())
+            }
+        }.let {
+            println("It took $it milliseconds to register all Donkeys")
+        }
+        measureTimeMillis {
+            repeat(10000) {
+                registerDonkeyRecords(donkeySpeciesWithRecords.random())
+            }
+        }.let { println("It took $it milliseconds to register all DonkeyRecords") }
 
     }
+
+    CoroutineScope(Dispatchers.Unconfined).launch {
+        delay(1000)
+    }
     GlobalScope.launch {
+        delay(10000)
+
         printCurrentContextInfo("Global")
 
         val futureScopeReturn = future {
             printCurrentContextInfo("Future")
             1
         }
-        futureScopeReturn.get()
+        val futureValue = futureScopeReturn.get()
+        println("Just like in the old days $futureValue")
 
         val coroutineScopeReturn = coroutineScope {
             printCurrentContextInfo("CoroutineScope")
@@ -43,7 +92,7 @@ import java.time.LocalDateTime
         }
 
         printCurrentContextInfo("BeforeWithContext")
-        val withContextReturn = withContext(Dispatchers.IO){
+        val withContextReturn = withContext(Dispatchers.IO) {
             printCurrentContextInfo("WithContext")
             1
         }
@@ -52,7 +101,8 @@ import java.time.LocalDateTime
             printCurrentContextInfo("Single Thread Context")
         }
 
-        asyncReturn.await()
+        val value = asyncReturn.await()
+        println("The asynchronous value is $value")
 
         println(LocalDateTime.now())
         Thread.sleep(2000)

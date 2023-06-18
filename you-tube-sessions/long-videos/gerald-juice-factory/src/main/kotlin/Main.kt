@@ -33,7 +33,7 @@ fun main(args: Array<String>) {
         val mean = realQuantity/FIFTY_MILLION
         var powSum = 0.0
         database.content.forEach {
-            powSum += (it.quantity - mean).toDouble().pow(2.0)
+            powSum += (it.quantity - mean).pow(2.0)
         }
         val std =  sqrt(powSum / FIFTY_MILLION)
         println("""
