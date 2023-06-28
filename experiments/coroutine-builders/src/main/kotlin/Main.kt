@@ -1,7 +1,4 @@
 import kotlinx.coroutines.*
-import kotlinx.coroutines.future.future
-import java.time.LocalDateTime
-import kotlin.coroutines.CoroutineContext
 import kotlin.system.measureTimeMillis
 
 
@@ -23,7 +20,58 @@ data class Donkey(
 @OptIn(DelicateCoroutinesApi::class)
 fun main(args: Array<String>) {
 
-    CoroutineScope(Dispatchers.IO).launch {
+
+    donkeyTastesABalloneySandwich()
+//    exitProcess(0)
+//    GlobalScope.launch {
+//        printCurrentContextInfo("Global")
+//
+//        val futureScopeReturn = future {
+//            printCurrentContextInfo("Future")
+//            1
+//        }
+//        val futureValue = futureScopeReturn.get()
+//        println("Just like in the old days $futureValue")
+//
+//        val coroutineScopeReturn = coroutineScope {
+//            printCurrentContextInfo("CoroutineScope")
+//            1
+//        }
+//
+//        val runBlockingReturn = runBlocking {
+//            printCurrentContextInfo("RunBlocking")
+//            1
+//        }
+//        launchTest()
+//
+//        val asyncReturn = async {
+//            printCurrentContextInfo("Async")
+//            1
+//        }
+//
+//        printCurrentContextInfo("BeforeWithContext")
+//        val withContextReturn = withContext(Dispatchers.IO) {
+//            printCurrentContextInfo("WithContext")
+//            1
+//        }
+//
+//        launch(newSingleThreadContext("Custom thread")) {
+//            printCurrentContextInfo("Single Thread Context")
+//        }
+//
+//        val value = asyncReturn.await()
+//        println("The asynchronous value is $value")
+//
+//        println(LocalDateTime.now())
+//        Thread.sleep(2000)
+//    }
+//    println(LocalDateTime.now())
+//    Thread.sleep(2000)
+//    println(LocalDateTime.now())
+}
+
+private fun donkeyTastesABalloneySandwich() {
+    runBlocking {
         val donkeySpecies = listOf(
             Donkey(4, "Incinnakey"),
             Donkey(3, "Wallacy"),
@@ -38,74 +86,34 @@ fun main(args: Array<String>) {
             DonkeyRecord(1, "Reetcoil"),
             DonkeyRecord(0, "Cocoloco"),
         )
-        val registerDonkeys = fun(donkey: Donkey) = suspend {
-            println("Donkey ${donkey.id} with name ${donkey.name} has been registered!")
-            delay(100)
+        val giveBaloneyToDataClassDonkey = fun(donkey: Donkey) = suspend {
+//            println("Donkey ${donkey.id} with name ${donkey.name} has been released!")
+            delay(1)
         }
-        val registerDonkeyRecords = fun(donkey: DonkeyRecord) = suspend {
-            println("Donkey ${donkey.id} with name ${donkey.name} has been registered!")
-            delay(100)
+        val giveBaloneyToRecordDonkey = fun(donkey: DonkeyRecord) = suspend {
+//            println("Donkey ${donkey.id} with name ${donkey.name} has been released!")
+            delay(1)
         }
         measureTimeMillis {
-            repeat(1000) {
-                registerDonkeys(donkeySpecies.random())
-            }
+            (1..1000000).map {
+                async { giveBaloneyToDataClassDonkey(donkeySpecies.random()
+                    .let { Donkey(it.id, it.name) })() }
+            }.awaitAll()
         }.let {
-            println("It took $it milliseconds to register all Donkeys")
+            println("It took $it milliseconds to a give baloney sandwich to everybody after watching all data class Donkeys")
         }
         measureTimeMillis {
-            repeat(1000) {
-                registerDonkeyRecords(donkeySpeciesWithRecords.random())
-            }
-        }.let { println("It took $it milliseconds to register all DonkeyRecords") }
+            (1..1000000).map {
+                async {
+                    giveBaloneyToRecordDonkey(
+                        donkeySpeciesWithRecords.random()
+                            .let { DonkeyRecord(it.id, it.name) })()
+                }
+            }.awaitAll()
+        }.let { println("It took $it milliseconds to give a baloney sandwich to everybody after watching all record Donkeys") }
 
-    }
 
-    GlobalScope.launch {
-        printCurrentContextInfo("Global")
-
-        val futureScopeReturn = future {
-            printCurrentContextInfo("Future")
-            1
-        }
-        val futureValue = futureScopeReturn.get()
-        println("Just like in the old days $futureValue")
-
-        val coroutineScopeReturn = coroutineScope {
-            printCurrentContextInfo("CoroutineScope")
-            1
-        }
-
-        val runBlockingReturn = runBlocking {
-            printCurrentContextInfo("RunBlocking")
-            1
-        }
-        launchTest()
-
-        val asyncReturn = async {
-            printCurrentContextInfo("Async")
-            1
-        }
-
-        printCurrentContextInfo("BeforeWithContext")
-        val withContextReturn = withContext(Dispatchers.IO) {
-            printCurrentContextInfo("WithContext")
-            1
-        }
-
-        launch(newSingleThreadContext("Custom thread")) {
-            printCurrentContextInfo("Single Thread Context")
-        }
-
-        val value = asyncReturn.await()
-        println("The asynchronous value is $value")
-
-        println(LocalDateTime.now())
-        Thread.sleep(2000)
-    }
-    println(LocalDateTime.now())
-    Thread.sleep(2000)
-    println(LocalDateTime.now())
+ }
 }
 
 private fun CoroutineScope.printCurrentContextInfo(name: String) {
