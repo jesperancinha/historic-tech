@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainJava {
-    private static List<DonkeyRecord> donkeySpeciesWithRecords = List.of(
+    private static final List<DonkeyRecord> donkeySpeciesWithRecords = List.of(
             new DonkeyRecord(4L, "Incinnakey"),
             new DonkeyRecord(3L, "Wallacy"),
             new DonkeyRecord(2L, "Analonkey"),
