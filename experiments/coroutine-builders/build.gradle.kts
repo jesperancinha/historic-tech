@@ -19,6 +19,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("--enable-preview")
+}
+
 kotlin {
     jvmToolchain(19)
 }
