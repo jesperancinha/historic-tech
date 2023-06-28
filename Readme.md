@@ -34,11 +34,11 @@ For short:
 
 Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints&Tricks.md) for details on how to setup java versions
 
-## Ignore projects if using IntelliJ
+## These projects have been moved
 
-- kotlin-keywords-app
-- test-app
-- test-app-2
+- [kotlin-keywords-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/kotlin-keywords-app)
+- [test-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app)
+- [test-app-2](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app-2)
 
 ## Source materials
 
