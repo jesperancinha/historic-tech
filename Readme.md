@@ -16,11 +16,11 @@ Read the [Inspiration](Inspiration.md) file for a small tale about the name of t
  
 How you can read this repo:
 
-- A Suitable Nice Software Engineer In The Right Working Age Forever
+-   A Suitable Nice Software Engineer In The Right Working Age Forever
 
 For short:
 
-- asnsei-the-right-waf (Asnsei The Right Waf)
+-   asnsei-the-right-waf (Asnsei The Right Waf)
 
 > Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
 
@@ -36,9 +36,9 @@ Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-s
 
 ## These projects have been moved
 
-- [kotlin-keywords-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/kotlin-keywords-app)
-- [test-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app)
-- [test-app-2](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app-2)
+-   [kotlin-keywords-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/kotlin-keywords-app)
+-   [test-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app)
+-   [test-app-2](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app-2)
 
 ## Source materials
 
