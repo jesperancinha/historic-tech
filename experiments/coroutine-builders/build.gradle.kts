@@ -25,6 +25,10 @@ tasks.withType<JavaCompile> {
     options.compilerArgs.add("--enable-preview")
 }
 
+tasks.withType<JavaExec> {
+    jvmArgs ("--enable-preview")
+}
+
 kotlin {
     jvmToolchain(19)
 }

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainJava {
+
+    public static int N_DONKEYS = 1_000_000;
     private static final List<DonkeyRecord> donkeySpeciesWithRecords = List.of(
             new DonkeyRecord(4L, "Incinnakey"),
             new DonkeyRecord(3L, "Wallacy"),
@@ -13,7 +15,7 @@ public class MainJava {
     public static void main(String[] args) {
         var startTimeStamp = Instant.now();
         var listVTs = new ArrayList<Thread>();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < N_DONKEYS; i++) {
             listVTs.add(Thread.startVirtualThread(() -> {
                 var donkey = donkeySpeciesWithRecords.get((int)(Math.random()*donkeySpeciesWithRecords.size()));
                 new DonkeyRecord(donkey.id(), donkey.name());

@@ -1,3 +1,4 @@
+import MainJava.N_DONKEYS
 import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
@@ -95,7 +96,7 @@ private fun donkeyTastesABalloneySandwich() {
             delay(1)
         }
         measureTimeMillis {
-            (1..1000000).map {
+            (1..N_DONKEYS).map {
                 async { giveBaloneyToDataClassDonkey(donkeySpecies.random()
                     .let { Donkey(it.id, it.name) })() }
             }.awaitAll()
@@ -103,7 +104,7 @@ private fun donkeyTastesABalloneySandwich() {
             println("It took $it milliseconds to a give baloney sandwich to everybody after watching all data class Donkeys")
         }
         measureTimeMillis {
-            (1..1000000).map {
+            (1..N_DONKEYS).map {
                 async {
                     giveBaloneyToRecordDonkey(
                         donkeySpeciesWithRecords.random()
