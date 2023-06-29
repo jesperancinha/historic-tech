@@ -24,7 +24,7 @@ tasks.withType<JavaCompile> {
 }
 
 kotlin {
-    jvmToolchain(19)
+    jvmToolchain(20)
 }
 
 application {

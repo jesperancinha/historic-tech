@@ -30,7 +30,7 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(19)
+    jvmToolchain(20)
 }
 
 application {
