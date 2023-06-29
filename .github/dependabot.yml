@@ -1,16 +1,17 @@
 version: 2
 updates:
+
   - package-ecosystem: "gradle"
-    directory: "/talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka"
+    directory: "/talks"
     schedule:
       interval: "daily"
 
   - package-ecosystem: "gradle"
-    directory: "/talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq"
+    directory: "/you-tube-sessions"
     schedule:
       interval: "daily"
 
   - package-ecosystem: "gradle"
-    directory: "/you-tube-sessions/spot-on"
+    directory: "/experiments"
     schedule:
       interval: "daily"
