@@ -1,5 +1,7 @@
 import MainJava.N_DONKEYS
 import kotlinx.coroutines.*
+import java.lang.Thread.sleep
+import java.util.concurrent.Executors
 import kotlin.system.measureTimeMillis
 
 
@@ -22,7 +24,7 @@ data class Donkey(
 fun main(args: Array<String>) {
 
 
-    donkeyTastesABalloneySandwich()
+    balloneyAfterReleasingDonkeys()
 //    exitProcess(0)
 //    GlobalScope.launch {
 //        printCurrentContextInfo("Global")
@@ -71,8 +73,52 @@ fun main(args: Array<String>) {
 //    println(LocalDateTime.now())
 }
 
-private fun donkeyTastesABalloneySandwich() {
-    runBlocking {
+private fun balloneyAfterReleasingDonkeys() {
+    CoroutineScope(Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()).launch {
+        val donkeySpecies = listOf(
+            Donkey(4, "Incinnakey"),
+            Donkey(3, "Wallacy"),
+            Donkey(2, "Analonkey"),
+            Donkey(1, "Reetcoil"),
+            Donkey(0, "Cocoloco"),
+        )
+        val donkeySpeciesWithRecords = listOf(
+            DonkeyRecord(4, "Incinnakey"),
+            DonkeyRecord(3, "Wallacy"),
+            DonkeyRecord(2, "Analonkey"),
+            DonkeyRecord(1, "Reetcoil"),
+            DonkeyRecord(0, "Cocoloco"),
+        )
+
+        measureTimeMillis {
+            (1..N_DONKEYS).map {
+                async {
+                    donkeySpeciesWithRecords.random()
+                        .let { DonkeyRecord(it.id, it.name) }
+                    delay(1)
+                }
+            }.awaitAll()
+        }.let { println("It took $it milliseconds to give a baloney sandwich to everybody after watching the release of $N_DONKEYS Record Donkeys") }
+
+        measureTimeMillis {
+            (1..N_DONKEYS).map {
+                async {
+                    donkeySpecies.random()
+                        .let { Donkey(it.id, it.name) }
+                    delay(1)
+                }
+            }.awaitAll()
+        }.let {
+            println("It took $it milliseconds to a give baloney sandwich to everybody after watching the release of $N_DONKEYS Data Class Donkeys")
+        }
+
+    }
+    sleep(10000)
+
+}
+
+private fun donkeyTastesABalloneySandwichOnSuspendFunctions() {
+    CoroutineScope(Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()).launch {
         val donkeySpecies = listOf(
             Donkey(4, "Incinnakey"),
             Donkey(3, "Wallacy"),
@@ -97,8 +143,10 @@ private fun donkeyTastesABalloneySandwich() {
         }
         measureTimeMillis {
             (1..N_DONKEYS).map {
-                async { giveBaloneyToDataClassDonkey(donkeySpecies.random()
-                    .let { Donkey(it.id, it.name) })() }
+                async {
+                    giveBaloneyToDataClassDonkey(donkeySpecies.random()
+                        .let { Donkey(it.id, it.name) })()
+                }
             }.awaitAll()
         }.let {
             println("It took $it milliseconds to a give baloney sandwich to everybody after watching all data class Donkeys")
@@ -114,7 +162,9 @@ private fun donkeyTastesABalloneySandwich() {
         }.let { println("It took $it milliseconds to give a baloney sandwich to everybody after watching all record Donkeys") }
 
 
- }
+    }
+    sleep(10000)
+
 }
 
 private fun CoroutineScope.printCurrentContextInfo(name: String) {

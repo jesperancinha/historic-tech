@@ -10,3 +10,5 @@ run-java:
 	./gradlew runWithJavaExec
 
 run-all: run run-java
+
+run-all-reverse: run-java run
