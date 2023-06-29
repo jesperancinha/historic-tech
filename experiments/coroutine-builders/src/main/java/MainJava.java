@@ -1,3 +1,5 @@
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ public class MainJava {
             new DonkeyRecord(1L, "Reetcoil"),
             new DonkeyRecord(0L, "Cocoloco"));
     public static void main(String[] args) {
+        var startTimeStamp = Instant.now();
         var listVTs = new ArrayList<Thread>();
         for (int i = 0; i < 1000000; i++) {
             listVTs.add(Thread.startVirtualThread(() -> {
@@ -23,5 +26,7 @@ public class MainJava {
                 throw new RuntimeException(e);
             }
         });
+        System.out.println("It took %d to finish processing all donkeys!".formatted(
+                Duration.between(startTimeStamp, Instant.now()).toMillis()));
     }
 }

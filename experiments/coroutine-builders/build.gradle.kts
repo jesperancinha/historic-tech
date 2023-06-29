@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.cli.jvm.main
+
 plugins {
     kotlin("jvm") version "1.8.21"
     application
@@ -29,4 +31,10 @@ kotlin {
 
 application {
     mainClass.set("MainKt")
+}
+task("runWithJavaExec", JavaExec::class) {
+    mainClass.set("MainJava")
+    classpath = files(tasks.jar)
+    jvmArgs ("--enable-preview")
+
 }
