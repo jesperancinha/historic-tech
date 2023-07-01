@@ -24,7 +24,7 @@ data class Donkey(
 fun main(args: Array<String>) {
 
 
-    balloneyAfterReleasingDonkeys()
+    baloneyAfterReleasingDonkeys()
 //    exitProcess(0)
 //    GlobalScope.launch {
 //        printCurrentContextInfo("Global")
@@ -73,7 +73,15 @@ fun main(args: Array<String>) {
 //    println(LocalDateTime.now())
 }
 
-private fun balloneyAfterReleasingDonkeys() {
+
+/**
+ * In this test we are comparing the performance between using
+ * Java Records
+ * and
+ * Kotlin Data Classes
+ * when trying to fulfill the good practice of assuring immutability in our code
+ */
+private fun baloneyAfterReleasingDonkeys() {
     CoroutineScope(Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()).launch {
         val donkeySpecies = listOf(
             Donkey(4, "Incinnakey"),
@@ -134,11 +142,11 @@ private fun donkeyTastesABalloneySandwichOnSuspendFunctions() {
             DonkeyRecord(0, "Cocoloco"),
         )
         val giveBaloneyToDataClassDonkey = fun(donkey: Donkey) = suspend {
-//            println("Donkey ${donkey.id} with name ${donkey.name} has been released!")
+            println("Donkey ${donkey.id} with name ${donkey.name} has been released!")
             delay(1)
         }
         val giveBaloneyToRecordDonkey = fun(donkey: DonkeyRecord) = suspend {
-//            println("Donkey ${donkey.id} with name ${donkey.name} has been released!")
+            println("Donkey ${donkey.id} with name ${donkey.name} has been released!")
             delay(1)
         }
         measureTimeMillis {
