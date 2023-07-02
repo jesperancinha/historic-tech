@@ -7,7 +7,7 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					you-tube-sessions/long-videos/spot-on \
 					you-tube-sessions/long-videos/drinks-manager \
 					you-tube-sessions/long-videos/kotlin-keywords \
-					you-tube-sessions/long-videos/gerald-juice-factory \
+					you-tube-sessions/long-videos/cooldrinks-juice-factory \
 					you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 \
 					you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring \
 					you-tube-sessions/overlay-shorts/coroutines-demo \
