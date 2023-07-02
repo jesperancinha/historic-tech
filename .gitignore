@@ -51,3 +51,8 @@ gradle-wrapper.jar
 *.dll
 *.o
 
+# Gradle
+.gradle
+gradle/wrapper/gradle-wrapper.jar
+
+
