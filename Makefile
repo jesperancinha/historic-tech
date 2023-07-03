@@ -11,7 +11,8 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 \
 					you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring \
 					you-tube-sessions/overlay-shorts/coroutines-demo \
-					experiments/coroutine-builders
+					experiments/coroutine-builders \
+					experiments/annotations-demo
 b: buildw
 build: buildw
 buildw:
