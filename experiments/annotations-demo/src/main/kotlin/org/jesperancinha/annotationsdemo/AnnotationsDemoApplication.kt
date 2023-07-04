@@ -1,6 +1,8 @@
 package org.jesperancinha.annotationsdemo
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import org.intellij.lang.annotations.Pattern
+import org.jetbrains.annotations.NotNull
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.http.ResponseEntity
@@ -32,10 +34,16 @@ data class PerfectInfo(
     @param:JsonProperty("ratePerMonth")
     val ratePerMonth: BigDecimal,
     @param:JsonProperty("good")
-    val isGood: Boolean
+    val isGood: Boolean,
+    @param:JsonProperty("amount")
+    @field: [Pattern("") Size(min = 5, max = 15)]
+    val amount:Int
 ) {
-    @JsonProperty("ratePerProject")
+    @field:JsonProperty("ratePerProject")
     lateinit var ratePerProject:BigDecimal
+
+    @field:JsonProperty("ratePerCompany")
+    val ratePerCompany:BigDecimal = BigDecimal(5_000_000_000)
 
     fun modernizeWork() {
         ratePerProject = RATE_PER_PROJECT

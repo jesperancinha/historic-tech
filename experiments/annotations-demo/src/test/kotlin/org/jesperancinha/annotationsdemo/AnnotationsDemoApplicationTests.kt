@@ -34,7 +34,8 @@ class AnnotationsDemoApplicationTests @Autowired constructor(
             ratePerHour = BigDecimal(1.22),
             ratePerWeek = BigDecimal(100),
             ratePerMonth = BigDecimal(8000),
-            isGood = true
+            isGood = true,
+            10
         )
         perfectInfo.modernizeWork()
         mockMvc.perform(
