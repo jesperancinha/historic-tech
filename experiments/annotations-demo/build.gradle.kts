@@ -1,6 +1,8 @@
 import org.gradle.api.JavaVersion.VERSION_19
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val kotest_version:String by project
+
 plugins {
 	id("org.springframework.boot") version "3.1.1"
 	id("io.spring.dependency-management") version "1.1.0"
@@ -24,6 +26,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.kotest:kotest-assertions-core-jvm:$kotest_version")
 }
 
 tasks.withType<KotlinCompile> {
