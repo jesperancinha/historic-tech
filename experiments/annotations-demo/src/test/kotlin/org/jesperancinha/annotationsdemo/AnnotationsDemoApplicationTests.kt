@@ -3,6 +3,7 @@ package org.jesperancinha.annotationsdemo
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.should
+import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -35,6 +36,7 @@ class AnnotationsDemoApplicationTests @Autowired constructor(
             ratePerMonth = BigDecimal(8000),
             isGood = true
         )
+        perfectInfo.modernizeWork()
         mockMvc.perform(
             post("/")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -46,6 +48,7 @@ class AnnotationsDemoApplicationTests @Autowired constructor(
             .should {
                 val value = objectMapper.readValue(it, PerfectInfo::class.java)
                 value.isGood.shouldBeTrue()
+                value.ratePerProject shouldBe RATE_PER_PROJECT
             }
 
     }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 import java.math.BigDecimal
 
+val RATE_PER_PROJECT = BigDecimal(100_000)
+
 @SpringBootApplication
 open class AnnotationsDemoApplication
 
@@ -31,7 +33,14 @@ data class PerfectInfo(
     val ratePerMonth: BigDecimal,
     @param:JsonProperty("good")
     val isGood: Boolean
-)
+) {
+    @JsonProperty("ratePerProject")
+    lateinit var ratePerProject:BigDecimal
+
+    fun modernizeWork() {
+        ratePerProject = RATE_PER_PROJECT
+    }
+}
 
 @RestController
 open class PureInfoController {
