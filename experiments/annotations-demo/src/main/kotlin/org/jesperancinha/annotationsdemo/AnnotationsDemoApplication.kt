@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AnnotationsDemoApplication
+open class AnnotationsDemoApplication
 
 fun main(args: Array<String>) {
-	runApplication<AnnotationsDemoApplication>(*args)
+	runApplication<AnnotationsDemoApplication>(*args).start()
 }
