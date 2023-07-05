@@ -36,6 +36,7 @@ data class PerfectInfo(
     @param:JsonProperty("good")
     val isGood: Boolean,
     @param:JsonProperty("amount")
+    @get:JsonProperty("wow")
     @field: [Pattern("") Size(min = 5, max = 15)]
     val amount:Int
 ) {
@@ -51,7 +52,8 @@ data class PerfectInfo(
 }
 
 @RestController
-open class PureInfoController {
+open class PureInfoController(
+) {
 
     @PostMapping
     open fun getConstantPerfectInfo(@RequestBody perfectInfo: PerfectInfo) = run {
