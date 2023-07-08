@@ -30,41 +30,46 @@ fun main() {
 /**
  * This test illustrates in a nutshell the different coroutine builders
  */
-@OptIn(DelicateCoroutinesApi::class)
-private fun coroutineBuildersExample() {
-    GlobalScope.launch {
+@OptIn(DelicateCoroutinesApi::class, ExperimentalCoroutinesApi::class)
+fun coroutineBuildersExample() {
+    val globalLaunch = GlobalScope.launch {
         printCurrentContextInfo("Global")
 
         val futureScopeReturn = future {
             printCurrentContextInfo("Future")
-            1
+            12
         }
         val futureValue = futureScopeReturn.get()
         println("Just like in the old days $futureValue")
 
         val coroutineScopeReturn = coroutineScope {
             printCurrentContextInfo("CoroutineScope")
-            1
+            123
         }
+        println("This what we get from a coroutineScope: $coroutineScopeReturn")
 
         val runBlockingReturn = runBlocking {
             printCurrentContextInfo("RunBlocking")
-            1
+            1234
         }
+        println("This is the result of a blocking coroutine scope $runBlockingReturn")
+
         launchTest()
 
         val asyncReturn = async {
             printCurrentContextInfo("Async")
-            1
+            12345
         }
+        println("This is what we immediately get returned after async $asyncReturn")
 
         printCurrentContextInfo("BeforeWithContext")
         val withContextReturn = withContext(Dispatchers.IO) {
             printCurrentContextInfo("WithContext")
-            1
+            123456
         }
+        println("This is what we immediately after we return withContextReturn $withContextReturn")
 
-        launch(newSingleThreadContext("Custom thread")) {
+        val launchSingleThreadContext = launch(newSingleThreadContext("Custom thread")) {
             printCurrentContextInfo("Single Thread Context")
         }
 
@@ -74,6 +79,7 @@ private fun coroutineBuildersExample() {
         println(now())
         sleep(2000)
     }
+    println("This is what we get after a global launch: $globalLaunch")
     println(now())
     sleep(2000)
     println(now())
@@ -87,7 +93,7 @@ private fun coroutineBuildersExample() {
  * Kotlin Data Classes
  * when trying to fulfill the good practice of assuring immutability in our code
  */
-private fun baloneyAfterReleasingDonkeys() {
+fun baloneyAfterReleasingDonkeys() {
     CoroutineScope(Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()).launch {
         val donkeySpecies = listOf(
             Donkey(4, "Incinnakey"),
