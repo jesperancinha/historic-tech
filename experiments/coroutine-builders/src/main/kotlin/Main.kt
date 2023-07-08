@@ -1,6 +1,8 @@
 import MainJava.N_DONKEYS
 import kotlinx.coroutines.*
+import kotlinx.coroutines.future.future
 import java.lang.Thread.sleep
+import java.time.LocalDateTime.now
 import java.util.concurrent.Executors
 import kotlin.system.measureTimeMillis
 
@@ -20,57 +22,61 @@ data class Donkey(
  * Coroutine functions
  * coroutineScope
  */
-@OptIn(DelicateCoroutinesApi::class)
-fun main(args: Array<String>) {
-
-
+fun main() {
     baloneyAfterReleasingDonkeys()
-//    exitProcess(0)
-//    GlobalScope.launch {
-//        printCurrentContextInfo("Global")
-//
-//        val futureScopeReturn = future {
-//            printCurrentContextInfo("Future")
-//            1
-//        }
-//        val futureValue = futureScopeReturn.get()
-//        println("Just like in the old days $futureValue")
-//
-//        val coroutineScopeReturn = coroutineScope {
-//            printCurrentContextInfo("CoroutineScope")
-//            1
-//        }
-//
-//        val runBlockingReturn = runBlocking {
-//            printCurrentContextInfo("RunBlocking")
-//            1
-//        }
-//        launchTest()
-//
-//        val asyncReturn = async {
-//            printCurrentContextInfo("Async")
-//            1
-//        }
-//
-//        printCurrentContextInfo("BeforeWithContext")
-//        val withContextReturn = withContext(Dispatchers.IO) {
-//            printCurrentContextInfo("WithContext")
-//            1
-//        }
-//
-//        launch(newSingleThreadContext("Custom thread")) {
-//            printCurrentContextInfo("Single Thread Context")
-//        }
-//
-//        val value = asyncReturn.await()
-//        println("The asynchronous value is $value")
-//
-//        println(LocalDateTime.now())
-//        Thread.sleep(2000)
-//    }
-//    println(LocalDateTime.now())
-//    Thread.sleep(2000)
-//    println(LocalDateTime.now())
+    coroutineBuildersExample()
+}
+
+/**
+ * This test illustrates in a nutshell the different coroutine builders
+ */
+@OptIn(DelicateCoroutinesApi::class)
+private fun coroutineBuildersExample() {
+    GlobalScope.launch {
+        printCurrentContextInfo("Global")
+
+        val futureScopeReturn = future {
+            printCurrentContextInfo("Future")
+            1
+        }
+        val futureValue = futureScopeReturn.get()
+        println("Just like in the old days $futureValue")
+
+        val coroutineScopeReturn = coroutineScope {
+            printCurrentContextInfo("CoroutineScope")
+            1
+        }
+
+        val runBlockingReturn = runBlocking {
+            printCurrentContextInfo("RunBlocking")
+            1
+        }
+        launchTest()
+
+        val asyncReturn = async {
+            printCurrentContextInfo("Async")
+            1
+        }
+
+        printCurrentContextInfo("BeforeWithContext")
+        val withContextReturn = withContext(Dispatchers.IO) {
+            printCurrentContextInfo("WithContext")
+            1
+        }
+
+        launch(newSingleThreadContext("Custom thread")) {
+            printCurrentContextInfo("Single Thread Context")
+        }
+
+        val value = asyncReturn.await()
+        println("The asynchronous value is $value")
+
+        println(now())
+        sleep(2000)
+    }
+    println(now())
+    sleep(2000)
+    println(now())
 }
 
 
