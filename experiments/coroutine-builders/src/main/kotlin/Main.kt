@@ -40,46 +40,45 @@ fun coroutineBuildersExample() {
             12
         }
         val futureValue = futureScopeReturn.get()
-        println("Just like in the old days $futureValue")
+        println("***** Just like in the old days $futureValue")
 
         val coroutineScopeReturn = coroutineScope {
             printCurrentContextInfo("CoroutineScope")
             123
         }
-        println("This what we get from a coroutineScope: $coroutineScopeReturn")
+        println("***** This what we get from a coroutineScope: $coroutineScopeReturn")
 
         val runBlockingReturn = runBlocking {
             printCurrentContextInfo("RunBlocking")
             1234
         }
-        println("This is the result of a blocking coroutine scope $runBlockingReturn")
-
-        launchTest()
+        println("***** This is the result of a blocking coroutine scope $runBlockingReturn")
 
         val asyncReturn = async {
             printCurrentContextInfo("Async")
             12345
         }
-        println("This is what we immediately get returned after async $asyncReturn")
+        println("***** This is what we immediately get returned after async $asyncReturn")
 
         printCurrentContextInfo("BeforeWithContext")
         val withContextReturn = withContext(Dispatchers.IO) {
             printCurrentContextInfo("WithContext")
             123456
         }
-        println("This is what we immediately after we return withContextReturn $withContextReturn")
+        println("***** This is what get we immediately after we return withContextReturn $withContextReturn")
 
         val launchSingleThreadContext = launch(newSingleThreadContext("Custom thread")) {
             printCurrentContextInfo("Single Thread Context")
         }
+        println("***** This is what get we immediately after launchSingleThreadContext $launchSingleThreadContext")
 
         val value = asyncReturn.await()
-        println("The asynchronous value is $value")
+        println("***** The asynchronous value is $value")
 
         println(now())
         sleep(2000)
     }
-    println("This is what we get after a global launch: $globalLaunch")
+    println("***** This is what we get after a global launch: $globalLaunch")
     println(now())
     sleep(2000)
     println(now())
@@ -200,7 +199,7 @@ private fun CoroutineScope.printCurrentContextInfo(name: String) {
     println((1..10).joinToString("") { "-" })
 }
 
-private suspend fun launchTest() {
+suspend fun coroutineLazyTest() {
     coroutineScope {
         printCurrentContextInfo("launchTest1")
         launch {

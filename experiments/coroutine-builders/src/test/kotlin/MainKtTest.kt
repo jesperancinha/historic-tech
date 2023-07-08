@@ -1,3 +1,4 @@
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 
 class MainKtTest {
@@ -15,5 +16,10 @@ class MainKtTest {
     @Test
     fun `should test the baloney sandwich after releasing donkeys example`() {
         coroutineBuildersExample()
+    }
+
+    @Test
+    fun `should perform coroutine LAZY property test`() = runBlocking{
+        coroutineLazyTest()
     }
 }
