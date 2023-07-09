@@ -35,13 +35,6 @@ fun coroutineBuildersExample() {
     val globalLaunch = GlobalScope.launch {
         printCurrentContextInfo("Global")
 
-        val futureScopeReturn = future {
-            printCurrentContextInfo("Future")
-            12
-        }
-        val futureValue = futureScopeReturn.get()
-        println("***** Just like in the old days $futureValue")
-
         val coroutineScopeReturn = coroutineScope {
             printCurrentContextInfo("CoroutineScope")
             123
@@ -76,6 +69,13 @@ fun coroutineBuildersExample() {
         println("***** The asynchronous value is $value")
 
         println(now())
+
+        val futureScopeReturn = future {
+            printCurrentContextInfo("Future")
+            12
+        }
+        val futureValue = futureScopeReturn.get()
+        println("***** Just like in the old days $futureValue")
         sleep(2000)
     }
     println("***** This is what we get after a global launch: $globalLaunch")
@@ -136,7 +136,7 @@ fun baloneyAfterReleasingDonkeys() {
 
 }
 
-private fun donkeyTastesABalloneySandwichOnSuspendFunctions() {
+fun getBaloneySandwichAfterReleasingTheDonkeysOnSuspendFunctions() {
     CoroutineScope(Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()).launch {
         val donkeySpecies = listOf(
             Donkey(4, "Incinnakey"),

@@ -22,4 +22,9 @@ class MainKtTest {
     fun `should perform coroutine LAZY property test`() = runBlocking{
         coroutineLazyTest()
     }
+
+    @Test
+    fun `should test getBaloneySandwichAfterReleasingTheDonkeysOnSuspendFunctions`(){
+        getBaloneySandwichAfterReleasingTheDonkeysOnSuspendFunctions()
+    }
 }
