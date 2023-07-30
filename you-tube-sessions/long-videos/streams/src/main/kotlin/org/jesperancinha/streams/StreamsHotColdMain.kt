@@ -17,12 +17,12 @@ fun main() {
     pause()
     runProducerChannelExample()
     pause()
-    runInfiniteProducingChannel()
+    runPipelineChannelsExample()
     pause()
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
-private fun runInfiniteProducingChannel() {
+private fun runPipelineChannelsExample() {
     CoroutineScope(Dispatchers.IO).launch {
         val currentSecondChannel = produce {
             while (true) send(LocalDateTime.now().nano)
