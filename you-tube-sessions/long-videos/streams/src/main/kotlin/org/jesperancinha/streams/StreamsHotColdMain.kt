@@ -11,6 +11,26 @@ fun main() {
     runChannelExample()
     pause()
     runChannelCloseExample()
+    pause()
+    runProducerChannelExample()
+    pause()
+}
+
+@OptIn(ExperimentalCoroutinesApi::class)
+private fun runProducerChannelExample() {
+    CoroutineScope(Dispatchers.IO).launch {
+        val randomNumbers:ReceiveChannel<Int> = produce {
+            for (x in 1..NUMBERS_FOR_EXAMPLE) send((random() * 123).toInt())
+        }
+        println("Random numbers is a ${randomNumbers.javaClass}")
+        println("Random numbers is a ${randomNumbers::class}")
+        println("A channel is a receive channel and a produce channel at the same time}")
+        randomNumbers.consumeEach { println(it) }
+        println("Complete!")
+    }
+}
+
+private fun pause() {
     Thread.sleep(1000)
 }
 
