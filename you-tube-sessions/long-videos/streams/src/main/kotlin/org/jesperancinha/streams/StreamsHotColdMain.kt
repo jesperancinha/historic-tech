@@ -6,7 +6,10 @@ import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.channels.produce
 import java.lang.Math.random
+import java.time.LocalDateTime
+import kotlin.math.sqrt
 
+@OptIn(ExperimentalCoroutinesApi::class)
 fun main() {
     runChannelExample()
     pause()
@@ -14,6 +17,25 @@ fun main() {
     pause()
     runProducerChannelExample()
     pause()
+    runInfiniteProducingChannel()
+    pause()
+}
+
+@OptIn(ExperimentalCoroutinesApi::class)
+private fun runInfiniteProducingChannel() {
+    CoroutineScope(Dispatchers.IO).launch {
+        val currentSecondChannel = produce {
+            while (true) send(LocalDateTime.now().nano)
+        }
+        val sqrtCurrentSecondChannel = produce {
+            for (number in currentSecondChannel) send(sqrt(number.toDouble()))
+        }
+        repeat(NUMBERS_FOR_EXAMPLE) {
+            println("These are the first square roots for current nanoseconds: ${sqrtCurrentSecondChannel.receive()}")
+        }
+        println("Complete!")
+        coroutineContext.cancelChildren()
+    }
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
