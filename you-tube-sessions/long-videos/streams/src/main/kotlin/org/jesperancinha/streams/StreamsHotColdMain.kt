@@ -1,10 +1,7 @@
 package org.jesperancinha.streams
 
 import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.consumeEach
-import kotlinx.coroutines.channels.produce
+import kotlinx.coroutines.channels.*
 import java.lang.Math.random
 import java.time.LocalDateTime
 import kotlin.math.sqrt
@@ -19,6 +16,51 @@ fun main() {
     pause()
     runPipelineChannelsExample()
     pause()
+    runFanOutExample()
+    pause()
+    CoroutineScope(Dispatchers.IO).launch {
+        println("FAN IN TEST")
+        val cutlery = arrayOf("Fork", "Knife", "Spoon", "Stick", "Plate", "Pan", "Saucepan")
+        val cooks = arrayOf("Jenny", "Jamie", "Oliver", "Olivier", "Olivia", "Olga", "Helga")
+        val producer = Channel<String>()
+        for (item in cutlery) {
+            launch {
+                while (true) {
+                    delay(100L)
+                    producer.send(item)
+                }
+            }
+        }
+        repeat(6) {
+            println("Cook ${cooks[it]} took a(n) ${producer.receive()}")
+        }
+        delay(250L)
+        coroutineContext.cancelChildren()
+    }
+    pause()
+}
+
+@OptIn(ExperimentalCoroutinesApi::class)
+private fun runFanOutExample() {
+    CoroutineScope(Dispatchers.IO).launch {
+        val cutlery = arrayOf("Fork", "Knife", "Spoon", "Stick", "Plate", "Pan", "Saucepan")
+        val cooks = arrayOf("Jenny", "Jamie", "Oliver", "Olivier", "Olivia", "Olga", "Helga")
+        val producer = produce {
+            while (true) {
+                send(cutlery.random())
+                delay(100)
+            }
+        }
+        repeat(cooks.size) {
+            launch {
+                for (item in producer) {
+                    println("Cook ${cooks[it]} took a(n) $item")
+                }
+            }
+        }
+        delay(250)
+        producer.cancel()
+    }
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -41,7 +83,7 @@ private fun runPipelineChannelsExample() {
 @OptIn(ExperimentalCoroutinesApi::class)
 private fun runProducerChannelExample() {
     CoroutineScope(Dispatchers.IO).launch {
-        val randomNumbers:ReceiveChannel<Int> = produce {
+        val randomNumbers: ReceiveChannel<Int> = produce {
             for (x in 1..NUMBERS_FOR_EXAMPLE) send((random() * 123).toInt())
         }
         println("Random numbers is a ${randomNumbers.javaClass}")
@@ -53,7 +95,7 @@ private fun runProducerChannelExample() {
 }
 
 private fun pause() {
-    Thread.sleep(1000)
+    Thread.sleep(500)
 }
 
 private const val NUMBERS_FOR_EXAMPLE = 10
