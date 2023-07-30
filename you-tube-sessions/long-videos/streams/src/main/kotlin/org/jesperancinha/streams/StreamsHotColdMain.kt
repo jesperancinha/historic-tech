@@ -6,7 +6,6 @@ import java.lang.Math.random
 import java.time.LocalDateTime
 import kotlin.math.sqrt
 
-@OptIn(ExperimentalCoroutinesApi::class)
 fun main() {
     runChannelExample()
     pause()
@@ -42,6 +41,7 @@ fun main() {
 
 @OptIn(ExperimentalCoroutinesApi::class)
 private fun runFanOutExample() {
+    println("FAN OUT TEST")
     CoroutineScope(Dispatchers.IO).launch {
         val cutlery = arrayOf("Fork", "Knife", "Spoon", "Stick", "Plate", "Pan", "Saucepan")
         val cooks = arrayOf("Jenny", "Jamie", "Oliver", "Olivier", "Olivia", "Olga", "Helga")
