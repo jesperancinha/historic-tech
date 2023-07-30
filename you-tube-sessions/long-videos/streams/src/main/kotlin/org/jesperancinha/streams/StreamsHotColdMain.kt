@@ -17,6 +17,11 @@ fun main() {
     pause()
     runFanOutExample()
     pause()
+    runFanInExample()
+    pause()
+}
+
+private fun runFanInExample() {
     CoroutineScope(Dispatchers.IO).launch {
         println("FAN IN TEST")
         val cutlery = arrayOf("Fork", "Knife", "Spoon", "Stick", "Plate", "Pan", "Saucepan")
@@ -36,7 +41,6 @@ fun main() {
         delay(250L)
         coroutineContext.cancelChildren()
     }
-    pause()
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
