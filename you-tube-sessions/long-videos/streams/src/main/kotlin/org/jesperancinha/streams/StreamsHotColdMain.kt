@@ -6,6 +6,12 @@ import java.lang.Math.random
 import java.time.LocalDateTime
 import kotlin.math.sqrt
 
+data class Frog(
+    val name: String = "Frog" + (random() * 1000).toInt()
+) {
+    override fun toString() = name
+}
+
 fun main() {
     runChannelExample()
     pause()
@@ -19,7 +25,29 @@ fun main() {
     pause()
     runFanInExample()
     pause()
+    runBufferedChannelExample()
+    pause()
 }
+
+private fun runBufferedChannelExample() {
+    runBlocking {
+        val channel = Channel<Frog>(4)
+        val sender = launch {
+            repeat(10) {
+                val frog = Frog()
+                println("Sending frog $frog on position $it through the channel!")
+                channel.send(frog)
+            }
+        }
+        println("There are now 4 forgs buffered and the channel is suspended")
+        delay(1000)
+        println("We are consuming 1 and therefore the buffer is free to receive another item")
+        channel.receive()
+        delay(1000)
+        sender.cancel()
+    }
+}
+
 
 private fun runFanInExample() {
     CoroutineScope(Dispatchers.IO).launch {
