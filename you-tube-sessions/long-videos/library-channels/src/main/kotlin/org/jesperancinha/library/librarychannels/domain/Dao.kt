@@ -17,7 +17,7 @@ data class ReaderUser(
 )
 data class Reservation (
     val id: UUID,
-    val idUser: ReaderUser,
+    val user: ReaderUser,
     val resevationDate: LocalDate = LocalDate.now(),
     val returnDate: LocalDate,
     val book: Book

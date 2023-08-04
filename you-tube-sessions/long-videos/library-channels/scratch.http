@@ -1,0 +1,21 @@
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "id": "4f29247f-21fc-4006-9adf-bf1ac52bd2c0",
+  "user": {
+    "id": "cf86a9f4-8bc6-47da-8d91-7a12c9b1106f",
+    "name": "The angry frog",
+    "address": "Road to nowhere",
+    "telephone": "1234567890"
+  },
+  "reservationDate": "2023-08-04",
+  "returnDate": "2023-08-04",
+  "book": {
+    "id": "cf86a9f4-8bc6-47da-8d91-7a12c9b1106f",
+    "name": "Frogs on YouTube and in the natural reserve",
+    "pages": 999
+  }
+}
+
+###
