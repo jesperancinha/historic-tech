@@ -3,10 +3,8 @@ package org.jesperancinha.library.librarychannels.service;
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.UNLIMITED
-import kotlinx.coroutines.channels.onFailure
 import kotlinx.coroutines.channels.produce
 import kotlinx.coroutines.channels.toList
-import kotlinx.coroutines.flow.consumeAsFlow
 import org.jesperancinha.library.librarychannels.domain.Reservation
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
@@ -45,6 +43,7 @@ class BookService {
                 println("Several coroutines receive data from one channel (Fan-Out")
                 println("Once the data is receive, another channel receives all the data from the multiple coroutines that sent the individual number of pages (Fan-In)")
                 println("This last operation is known as a Fan-In also")
+                println("The very last operation uses a channel with 0 capacity created with produce which by default makes a channel with a Rendez-vous configuration.")
                 println("The result is $totalPageCount pages!")
             }
         }
