@@ -19,7 +19,7 @@ class BookService {
         Channel<Int>()
     }
 
-    @Scheduled(cron = "*/1 * * * * * ")
+    @Scheduled(cron = "* */1 * * * *")
     fun scheduleStats() {
         CoroutineScope(Dispatchers.IO).launch {
             repeat(10) {
