@@ -27,6 +27,11 @@ fun main() {
     pause()
     runBufferedChannelExample()
     pause()
+    runBlocking {
+        val tickerChannel = ticker(delayMillis = 100, initialDelayMillis = 0)
+
+    }
+    pause()
 }
 
 private fun runBufferedChannelExample() {
@@ -39,7 +44,7 @@ private fun runBufferedChannelExample() {
                 channel.send(frog)
             }
         }
-        println("There are now 4 forgs buffered and the channel is suspended")
+        println("There are now 4 frogs buffered and the channel is suspended")
         delay(1000)
         println("We are consuming 1 and therefore the buffer is free to receive another item")
         channel.receive()

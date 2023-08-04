@@ -6,6 +6,7 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-single \
 					you-tube-sessions/long-videos/spot-on \
 					you-tube-sessions/long-videos/streams \
+					you-tube-sessions/long-videos/library-channels \
 					you-tube-sessions/long-videos/drinks-manager \
 					you-tube-sessions/long-videos/kotlin-keywords \
 					you-tube-sessions/long-videos/cooldrinks-juice-factory \
