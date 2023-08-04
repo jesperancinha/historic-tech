@@ -1,0 +1,28 @@
+networks:
+  library:
+
+services:
+  library_postgres:
+    hostname: library_postgres
+    container_name: library_postgres
+    command: -c 'max_connections=400' -c 'shared_buffers=100MB'
+    build:
+      context: ./docker-files/docker-psql/.
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_MULTIPLE_DATABASES=library
+    networks:
+      - library
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+        reservations:
+          memory: 200M
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 30s
+      timeout: 30s
+      retries: 10
+      start_period: 0s
