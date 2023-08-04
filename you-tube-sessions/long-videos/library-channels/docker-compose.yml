@@ -7,7 +7,7 @@ services:
     container_name: library_postgres
     command: -c 'max_connections=400' -c 'shared_buffers=100MB'
     build:
-      context: ./docker-files/docker-psql/.
+      context: ./docker-psql/.
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=admin
