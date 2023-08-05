@@ -73,3 +73,8 @@ install-linux:
 	sudo apt-get install jq
 	sudo apt-get install curl
 	curl https://services.gradle.org/versions/current
+sdk-man-install:
+	curl -s "https://get.sdkman.io" | bash; \
+	source "$(HOME)/.sdkman/bin/sdkman-init.sh"; \
+	export SDKMAN_DIR="$(HOME)/.sdkman"; \
+    [[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]];
