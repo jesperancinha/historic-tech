@@ -15,4 +15,6 @@ sudo snap install qprompt
 sudo apt install flatpak -y
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
 sudo apt update -y
-sudo apt install kdenlive -y
+sudo apt install kdenlive mediainfo -y
+snap install glaxnimate
+snap install shotcut --classic

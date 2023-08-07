@@ -4,6 +4,16 @@
 |--------------------------------------|---|--------------------------------------------------|---|
 | [Spot On App](long-videos/spot-on) | A coroutines based reactive web application. We create a simple application, going through the relevant details and some curious things. This application could be created in 10 minutes but because of the details the 3 sessions take about 1 hour | Spring, Spring-Boot, Project Reactor, Coroutines | Kotlin |
 
+## YouTube Scripts
+
+##### Debina/Ubuntu Systems
+
+1. [YouTube Install Bash Script](./youtube-install.sh)
+
+## References
+
+- [Filmoras To 10 Open Source editors](https://filmora.wondershare.com/video-editor/free-linux-video-editor.html)
+
 ## About me
 
 <div align="center">
