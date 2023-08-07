@@ -12,3 +12,5 @@ sudo apt-get install simplescreenrecorder webcamoid kamoso cheese -y
 sudo apt-get update
 sudo apt-get install pitivi openshot-qt vlc -y
 sudo snap install qprompt
+sudo snap install kdenlive
+
