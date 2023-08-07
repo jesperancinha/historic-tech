@@ -12,5 +12,7 @@ sudo apt-get install simplescreenrecorder webcamoid kamoso cheese -y
 sudo apt-get update
 sudo apt-get install pitivi openshot-qt vlc -y
 sudo snap install qprompt
-sudo snap install kdenlive
-
+sudo apt install flatpak -y
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+sudo apt update -y
+sudo apt install kdenlive -y
