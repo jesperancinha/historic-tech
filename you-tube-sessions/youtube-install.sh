@@ -16,5 +16,5 @@ sudo apt install flatpak -y
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
 sudo apt update -y
 sudo apt install kdenlive mediainfo -y
-snap install glaxnimate
-snap install shotcut --classic
+sudo snap install glaxnimate
+sudo snap install shotcut --classic
