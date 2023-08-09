@@ -36,14 +36,14 @@ class BookService {
                     }
 
                 }.toList().sum()
-                println("We just received all reservations sent to the channel at one point in time. This is known as a Fan-Out")
+                println("We just received all up to 10 reservations sent to the channel at one point in time. This is known as a Fan-Out")
                 println("We did send data from multiple coroutines, which makes this also a Fan-In")
                 println("This is in fact a mixed operation: ")
                 println("Several coroutines send data to one channel (Fan-In))")
                 println("Several coroutines receive data from one channel (Fan-Out")
                 println("Once the data is receive, another channel receives all the data from the multiple coroutines that sent the individual number of pages (Fan-In)")
                 println("This last operation is known as a Fan-In also")
-                println("The very last operation uses a channel with 0 capacity created with produce which by default makes a channel with a Rendez-vous configuration.")
+                println("The very last operation uses a channel with 0 capacity created with produce which by default makes a channel with a Rendezvous configuration.")
                 println("The result is $totalPageCount pages!")
             }
         }
