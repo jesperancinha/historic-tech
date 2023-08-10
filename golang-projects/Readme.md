@@ -1,4 +1,10 @@
 
+
+## Go-Lang examples
+
+- [Tutorial: Developing a RESTful API with Go and Gin](https://go.dev/doc/tutorial/web-service-gin)
+- [Install Golang](https://go.dev/doc/install)
+
 ## References
 
 - [Is the programming language Go a functional or object oriented programming language?](https://www.quora.com/Is-the-programming-language-Go-a-functional-or-object-oriented-programming-language)
