@@ -7,6 +7,7 @@
 -   https://www.tibco.com/reference-center/what-is-data-streaming
 -   https://dictionary.cambridge.org/dictionary/english/canal
 -   https://dictionary.cambridge.org/dictionary/english/channel
+-   https://kotlinlang.org/docs/channels.html#buffered-channels
 
 # Resources
 
