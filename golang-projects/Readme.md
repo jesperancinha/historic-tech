@@ -1,4 +1,12 @@
+## Golang projects
 
+## How to
+
+1. Download dependencies
+
+```shell
+gp get .
+```
 
 ## Go-Lang examples
 
