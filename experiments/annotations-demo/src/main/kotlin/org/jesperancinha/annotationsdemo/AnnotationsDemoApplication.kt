@@ -2,7 +2,6 @@ package org.jesperancinha.annotationsdemo
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import org.intellij.lang.annotations.Pattern
-import org.jetbrains.annotations.NotNull
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.http.ResponseEntity
