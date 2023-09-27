@@ -15,7 +15,7 @@ abstract class Box<out T : Nut>(
     abstract fun removeNuts(number: Int): List<T>
 }
 
-class OutPinkBox() : Box<Almond>() {
+class OutPinkBox : Box<Almond>() {
 
     val nuts = (1..10).map { Almond() }.toMutableList()
 
@@ -30,8 +30,7 @@ class OutBlueBox() : Box<Macadamia>() {
 
 }
 
-class OutGreenBox(
-) : Box<Pistache>() {
+class OutGreenBox : Box<Pistache>() {
 
     val nuts: MutableList<Pistache> = (1..10).map { Pistache() }.toMutableList()
 
