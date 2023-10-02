@@ -8,11 +8,11 @@
 
 ##### Debina/Ubuntu Systems
 
-1. [YouTube Install Bash Script](./youtube-install.sh)
+1.  [YouTube Install Bash Script](./youtube-install.sh)
 
 ## References
 
-- [Filmoras To 10 Open Source editors](https://filmora.wondershare.com/video-editor/free-linux-video-editor.html)
+-   [Filmoras To 10 Open Source editors](https://filmora.wondershare.com/video-editor/free-linux-video-editor.html)
 
 ## About me
 
