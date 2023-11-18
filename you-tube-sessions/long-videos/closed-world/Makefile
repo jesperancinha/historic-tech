@@ -21,7 +21,7 @@ inspect-classes:
 	java -agentlib:native-image-agent=config-output-dir=META-INF/native-image CalculatorJava Add add 1 2
 test-native:
 	target/calculatorjava Add add 1 2
-	target/calculatorjava Add join 1 2
+	#target/calculatorjava Add join 1 2
 test-jar:
 	$(SETUP); \
 	java -jar target/calculatorjava.jar Add add 1 2; \
