@@ -1,0 +1,3 @@
+-   https://docs.oracle.com/en/learn/understanding-reflection-graalvm-native-image/index.html#step-3--an-example-using-reflection
+-   https://en.wikipedia.org/wiki/Closed-world_assumption
+-   https://kotlinlang.org/docs/native-debugging.html
