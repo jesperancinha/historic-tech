@@ -7,7 +7,7 @@ SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
 compile-only:
 	$(SETUP); \
 	javac src/main/CalculatorJava.java -d target
-compile-native-only: compile-only
+compile-native-only:
 	$(SETUP); \
 	cd target; \
 	native-image --no-fallback CalculatorJava
@@ -21,7 +21,7 @@ inspect-classes:
 	java -agentlib:native-image-agent=config-output-dir=META-INF/native-image CalculatorJava Add add 1 2
 test-native:
 	target/calculatorjava Add add 1 2
-	#target/calculatorjava Add join 1 2
+	target/calculatorjava Add join 1 2
 test-jar:
 	$(SETUP); \
 	java -jar target/calculatorjava.jar Add add 1 2; \
@@ -36,7 +36,7 @@ local-pipeline: compile-only compile-only-jar test-jar
 compile-kotlin-only:
 	$(SETUP); \
 	kotlinc src/main/Calculator.kt -d target
-compile-native-kotlin-only: compile-kotlin-only
+compile-native-kotlin-only:
 	$(SETUP); \
 	cd target; \
 	native-image --no-fallback Calculator

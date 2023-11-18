@@ -1,14 +1,13 @@
 import java.lang.reflect.InvocationTargetException;
 
 class AddJ {
+    public static String join(Integer a, Integer b){
+        return "%d%d".formatted(a, b);
+    }
 
     public static Integer add(Integer a, Integer b) {
         return a+b;
     }
-
-     public static String join(Integer a, Integer b){
-        return "%d%d".formatted(a, b);
-     }
 }
 
 public class CalculatorJava {
