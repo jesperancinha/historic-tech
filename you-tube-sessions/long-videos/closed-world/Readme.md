@@ -13,6 +13,12 @@ cd ~/.sdkman/candidates/java/22.2.r17-grl/
 export LD_LIBRARY_PATH="$(pwd)/lib:$LD_LIBRARY_PATH"
 ```
 
+## Technical Docs
+
+- https://github.com/oracle/graal/issues/5375
+- https://sdk-forum.dji.net/hc/en-us/articles/11916949986585-Why-a-crash-ClassNotFoundException-Didn-t-find-class-kotlin-jvm-internal-Intrinsics-has-happened-
+- https://javarevisited.blogspot.com/2012/10/5-ways-to-add-multiple-jar-to-classpath-java.html#axzz8JRqqAzrt
+
 ## References
 
 - https://docs.oracle.com/en/learn/understanding-reflection-graalvm-native-image/index.html#step-3--an-example-using-reflection
