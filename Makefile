@@ -4,6 +4,7 @@ PARENT_MODULES := talks you-tube-sessions
 MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-single \
+					you-tube-sessions/long-videos/closed-world \
 					you-tube-sessions/long-videos/spot-on \
 					you-tube-sessions/long-videos/streams \
 					you-tube-sessions/long-videos/library-channels \
