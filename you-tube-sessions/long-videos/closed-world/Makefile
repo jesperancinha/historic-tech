@@ -3,6 +3,11 @@ SHELL := /bin/bash
 SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
          	[[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]]; \
          	source "$(HOME)/.sdkman/bin/sdkman-init.sh"
+
+# Make sure to add kotlin-stdlib-<VERSION>.jar with path to -classpath
+# If you have 1.9.20 installed then you can ignore this.
+STDLIB ?= "$(HOME)/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.20/kotlin-stdlib-1.9.20.jar"
+
 # Java only builds
 compile-only:
 	$(SETUP); \
@@ -35,11 +40,11 @@ local-pipeline: compile-only compile-only-jar test-jar
 # Kotlin only builds
 compile-kotlin-only:
 	$(SETUP); \
-	kotlinc src/main/Calculator.kt -d target
+	kotlinc src/main/Calculator.kt -include-runtime -d target
 compile-native-kotlin-only:
 	$(SETUP); \
 	cd target; \
-	native-image --no-fallback Calculator
+	native-image --no-fallback Calculator -classpath $(STDLIB):.
 compile-kotlin-only-jar:
 	$(SETUP); \
 	kotlinc src/main/Calculator.kt -include-runtime -d target/calculator.jar
@@ -53,7 +58,9 @@ inspect-kotlin-classes:
 test-kotlin-jar:
 	java -jar target/calculator.jar Add add 1 2
 	java -jar target/calculator.jar Add join 1 2
+# Make sure to add kotlin-stdlib-<VERSION>.jar with path to -classpath
+# Example java -classpath kotlin-stdlib-1.9.20.jar:target/. Calculator Add add 1 2
 test-kotlin-class:
-	java -classpath target/. Calculator Add add 1 2
-	java -classpath target/. Calculator Add join 1 2
+	java -classpath $(STDLIB):target/. Calculator Add add 1 2
+	java -classpath $(STDLIB):target/. Calculator Add join 1 2
 local-kotlin-pipeline: compile-kotlin-only compile-kotlin-only-jar test-kotlin-jar
