@@ -11,28 +11,36 @@ repositories {
     mavenCentral()
 }
 
-configure<SourceSetContainer> {
-    named("main") {
-        java.srcDir("src/main")
+sourceSets {
+    main {
+        kotlin {
+            srcDir("src/main")
+        }
+    }
+    test {
+        kotlin {
+            srcDir("src/test")
+        }
     }
 }
 
-
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
 }
 
 
-tasks.test {
+tasks.withType<Test> {
     useJUnitPlatform()
+    testLogging {
+        setExceptionFormat("full")
+        events ("started", "skipped", "passed", "failed")
+        showStandardStreams = true
+    }
 }
 
 kotlin {
     jvmToolchain(19)
-}
-
-application {
-    mainClass.set("MainKt")
 }
 
 

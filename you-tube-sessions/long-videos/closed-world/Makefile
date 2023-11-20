@@ -8,6 +8,10 @@ SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
 # If you have 1.9.20 installed then you can ignore this.
 STDLIB ?= "$(HOME)/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.20/kotlin-stdlib-1.9.20.jar"
 
+test-gradle:
+	$(SETUP); \
+	gradle build; \
+	gradle test
 # Java only builds
 compile-only:
 	$(SETUP); \
@@ -40,7 +44,7 @@ local-pipeline: compile-only compile-only-jar test-jar
 # Kotlin only builds
 compile-kotlin-only:
 	$(SETUP); \
-	kotlinc src/main/Calculator.kt -include-runtime -d target
+	kotlinc src/main/Calculator.kt -include-runtime -d target -classpath $(STDLIB):.
 compile-native-kotlin-only:
 	$(SETUP); \
 	cd target; \
@@ -54,13 +58,18 @@ install-kotlin:
 inspect-kotlin-classes:
 	$(SETUP); \
 	cd target; \
-	java -agentlib:native-image-agent=config-output-dir=META-INF/native-image Calculator Add add 1 2
+	java -classpath $(STDLIB):. -agentlib:native-image-agent=config-output-dir=META-INF/native-image Calculator Add add 1 2
 test-kotlin-jar:
-	java -jar target/calculator.jar Add add 1 2
+	$(SETUP); \
+	java -jar target/calculator.jar Add add 1 2; \
 	java -jar target/calculator.jar Add join 1 2
 # Make sure to add kotlin-stdlib-<VERSION>.jar with path to -classpath
 # Example java -classpath kotlin-stdlib-1.9.20.jar:target/. Calculator Add add 1 2
 test-kotlin-class:
-	java -classpath $(STDLIB):target/. Calculator Add add 1 2
+	$(SETUP); \
+	java -classpath $(STDLIB):target/. Calculator Add add 1 2; \
 	java -classpath $(STDLIB):target/. Calculator Add join 1 2
+test-kotlin-native:
+	target/calculator Add add 1 2
+	target/calculator Add join 1 2
 local-kotlin-pipeline: compile-kotlin-only compile-kotlin-only-jar test-kotlin-jar
