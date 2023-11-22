@@ -2,6 +2,7 @@ rootProject.name = "asnsei-the-right-waf"
 include("talks:talk-10-kotlin-streams-good-bad:streams-gb-kafka")
 include("talks:talk-10-kotlin-streams-good-bad:streams-gb-rabbitmq")
 include("talks:talk-10-kotlin-streams-good-bad:streams-gb-single")
+include("you-tube-sessions:long-videos:k2-compiler")
 include("you-tube-sessions:long-videos:closed-world")
 include("you-tube-sessions:long-videos:spot-on")
 include("you-tube-sessions:long-videos:library-channels")
@@ -14,3 +15,5 @@ include("you-tube-sessions:overlay-shorts:jeorg-overlays-group-1-spring")
 include("you-tube-sessions:overlay-shorts:coroutines-demo")
 include("experiments:coroutine-builders")
 include("experiments:annotations-demo")
+include("you-tube-sessions:long-videos:k2-compiler")
+findProject(":you-tube-sessions:long-videos:k2-compiler")?.name = "k2-compiler"
