@@ -6,7 +6,8 @@ SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
 
 FILENAME ?= "MegaClass.kt"
 
-b: make-class
+setup: make-class
+b:
 	$(SETUP); \
 	gradle build; \
 	gradle test
@@ -18,7 +19,7 @@ make-class:
 	echo "    companion object {" >> $(FILENAME)
 	echo "" >> $(FILENAME)
 	echo "        fun run(){" >> $(FILENAME)
-	for i in {0..24000}; \
+	for i in {0..6000}; \
     do \
 		echo "            println(\"Lines of code\")" >> $(FILENAME); \
     done;
@@ -27,3 +28,5 @@ make-class:
 	echo "    }" >> $(FILENAME)
 	echo "}" >> $(FILENAME)
 	mv $(FILENAME) src/main/kotlin/org/jesperancinha/k2/$(FILENAME)
+perform-benchmark:
+	./benchmark.sh

@@ -32,4 +32,3 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
-kotlin { sourceSets.all { languageSettings { languageVersion = "2.0" } } }
