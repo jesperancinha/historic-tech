@@ -1,5 +1,7 @@
 plugins {
-    id("java")
+    kotlin("jvm") version "1.9.20"
+    application
+    id("jacoco")
 }
 
 group = "org.example"
@@ -12,6 +14,19 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+sourceSets {
+    main {
+        kotlin {
+            srcDir("src/main")
+        }
+    }
+    test {
+        kotlin {
+            srcDir("src/test")
+        }
+    }
 }
 
 tasks.test {
