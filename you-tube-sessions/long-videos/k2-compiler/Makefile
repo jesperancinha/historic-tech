@@ -18,7 +18,10 @@ make-class:
 	echo "    companion object {" >> $(FILENAME)
 	echo "" >> $(FILENAME)
 	echo "        fun run(){" >> $(FILENAME)
-	echo "            println(\"Lines of code\")" >> $(FILENAME)
+	for i in {0..24000}; \
+    do \
+		echo "            println(\"Lines of code\")" >> $(FILENAME); \
+    done;
 	echo "        }" >> $(FILENAME)
 	echo "" >> $(FILENAME)
 	echo "    }" >> $(FILENAME)
