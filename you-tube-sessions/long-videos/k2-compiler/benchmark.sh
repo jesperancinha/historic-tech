@@ -11,8 +11,8 @@ cp build.gradle.original.txt build.gradle.kts
 start=`date +%s.%N`
 make b
 end=`date +%s.%N`
-runtimek2=$( echo "$end - $start" | bc -l )
-echo $runtimek2
+runtimeRegular=$( echo "$end - $start" | bc -l )
+echo $runtimeRegular
 
 
 
@@ -23,9 +23,9 @@ echo $k2config >> build.gradle.kts
 start=`date +%s.%N`
 make b
 end=`date +%s.%N`
-runtime=$( echo "$end - $start" | bc -l )
-echo $runtime
+runtimeK2=$( echo "$end - $start" | bc -l )
+echo $runtimeK2
 
-echo "$i , $runtimek2 , $runtime" >> stats.csv
+echo "$i , $runtimeRegular , $runtimeK2" >> stats.csv
 
 done;
