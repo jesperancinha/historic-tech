@@ -7,9 +7,12 @@ SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
 FILENAME ?= "MegaClass.kt"
 
 setup: make-class
-b:
+b: build test
+build:
 	$(SETUP); \
-	gradle build; \
+	gradle build;
+test:
+	$(SETUP); \
 	gradle test
 make-class:
 	echo "package org.jesperancinha.k2" > $(FILENAME)

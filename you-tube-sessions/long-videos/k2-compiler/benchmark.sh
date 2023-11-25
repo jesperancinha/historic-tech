@@ -9,7 +9,7 @@ do
 rm -r build
 cp build.gradle.original.txt build.gradle.kts
 start=`date +%s.%N`
-make b
+make build
 end=`date +%s.%N`
 runtimeRegular=$( echo "$end - $start" | bc -l )
 echo $runtimeRegular
@@ -21,7 +21,7 @@ k2config=$(<k2config.kts)
 cp build.gradle.original.txt build.gradle.kts
 echo $k2config >> build.gradle.kts
 start=`date +%s.%N`
-make b
+make build
 end=`date +%s.%N`
 runtimeK2=$( echo "$end - $start" | bc -l )
 echo $runtimeK2
