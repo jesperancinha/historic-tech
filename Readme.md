@@ -24,6 +24,7 @@ For short:
 
 > Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
 
+Finally, please remember to stay up to dat to the changes on this repo on: [Log Book](./LogBook.md).
 
 ## Structure
 
