@@ -1,4 +1,4 @@
-include ../../../Makefile
+include ../../Makefile
 
 b: build-gradle-report
 build-gradle: build-dll

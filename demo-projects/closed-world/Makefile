@@ -23,7 +23,7 @@ compile-native-only:
 compile-only-jar:
 	$(SETUP); \
 	cd src/main ; \
-	javac CalculatorJava.java -d target/calculatorjava.jar
+	javac CalculatorJava.java -d ../../target/calculatorjava.jar
 inspect-classes:
 	$(SETUP); \
 	cd target; \
@@ -73,3 +73,4 @@ test-kotlin-native:
 	target/calculator Add add 1 2
 	target/calculator Add join 1 2
 local-kotlin-pipeline: compile-kotlin-only compile-kotlin-only-jar test-kotlin-jar
+b: local-kotlin-pipeline
