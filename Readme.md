@@ -29,8 +29,9 @@ Finally, please remember to stay up to dat to the changes on this repo on: [Log 
 ## Structure
 
 -   [Talks](./talks) - All projects used as a support for my talks in current and past application processes.
--   [Demo-Projects](./demo-projects) - All projects used as a support to articles and videos of mine on the web.
+-   [Demo-Projects](./demo-projects) - All projects used as a support to articles and videos of mine on the web. (Mostly made in Kotlin a.k.a Jet-Lang and Java)
 -   [Experiments](./experiments) - Experimental projects that aren't considered stable, nor do they serve a specific purpose. They are purely experimental, and they may be moved to [Demo projects](./demo-projects) when they meet the requirements.
+-   [GoLang projects](./golang-projects) - Projects made in Go
 
 ## Setup
 
