@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-GRADLE_VERSION ?= 8.2.1
+GRADLE_VERSION ?= 8.5
 PARENT_MODULES := talks demo-projects-sessions
 MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \
@@ -54,9 +54,11 @@ local-pipeline:
   		make b; \
   		cd ..; \
 	done
-upgrade-gradle:
+upgrade-gradle: upgrade-system upgrade-sdk-man upgrade
+upgrade-system:
 	sudo apt upgrade
 	sudo apt update
+upgrade-sdk-man:
 	export SDKMAN_DIR="$(HOME)/.sdkman"; \
 	[[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]]; \
 	source "$(HOME)/.sdkman/bin/sdkman-init.sh"; \
@@ -70,7 +72,6 @@ upgrade-gradle:
 		sdk use gradle $$gradleOnlineVersion; \
 		export GRADLE_VERSION=$$gradleOnlineVersion; \
 	fi;
-	make upgrade
 install-linux:
 	sudo apt-get install jq
 	sudo apt-get install curl
