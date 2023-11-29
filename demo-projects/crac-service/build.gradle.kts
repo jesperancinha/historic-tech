@@ -1,3 +1,4 @@
+import org.gradle.api.JavaVersion.VERSION_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -11,7 +12,7 @@ group = "org.jesperancinha"
 version = "0.0.1-SNAPSHOT"
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_21
+	sourceCompatibility = VERSION_21
 }
 
 repositories {
