@@ -7,7 +7,7 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "gradle"
-    directory: "/you-tube-sessions"
+    directory: "/demo-projects"
     schedule:
       interval: "daily"
 

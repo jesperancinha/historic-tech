@@ -1,20 +1,20 @@
 SHELL := /bin/bash
 GRADLE_VERSION ?= 8.2.1
-PARENT_MODULES := talks you-tube-sessions
+PARENT_MODULES := talks demo-projects-sessions
 MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-single \
-					you-tube-sessions/long-videos/k2-compiler \
-					you-tube-sessions/long-videos/closed-world \
-					you-tube-sessions/long-videos/spot-on \
-					you-tube-sessions/long-videos/streams \
-					you-tube-sessions/long-videos/library-channels \
-					you-tube-sessions/long-videos/drinks-manager \
-					you-tube-sessions/long-videos/kotlin-keywords \
-					you-tube-sessions/long-videos/cooldrinks-juice-factory \
-					you-tube-sessions/overlay-shorts/jeorg-overlay-group-1 \
-					you-tube-sessions/overlay-shorts/jeorg-overlays-group-1-spring \
-					you-tube-sessions/overlay-shorts/coroutines-demo \
+					demo-projects/k2-compiler \
+					demo-projects/closed-world \
+					demo-projects/spot-on \
+					demo-projects/streams \
+					demo-projects/library-channels \
+					demo-projects/drinks-manager \
+					demo-projects/kotlin-keywords \
+					demo-projects/cooldrinks-juice-factory \
+					demo-projects/jeorg-overlay-group-1 \
+					demo-projects/jeorg-overlays-group-1-spring \
+					demo-projects/coroutines-demo \
 					experiments/coroutine-builders \
 					experiments/annotations-demo
 b: buildw
@@ -42,7 +42,7 @@ build-talks: ./talk*
   			make b; \
   			cd ..; \
 		done
-build-youtube: ./you-tube*
+build-youtube: ./demo-projects*
 		for d in $^ ; do \
 			cd $${d}; \
 			make b; \

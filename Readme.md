@@ -10,7 +10,7 @@
 
 This repo serves to support all the code to back up all my talks and videos (there has been no successful application yet, so they are all preparation materials at this point).
 
-Have a look in the submodules for more info
+Have a look at the submodules for more info
 
 Read the [Inspiration](Inspiration.md) file for a small tale about the name of this project.
  
@@ -27,8 +27,9 @@ For short:
 
 ## Structure
 
--   [Talks](./talks) - All materials for current applications to talks and/or actual talks
--   [YouTube's sessions](./you-tube-sessions) - All projects made for my YouTube sessions.
+-   [Talks](./talks) - All projects used as a support for my talks in current and past application processes.
+-   [Demo-Projects](./demo-projects) - All projects used as a support to articles and videos of mine on the web.
+-   [Experiments](./experiments) - Experimental projects that aren't considered stable, nor do they serve a specific purpose. They are purely experimental, and they may be moved to [Demo projects](./demo-projects) when they meet the requirements.
 
 ## Setup
 

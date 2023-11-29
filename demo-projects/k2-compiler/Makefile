@@ -7,7 +7,7 @@ SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
 FILENAME ?= "MegaClass.kt"
 
 setup: make-class
-b: build test
+b: make-class build test
 build:
 	$(SETUP); \
 	gradle build;

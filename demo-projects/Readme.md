@@ -1,43 +1,40 @@
-# A Suitable Nice Guy In A Suitable Age Group Forever -  Quizzes
+# YouTube Sessions support materials
 
-## Introduction
+| Project                              | Description | Frameworks                                       | Language |
+|--------------------------------------|---|--------------------------------------------------|---|
+| [Spot On App](long-videos/spot-on) | A coroutines based reactive web application. We create a simple application, going through the relevant details and some curious things. This application could be created in 10 minutes but because of the details the 3 sessions take about 1 hour | Spring, Spring-Boot, Project Reactor, Coroutines | Kotlin |
 
-All quizzes on my channel [@joaoesperancinha](https://www.youtube.com/@joaoesperancinha),
-have support materials that are available on this repo and on repo [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives).
+## YouTube Scripts
 
-## Quiz list
+##### Debina/Ubuntu Systems
 
-#### Q-JESC-01 - The Main Kotlin Coroutine Dispatcher
--   Q - https://www.youtube.com/shorts/R1fh4mglA_8
--   A - https://www.youtube.com/shorts/vr8lVaF4EQw
-> Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
+1.  [YouTube Install Bash Script](./linux-video-studio-install.sh)
 
-#### Q-JESC-02 - Kotlin Coroutines Unconfined Scope
--   Q - https://www.youtube.com/shorts/vrkOqzhYVSw
--   A - https://www.youtube.com/shorts/MGxvkW0t8QM
-> Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
+## References
 
-#### Q-JESC-03 - How does an unconfined coroutine regains control of a thread?
--   Q - https://www.youtube.com/shorts/8eWAaqtFjCY
--   A - https://www.youtube.com/shorts/D9TOP4nvo5A
-> Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
+-   [Filmoras To 10 Open Source editors](https://filmora.wondershare.com/video-editor/free-linux-video-editor.html)
+-   [Podcast enhance](https://podcast.adobe.com/enhance)
+-   [Using a Canon DSLR as a webcam with Debian/Ubuntu](https://maximevaillancourt.com/blog/canon-dslr-webcam-debian-ubuntu)
 
-#### Q-JESC-04 - MutableSharedFlow Quiz. What would the emit do in this case?
--   Q - https://www.youtube.com/shorts/h2fLc2d5yr4
--   A1 - https://www.youtube.com/shorts/rZCcfAA-xGs
--   A2 - https://www.youtube.com/shorts/PCuRO97ZegM
-> Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
+## Recording Linux tips
 
-#### Q-JESC-05 - Dispatchers.IO parallelism
--   Q1 - https://www.youtube.com/shorts/6LRUIdKsUo4
--   Q2 - https://www.youtube.com/shorts/1LCzZY5SQvM
--   A1of2 - https://www.youtube.com/shorts/B-Eq7AuvzVE
--   A2of2 - https://www.youtube.com/shorts/u0P4wrH1_M8
-> Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
+```shell
+sudo apt-get reinstall gphoto2 v4l2loopback-utils v4l2loopback-dkms ffmpeg build-essential libelf-dev linux-headers-$(uname -r) unzip vlc
+sudo modprobe v4l2loopback
+gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4
+vlc v4l2:///dev/video4
+streamer -t 0:1:0 -c /dev/video4 -f rgb24 -r 60 -o test.avi -C /dev/dsp4
+```
 
-#### Q-JESC-06 - Cancellation in Kotlin Coroutines
--   Q1 - https://www.youtube.com/shorts/whGuYl5IgUM
-> Location: [jeorg-kotlin-test-drives](https://github.com/jesperancinha/jeorg-kotlin-test-drives)
+```shell
+sudo apt-get install alsa-utils
+pulseaudio --start
+```
+
+```shell
+sudo apt-get install ffmpeg
+ffmpeg -i $INPUT.mp4 $OUTPUT.mp3
+```
 
 ## About me
 
