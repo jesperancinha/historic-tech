@@ -8,7 +8,7 @@
 
 ##### Debina/Ubuntu Systems
 
-1.  [YouTube Install Bash Script](./linux-video-studio-install.sh)
+1.  [Linux studio Install Bash Script](./linux-video-studio-install.sh)
 
 ## References
 
