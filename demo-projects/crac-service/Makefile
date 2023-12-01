@@ -16,7 +16,7 @@ b: build-gradle
 build-gradle:
 	$(SETUP); \
 	./gradlew build
-start-service:
+start-service: cleanup
 	$(SETUP); \
 	java -jar build/libs/crac-service-0.0.1-SNAPSHOT.jar
 start-service-crac: cleanup
@@ -29,5 +29,6 @@ create-checkpoint:
 start-checkpoint:
 	$(SETUP); \
 	java -XX:CRaCRestoreFrom=./tmp_checkpoint
+	make cleanup
 cleanup:
 	rm -rf tmp_checkpoint
