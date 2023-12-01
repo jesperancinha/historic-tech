@@ -19,10 +19,15 @@ build-gradle:
 start-service:
 	$(SETUP); \
 	java -jar build/libs/crac-service-0.0.1-SNAPSHOT.jar
-start-service-crac:
+start-service-crac: cleanup
 	$(SETUP); \
 	java -version; \
 	java -XX:CRaCCheckpointTo=./tmp_checkpoint -jar build/libs/crac-service-0.0.1-SNAPSHOT.jar
 create-checkpoint:
 	$(SETUP); \
 	jcmd build/libs/crac-service-0.0.1-SNAPSHOT.jar JDK.checkpoint
+start-checkpoint:
+	$(SETUP); \
+	java -XX:CRaCRestoreFrom=./tmp_checkpoint
+cleanup:
+	rm -rf tmp_checkpoint
