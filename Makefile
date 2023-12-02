@@ -16,7 +16,9 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					demo-projects/jeorg-overlays-group-1-spring \
 					demo-projects/coroutines-demo \
 					experiments/coroutine-builders \
-					experiments/annotations-demo
+					experiments/annotations-demo \
+					experiments/generics-demo \
+					experiments/channels
 b: buildw
 build: buildw
 buildw:

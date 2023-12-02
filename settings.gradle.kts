@@ -18,3 +18,5 @@ include("experiments:coroutine-builders")
 include("experiments:annotations-demo")
 include("demo-projects:k2-compiler")
 findProject(":demo-projects:k2-compiler")?.name = "k2-compiler"
+include("experiments:generics-demo")
+findProject(":experiments:generics-demo")?.name = "generics-demo"
