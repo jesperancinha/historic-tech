@@ -20,3 +20,5 @@ include("demo-projects:k2-compiler")
 findProject(":demo-projects:k2-compiler")?.name = "k2-compiler"
 include("experiments:generics-demo")
 findProject(":experiments:generics-demo")?.name = "generics-demo"
+include("experiments:koin-example")
+findProject(":experiments:koin-example")?.name = "koin-example"

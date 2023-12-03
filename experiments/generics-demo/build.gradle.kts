@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.jesperancinha"
-version = "unspecified"
+version = "0.0.0"
 
 repositories {
     mavenCentral()
@@ -14,6 +14,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.test {
+kotlin {
+    jvmToolchain(21)
+}
+
+tasks.withType<Test> {
     useJUnitPlatform()
 }

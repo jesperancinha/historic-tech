@@ -13,16 +13,18 @@ sealed class MarbleBag {
     sealed class MetalMarbleBag : MarbleBag()
 }
 
-fun generateMarbleBagWork(marble: Marble) : ()-> Unit= when (marble) {
-        Wooden -> {
-            { workMarbleBag<WoodenMarbleBag>() }
-        }
-        Glass -> {
-            { workMarbleBag<GlassMarbleBag>() }
-        }
-        Metal -> {
-            { workMarbleBag<MetalMarbleBag>() }
-        }
+fun generateMarbleBagWork(marble: Marble): () -> Unit = when (marble) {
+    Wooden -> {
+        { workMarbleBag<WoodenMarbleBag>() }
+    }
+
+    Glass -> {
+        { workMarbleBag<GlassMarbleBag>() }
+    }
+
+    Metal -> {
+        { workMarbleBag<MetalMarbleBag>() }
+    }
 }
 
 inline fun <reified T> workMarbleBag() {
