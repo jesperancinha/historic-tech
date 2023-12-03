@@ -22,3 +22,5 @@ include("experiments:generics-demo")
 findProject(":experiments:generics-demo")?.name = "generics-demo"
 include("experiments:koin-example")
 findProject(":experiments:koin-example")?.name = "koin-example"
+include("experiments:supabase-demo")
+findProject(":experiments:supabase-demo")?.name = "supabase-demo"
