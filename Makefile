@@ -28,7 +28,8 @@ buildw:
   		export CURRENT=$(shell pwd); \
   		echo "Building $$location..."; \
 		cd $$location; \
-		gradle build -x test; \
+		make b; \
+		gradle -x test; \
 		cd $$CURRENT; \
 	done
 upgrade:
@@ -84,4 +85,7 @@ sdk-man-install:
 	curl -s "https://get.sdkman.io" | bash; \
 	source "$(HOME)/.sdkman/bin/sdkman-init.sh"; \
 	export SDKMAN_DIR="$(HOME)/.sdkman"; \
-    [[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]];
+    [[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]]; \
+    sdk install kotlin
+install:
+	sdk install kotlin

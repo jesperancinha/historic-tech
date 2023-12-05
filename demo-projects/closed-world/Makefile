@@ -5,8 +5,8 @@ SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
          	source "$(HOME)/.sdkman/bin/sdkman-init.sh"
 
 # Make sure to add kotlin-stdlib-<VERSION>.jar with path to -classpath
-# If you have 1.9.20 installed then you can ignore this.
-STDLIB ?= "$(HOME)/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.20/kotlin-stdlib-1.9.20.jar"
+# If you have 1.9.21 installed then you can ignore this.
+STDLIB ?= "$(HOME)/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar"
 
 test-gradle:
 	$(SETUP); \
@@ -64,7 +64,7 @@ test-kotlin-jar:
 	java -jar target/calculator.jar Add add 1 2; \
 	java -jar target/calculator.jar Add join 1 2
 # Make sure to add kotlin-stdlib-<VERSION>.jar with path to -classpath
-# Example java -classpath kotlin-stdlib-1.9.20.jar:target/. Calculator Add add 1 2
+# Example java -classpath kotlin-stdlib-1.9.21.jar:target/. Calculator Add add 1 2
 test-kotlin-class:
 	$(SETUP); \
 	java -classpath $(STDLIB):target/. Calculator Add add 1 2; \
