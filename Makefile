@@ -27,7 +27,9 @@ buildw:
 	@for location in $(MODULE_LOCATIONS); do \
   		export CURRENT=$(shell pwd); \
   		echo "Building $$location..."; \
+		pwd; \
 		cd $$location; \
+		pwd; \
 		make b; \
 		gradle -x test; \
 		cd $$CURRENT; \

@@ -1,13 +1,11 @@
-include ../../Makefile
-
 b: build-gradle-report
 build-gradle: build-dll
 	./gradlew build test
 build-gradle-report: build-dll
-	gradle wrapper --gradle-version $(GRADLE_VERSION);
+	gradle wrapper; \
 	./gradlew clean build test jacocoTestReport -i
 build-wrapper:
-	gradle wrapper --gradle-version $(GRADLE_VERSION);
+	gradle wrapper;
 build-dll:
 	if [ -f "src/main/resources/DozenCount.dll" ]; then rm src/main/resources/DozenCount.dll; fi
 	if [ -f "src/main/resources/dozenCount.dll" ]; then rm src/main/resources/dozenCount.dll; fi
