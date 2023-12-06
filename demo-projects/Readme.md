@@ -1,8 +1,4 @@
-# YouTube Sessions support materials
-
-| Project                              | Description | Frameworks                                       | Language |
-|--------------------------------------|---|--------------------------------------------------|---|
-| [Spot On App](long-videos/spot-on) | A coroutines based reactive web application. We create a simple application, going through the relevant details and some curious things. This application could be created in 10 minutes but because of the details the 3 sessions take about 1 hour | Spring, Spring-Boot, Project Reactor, Coroutines | Kotlin |
+# Demo projects
 
 ## Video Studio Scripts
 
@@ -16,6 +12,7 @@
 -   [Podcast enhance](https://podcast.adobe.com/enhance)
 -   [Using a Canon DSLR as a webcam with Debian/Ubuntu](https://maximevaillancourt.com/blog/canon-dslr-webcam-debian-ubuntu)
 -   [G'MIC plugin for GIMP](https://gmic.eu/download.html)
+-   [Fake Whatsup](https://www.fakewhats.com/generator)
 
 ## Recording Linux tips
 
