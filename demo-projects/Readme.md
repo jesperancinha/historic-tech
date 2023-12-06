@@ -36,6 +36,12 @@ pulseaudio --start
 sudo apt-get install ffmpeg
 ffmpeg -i $INPUT.mp4 $OUTPUT.mp3
 ```
+## Ideal prompt with ZSH
+
+#### 1. For videos
+```shell
+PS1='%1d$ '
+```
 
 ## About me
 
