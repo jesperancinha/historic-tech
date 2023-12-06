@@ -32,3 +32,15 @@ start-checkpoint:
 	make cleanup
 cleanup:
 	rm -rf tmp_checkpoint
+docker-build-start:
+	docker-compose up --build
+docker-start:
+	docker-compose up -d
+docker-start-service:
+	docker-compose exec crac_service java -jar /opt/app/crac-service-0.0.1-SNAPSHOT.jar
+docker-start-service-crac:
+	docker-compose exec crac_service java -XX:CRaCCheckpointTo=./tmp_checkpoint -jar /opt/app/crac-service-0.0.1-SNAPSHOT.jar
+docker-checkpoint-service-crac:
+	docker-compose exec crac_service jcmd /opt/app/crac-service-0.0.1-SNAPSHOT.jar JDK.checkpoint
+docker-resume-service-crac:
+	docker-compose exec crac_service java -XX:CRaCRestoreFrom=./tmp_checkpoint
