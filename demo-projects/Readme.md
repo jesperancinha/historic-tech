@@ -15,6 +15,7 @@
 -   [Filmoras To 10 Open Source editors](https://filmora.wondershare.com/video-editor/free-linux-video-editor.html)
 -   [Podcast enhance](https://podcast.adobe.com/enhance)
 -   [Using a Canon DSLR as a webcam with Debian/Ubuntu](https://maximevaillancourt.com/blog/canon-dslr-webcam-debian-ubuntu)
+-   [G'MIC plugin for GIMP](https://gmic.eu/download.html)
 
 ## Recording Linux tips
 

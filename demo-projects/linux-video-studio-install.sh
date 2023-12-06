@@ -19,3 +19,4 @@ sudo apt install kdenlive mediainfo -y
 sudo snap install glaxnimate
 sudo snap install shotcut --classic
 sudo snap install gimp
+sudo apt install gimp-gmic
