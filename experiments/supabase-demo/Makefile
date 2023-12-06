@@ -16,4 +16,8 @@ start-docker:
 	docker compose up -d
 stop-docker:
 	cd supabase/docker; \
-	docker compose down; \
+	docker compose down;
+clean:
+	if [ -d supabase ]; then \
+	   rm -r supabase; \
+	fi
