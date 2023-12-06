@@ -22,3 +22,4 @@ Running the Makefile in the IDE creates some pointers that may confuse the whole
 -   [SpringBoot 3.2 + CRaC](https://foojay.io/today/springboot-3-2-crac/)
 -   [CRIU on Wikipedia](https://en.wikipedia.org/wiki/CRIU)
 -   [CRaC (Coordinated Restore at Checkpoint)](https://openjdk.org/projects/crac/)
+-   [Introduction to Project CRaC: Enhancing Runtime Efficiency in Java & Spring Development](https://www.youtube.com/watch?v=sVXUx_Y4hRU)
