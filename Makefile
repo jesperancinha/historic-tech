@@ -20,7 +20,8 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					experiments/generics-demo \
 					experiments/channels \
 					experiments/koin-example \
-					experiments/supabase-demo
+					experiments/supabase-demo \
+					experiments/dokka-multilevel
 b: buildw
 build: buildw
 buildw:

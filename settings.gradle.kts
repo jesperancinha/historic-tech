@@ -24,3 +24,5 @@ include("experiments:koin-example")
 findProject(":experiments:koin-example")?.name = "koin-example"
 include("experiments:supabase-demo")
 findProject(":experiments:supabase-demo")?.name = "supabase-demo"
+//include("experiments:dokka-multilevel")
+//findProject(":experiments:dokka-multilevel")?.name = "dokka-multilevel"
