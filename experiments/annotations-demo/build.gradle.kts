@@ -1,4 +1,4 @@
-import org.gradle.api.JavaVersion.VERSION_19
+import org.gradle.api.JavaVersion.VERSION_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotest_version:String by project
@@ -15,7 +15,7 @@ group = "org.jesperancinha"
 version = "0.0.1-SNAPSHOT"
 
 java {
-	sourceCompatibility = VERSION_19
+	sourceCompatibility = VERSION_21
 }
 
 repositories {
@@ -32,12 +32,12 @@ dependencies {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs += "-Xjsr305=strict"
-		jvmTarget = "19"
+		jvmTarget = "21"
 	}
 }
 
 kotlin {
-	jvmToolchain(19)
+	jvmToolchain(21)
 }
 
 tasks.withType<Test> {
