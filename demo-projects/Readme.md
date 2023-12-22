@@ -33,6 +33,11 @@ pulseaudio --start
 sudo apt-get install ffmpeg
 ffmpeg -i $INPUT.mp4 $OUTPUT.mp3
 ```
+
+```shell
+sudo apt-get install gimp-gmic
+```
+
 ## Ideal prompt with ZSH
 
 #### 1. For videos
