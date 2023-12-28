@@ -13,6 +13,7 @@
 -   [Using a Canon DSLR as a webcam with Debian/Ubuntu](https://maximevaillancourt.com/blog/canon-dslr-webcam-debian-ubuntu)
 -   [G'MIC plugin for GIMP](https://gmic.eu/download.html)
 -   [Fake Whatsup](https://www.fakewhats.com/generator)
+-   [Vidyo AI](https://app.vidyo.ai/)
 
 ## Recording Linux tips
 
