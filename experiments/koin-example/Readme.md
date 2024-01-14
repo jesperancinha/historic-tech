@@ -1,4 +1,4 @@
-# streams-gb-kafka
+# koin-example
 
 ## About me
 
