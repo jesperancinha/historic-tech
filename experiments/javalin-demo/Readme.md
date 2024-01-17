@@ -1,4 +1,4 @@
-# streams-gb-kafka
+# javalin-demo
 
 ## About me
 

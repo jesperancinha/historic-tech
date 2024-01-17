@@ -1,4 +1,4 @@
-# streams-gb-kafka
+# generics-demo
 
 ## About me
 

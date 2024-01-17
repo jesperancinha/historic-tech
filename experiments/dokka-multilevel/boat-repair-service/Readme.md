@@ -1,4 +1,4 @@
-# streams-gb-kafka
+# boat-repair-service
 
 ## About me
 

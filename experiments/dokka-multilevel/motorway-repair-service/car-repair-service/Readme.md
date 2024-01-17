@@ -1,4 +1,4 @@
-# streams-gb-kafka
+# car-repair-service
 
 ## About me
 
