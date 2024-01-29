@@ -45,6 +45,8 @@ local-pipeline: compile-only compile-only-jar test-jar
 compile-kotlin-only:
 	$(SETUP); \
 	kotlinc src/main/Calculator.kt -include-runtime -d target -classpath $(STDLIB):.
+compile-kotlin-only-with-kotlin:
+	kotlinc src/main/Calculator.kt -include-runtime -d target
 compile-native-kotlin-only:
 	$(SETUP); \
 	cd target; \
