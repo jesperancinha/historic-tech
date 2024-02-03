@@ -39,6 +39,13 @@ ffmpeg -i $INPUT.mp4 $OUTPUT.mp3
 sudo apt-get install gimp-gmic
 ```
 
+##### Make film from images
+
+
+```shell
+ffmpeg -framerate 60 -pattern_type glob -i '*.jpeg' -c:v libx264 -r 60 -pix_fmt yuv420p output.mp4
+```
+
 ## Ideal prompt with ZSH
 
 #### 1.  For videos
