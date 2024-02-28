@@ -4,3 +4,5 @@ install-all:
 run-example:
 	cobc -x factorial.cob
 	./factorial
+	cobc -x -free factorial-recursive.cob
+	./factorial-recursive
