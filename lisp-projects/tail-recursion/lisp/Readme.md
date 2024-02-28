@@ -8,11 +8,11 @@ apt-get install rlwrap
 apt-get install cl-quicklisp
 ```
 
-```lisp
+```common lisp
 (load "/usr/share/common-lisp/source/quicklisp/quicklisp.lisp")
 (quicklisp-quickstart:install)
-(ql:quickload "str")
 (ql:quickload '("str" "cl-ppcre" "alexandria", "cl-project", "rove"))
+(ql:quickload "str")
 (ql:quickload "cl-project")
 (ql:quickload "rove")
 ```
