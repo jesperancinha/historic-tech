@@ -12,17 +12,46 @@ apt-get install cl-quicklisp
 (load "/usr/share/common-lisp/source/quicklisp/quicklisp.lisp")
 (quicklisp-quickstart:install)
 (ql:quickload "str")
-(ql:quickload '("str" "cl-ppcre" "alexandria"))
+(ql:quickload '("str" "cl-ppcre" "alexandria", "cl-project", "rove"))
+(ql:quickload "cl-project")
+(ql:quickload "rove")
+```
+
+## After install
+
+```common lisp
+(ql:quickload "str")
 (ql:quickload "cl-project")
 (ql:quickload "rove")
 ```
 
 ## Project creation
 
-```lisp
+```common lisp
 (cl-project:make-project #P"./tailrec-lisp")
 (in-package :tailrec-lisp)
+(asdf:test-system :tailrec-lisp)
+(pushnew "./tailrec-lisp" asdf:*central-registry* :test #'equal)
+(setf *print-case* :downcase)
+(require "asdf")
+(asdf:load-asd (merge-pathnames "tailrec-lisp/tailrec-lisp.asd" (uiop:getcwd)))
+```
 
+## Loading
+
+```common lisp
+(require "asdf")
+(load (merge-pathnames "~/quicklisp/setup.lisp" (uiop:getcwd)))
+(ql:quickload '("str" "cl-ppcre" "alexandria" "cl-project" "rove"))
+(asdf:load-asd (merge-pathnames "tailrec-lisp/tailrec-lisp.asd" (uiop:getcwd)))
+(asdf:test-system :tailrec-lisp)
+```
+
+## Others
+
+```common lisp
+(load "/home/jesperancinha/quicklisp/setup.lisp")
+(asdf:load-asd #P"./tailrec-lisp.asd")
 ```
 
 ## Resources
