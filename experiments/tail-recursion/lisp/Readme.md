@@ -44,7 +44,10 @@ apt-get install cl-quicklisp
 (load (merge-pathnames "~/quicklisp/setup.lisp" (uiop:getcwd)))
 (ql:quickload '("str" "cl-ppcre" "alexandria" "cl-project" "rove"))
 (asdf:load-asd (merge-pathnames "tailrec-lisp/tailrec-lisp.asd" (uiop:getcwd)))
+(asdf:load-system :tailrec-lisp)
 (asdf:test-system :tailrec-lisp)
+(tailrec-lisp:two-power-of 3)
+(quit)
 ```
 
 ## Others
@@ -53,6 +56,10 @@ apt-get install cl-quicklisp
 (load "/home/jesperancinha/quicklisp/setup.lisp")
 (asdf:load-asd #P"./tailrec-lisp.asd")
 ```
+
+## Exiting
+
+The best way to quit the `sbcl` console is to simply press Ctr-C at any point and just evaluate `(quit)` wherever that lands you.
 
 ## Resources
 
