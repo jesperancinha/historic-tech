@@ -4,4 +4,5 @@
       accumulator
       (factorial-iter (- n 1) (* n accumulator))))
   (factorial-iter n 1))
-(display(factorial 4))
+(display "The factorial of 5 is ")
+(display(factorial 5))

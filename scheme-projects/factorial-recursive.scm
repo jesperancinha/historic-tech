@@ -2,4 +2,5 @@
   (if (= x 0)
     1
     (* x (factorial (- x 1)))))
-(display(factorial 4))
+(display "The factorial of 5 is ")
+(display(factorial 5))
