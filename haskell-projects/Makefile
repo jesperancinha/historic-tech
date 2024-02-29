@@ -2,10 +2,23 @@ install-all:
 	curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 start:
 	ghci
+run-demo-profile:
+	ghc -v -O -O2 -prof -fprof-auto factorial-recursive.hs -o factorial-recursive
+	./factorial-recursive +RTS -p -RTS
+	ghc -v -O -O2  -prof -fprof-auto factorial-recursive-tco.hs -o factorial-recursive-tco
+	./factorial-recursive-tco +RTS -p -RTS
 run-demo:
 	ghc factorial-recursive.hs -o factorial-recursive
 	./factorial-recursive
-run-dumps:
-	ghc -O2 -ddump-simpl factorial-recursive.hs
-	ghc -O2 -S factorial-recursive.hs
+	ghc factorial-recursive-tco.hs -o factorial-recursive-tco
+	./factorial-recursive-tco
+run-dumps: run-intermediate-dump run-assembly-dump
 	ghc -O2 -prof -fprof-auto factorial-recursive.hs
+run-intermediate-dump:
+	ghc -O2 -ddump-simpl factorial-recursive.hs
+run-intermediate-dump-tco:
+	ghc -O2 -ddump-simpl factorial-recursive-tco.hs
+run-assembly-dump:
+	ghc -O2 -S factorial-recursive.hs
+run-assembly-dump-tco:
+	ghc -O2 -S factorial-recursive-tco.hs

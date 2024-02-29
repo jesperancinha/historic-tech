@@ -1,4 +1,6 @@
 factorial-recursive
+factorial-recursive-tco
 *.hi
 *.o
 *.s
+*.prof
