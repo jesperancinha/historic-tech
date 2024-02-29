@@ -7,14 +7,14 @@ run-demo-profile:
 	./factorial-recursive +RTS -p -RTS
 	ghc -v -O -O2  -prof -fprof-auto factorial-recursive-tco.hs -o factorial-recursive-tco
 	./factorial-recursive-tco +RTS -p -RTS
-	ghc -v -O -O2  -prof -fprof-auto factorial-non-recursive.hs -o factorial-non-recursive
+	ghc -v -O -O2  -prof -fprof-auto factorial-non-tail-recursive -o factorial-non-recursive
 	./factorial-non-recursive +RTS -p -RTS
 run-demo:
 	ghc factorial-recursive.hs -o factorial-recursive
 	./factorial-recursive
 	ghc factorial-recursive-tco.hs -o factorial-recursive-tco
 	./factorial-recursive-tco
-	ghc factorial-non-recursive.hs -o factorial-non-recursive
+	ghc factorial-non-tail-recursive -o factorial-non-recursive
 	./factorial-non-recursive
 run-dumps: run-intermediate-dump run-assembly-dump
 	ghc -O2 -prof -fprof-auto factorial-recursive.hs
