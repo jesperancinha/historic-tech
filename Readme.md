@@ -34,6 +34,7 @@ Finally, please remember to stay up to dat to the changes on this repo on: [Log 
 -   [GoLang projects](./golang-projects) - Projects made in Go
 -   [LISP Projects](./lisp-projects) - All projects implemented with the LISP language (the language started in the late 1950's)
 -   [COBOL Projects](./cobol-projects) - Irrelevant today, but it is here to highlight its historic significance
+-   [Fortran Projects](./fortran-projects) - Irrelevant today, but it is here to highlight its historic significance
 
 ## Setup
 
