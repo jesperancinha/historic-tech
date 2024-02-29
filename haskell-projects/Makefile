@@ -14,6 +14,8 @@ run-demo:
 	./factorial-recursive
 	ghc factorial-recursive-tco.hs -o factorial-recursive-tco
 	./factorial-recursive-tco
+	ghc factorial-non-recursive.hs -o factorial-non-recursive
+	./factorial-non-recursive
 run-dumps: run-intermediate-dump run-assembly-dump
 	ghc -O2 -prof -fprof-auto factorial-recursive.hs
 run-intermediate-dump:
