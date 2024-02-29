@@ -1,4 +1,4 @@
-# asnsei-the-right-waf
+# Tail Recursion with TCO (Tail Cal Optimization)
 
 ## Install LISP
 
@@ -28,13 +28,16 @@ apt-get install cl-quicklisp
 ## Project creation
 
 ```common lisp
-(cl-project:make-project #P"./tailrec-lisp")
-(in-package :tailrec-lisp)
-(asdf:test-system :tailrec-lisp)
-(pushnew "./tailrec-lisp" asdf:*central-registry* :test #'equal)
+(require "asdf")
+(load (merge-pathnames "~/quicklisp/setup.lisp" (uiop:getcwd)))
+(ql:quickload '("str" "cl-ppcre" "alexandria" "cl-project" "rove"))
+(cl-project:make-project #P"./tailrec-lisp-tco")
+(in-package :tailrec-lisp-tco)
+(asdf:test-system :tailrec-lisp-tco)
+(pushnew "./tailrec-lisp-tco" asdf:*central-registry* :test #'equal)
 (setf *print-case* :downcase)
 (require "asdf")
-(asdf:load-asd (merge-pathnames "tailrec-lisp/tailrec-lisp.asd" (uiop:getcwd)))
+(asdf:load-asd (merge-pathnames "tailrec-lisp-tco.asd" (uiop:getcwd)))
 ```
 
 ## Loading
@@ -43,10 +46,10 @@ apt-get install cl-quicklisp
 (require "asdf")
 (load (merge-pathnames "~/quicklisp/setup.lisp" (uiop:getcwd)))
 (ql:quickload '("str" "cl-ppcre" "alexandria" "cl-project" "rove"))
-(asdf:load-asd (merge-pathnames "tailrec-lisp/tailrec-lisp.asd" (uiop:getcwd)))
-(asdf:load-system :tailrec-lisp)
-(asdf:test-system :tailrec-lisp)
-(tailrec-lisp:two-power-of 3)
+(asdf:load-asd (merge-pathnames "tailrec-lisp-tco.asd" (uiop:getcwd)))
+(asdf:load-system :tailrec-lisp-tco)
+(asdf:test-system :tailrec-lisp-tco)
+(tailrec-lisp-tco:two-power-of 3)
 (quit)
 ```
 
@@ -54,7 +57,7 @@ apt-get install cl-quicklisp
 
 ```common lisp
 (load "/home/jesperancinha/quicklisp/setup.lisp")
-(asdf:load-asd #P"./tailrec-lisp.asd")
+(asdf:load-asd #P"./tailrec-lisp-tco.asd")
 ```
 
 ## Exiting

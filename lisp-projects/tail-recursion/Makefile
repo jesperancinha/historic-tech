@@ -6,5 +6,3 @@ start-sbcl:
 	sbcl --load /usr/share/common-lisp/source/quicklisp/quicklisp.lisp
 start:
 	rlwrap sbcl
-
-
