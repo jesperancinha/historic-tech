@@ -5,3 +5,7 @@ start:
 run-demo:
 	ghc factorial-recursive.hs -o factorial-recursive
 	./factorial-recursive
+run-dumps:
+	ghc -O2 -ddump-simpl factorial-recursive.hs
+	ghc -O2 -S factorial-recursive.hs
+	ghc -O2 -prof -fprof-auto factorial-recursive.hs

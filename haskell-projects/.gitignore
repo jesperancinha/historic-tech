@@ -1,2 +1,4 @@
 factorial-recursive
 *.hi
+*.o
+*.s
