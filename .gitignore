@@ -55,4 +55,6 @@ gradle-wrapper.jar
 .gradle
 gradle/wrapper/gradle-wrapper.jar
 
-
+# Lein
+.lsp
+.clj-kondo
