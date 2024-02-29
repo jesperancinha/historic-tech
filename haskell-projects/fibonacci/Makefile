@@ -1,0 +1,25 @@
+install-all:
+	curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+start:
+	ghci
+run-demo-profile:
+	ghc -v -O -O2 -prof -fprof-auto fibonacci.hs -o fibonacci
+	./fibonacci +RTS -p -RTS
+run-demo: run-demo-fast
+	ghc fibonacci.hs -o fibonacci
+	./fibonacci
+run-demo-fast:
+	ghc fibonacci-iterative.hs -o fibonacci-iterative
+	./fibonacci-iterative
+	ghc fibonacci-tail-rec.hs -o fibonacci-tail-rec
+	./fibonacci-tail-rec
+run-dumps: run-intermediate-dump run-assembly-dump
+	ghc -O2 -prof -fprof-auto fibonacci.hs
+run-intermediate-dump:
+	ghc -O2 -ddump-simpl fibonacci.hs
+run-intermediate-dump-tco:
+	ghc -O2 -ddump-simpl fibonacci-tco.hs
+run-assembly-dump:
+	ghc -O2 -S fibonacci.hs
+run-assembly-dump-tco:
+	ghc -O2 -S fibonacci-tco.hs
