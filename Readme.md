@@ -33,11 +33,12 @@ Finally, please remember to stay up to dat to the changes on this repo on: [Log 
 -   [Experiments](./experiments) - Experimental projects that aren't considered stable, nor do they serve a specific purpose. They are purely experimental, and they may be moved to [Demo projects](./demo-projects) when they meet the requirements.
 -   [GoLang projects](./golang-projects) - Projects made in Go
 -   [LISP Projects](./lisp-projects) - All projects implemented with the LISP language (the language started in the late 1950's)
--   [Scheme Projects](./fortran-projects) -  All projects implemented with the LISP language (the language started in the late 1970's)
--   [COBOL Projects](./cobol-projects) - Irrelevant today, but it is here to highlight its historic significance
--   [Fortran Projects](./fortran-projects) - Irrelevant today, but it is here to highlight its historic significance
--   [Haskell Projects](./haskell-projects) - Haskell Projects
+-   [Scheme Projects](./fortran-projects) -  All projects implemented with the Scheme language (the language started in the late 1970's)
+-   [COBOL Projects](./cobol-projects) - [COBOL](https://gnucobol.sourceforge.io/faq/index.html) Projects
+-   [Fortran Projects](./fortran-projects) - [Fortran](https://fortran-lang.org/) Projects
+-   [Haskell Projects](./haskell-projects) - [Haskell](https://www.haskell.org/) Projects
 -   [SML Projects](sml-projects) - ML Projects for [SML](https://www.smlnj.org/sml.html)
+-   [Erlang Projects](./erlang-projects) - [Erlang](https://www.erlang.org/) Projects
 
 ## Setup
 
