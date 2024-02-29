@@ -1,0 +1,17 @@
+bin
+base
+config
+lib
+ml-yacc
+MLRISC.tgz
+MLRISC
+smlnj-lib
+trace-debug-profile
+*.tgz
+*.standard
+doc
+ckit
+cml
+ml-lpt
+ml-lex
+ml-burg

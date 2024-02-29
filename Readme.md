@@ -37,6 +37,7 @@ Finally, please remember to stay up to dat to the changes on this repo on: [Log 
 -   [COBOL Projects](./cobol-projects) - Irrelevant today, but it is here to highlight its historic significance
 -   [Fortran Projects](./fortran-projects) - Irrelevant today, but it is here to highlight its historic significance
 -   [Haskell Projects](./haskell-projects) - Haskell Projects
+-   [SML Projects](sml-projects) - ML Projects for [SML](https://www.smlnj.org/sml.html)
 
 ## Setup
 
