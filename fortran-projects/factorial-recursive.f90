@@ -3,11 +3,7 @@ program FactorialTailRecursionExample
 
   integer :: n, result
 
-  ! Prompt the user for input
-  print *, "For which number do you want to calculate the factorial:"
-  read *, n
-
-  ! Call the factorial function and print the result
+  n = 5
   result = factorial(n)
   print *, "Factorial of", n, "is", result
 
