@@ -1,21 +1,26 @@
-IDENTIFICATION DIVISION.
-PROGRAM-ID. FactorialExample.
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. SAMPLE.
 
-DATA DIVISION.
-WORKING-STORAGE SECTION.
-01 Num PIC 9(3) VALUE 5.
-01 Result PIC 9(9) VALUE 1.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
 
-PROCEDURE DIVISION.
-    CALL 'FACTORIAL'.
-    DISPLAY "Factorial of 5 is " Result.
-    STOP RUN.
+         77 n pic 99.
+         77 i pic 99.
+         77 tnumber pic XX.
+         77 fact pic 9(18) comp.
+         77 factst pic X(18).
 
-    ENTRY 'FACTORIAL'.
-    IF Num <= 1 THEN
-        EXIT PROGRAM
-    ELSE
-        MULTIPLY Num BY Result
-        SUBTRACT 1 FROM Num
-        CALL 'FACTORIAL'
-    END-IF.
+       PROCEDURE DIVISION.
+         MOVE 0 to i
+         MOVE 1 to fact
+         MOVE 20 to n
+         PERFORM until i greater than n
+           MOVE i to tnumber
+           MOVE fact to factst
+           DISPLAY "Factorial of " tnumber " or " tnumber "! = " factst
+           ADD 1 to i
+           MULTIPLY i by fact
+             ON SIZE ERROR DISPLAY "result overflow!"
+           END-MULTIPLY
+         END-PERFORM.
+         STOP RUN.

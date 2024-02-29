@@ -1,2 +1,2 @@
-factorial.o
-a.out
+*.o
+*.out
