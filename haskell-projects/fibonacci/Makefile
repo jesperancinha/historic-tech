@@ -3,11 +3,11 @@ install-all:
 start:
 	ghci
 run-demo-profile:
-	ghc -v -O -O2 -prof -fprof-auto fibonacci.hs -o fibonacci
-	./fibonacci +RTS -p -RTS
+	ghc -v -O -O2 -prof -fprof-auto fibonacci-recursive.hs -o fibonacci-recursive
+	./fibonacci-recursive +RTS -p -RTS
 run-demo: run-demo-fast
-	ghc fibonacci.hs -o fibonacci
-	./fibonacci
+	ghc fibonacci-recursive.hs -o fibonacci-recursive
+	./fibonacci-recursive
 run-demo-fast:
 	ghc fibonacci-iterative.hs -o fibonacci-iterative
 	./fibonacci-iterative
