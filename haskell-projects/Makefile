@@ -7,6 +7,8 @@ run-demo-profile:
 	./factorial-recursive +RTS -p -RTS
 	ghc -v -O -O2  -prof -fprof-auto factorial-recursive-tco.hs -o factorial-recursive-tco
 	./factorial-recursive-tco +RTS -p -RTS
+	ghc -v -O -O2  -prof -fprof-auto factorial-non-recursive.hs -o factorial-non-recursive
+	./factorial-non-recursive +RTS -p -RTS
 run-demo:
 	ghc factorial-recursive.hs -o factorial-recursive
 	./factorial-recursive

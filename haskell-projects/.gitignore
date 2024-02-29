@@ -1,5 +1,6 @@
 factorial-recursive
 factorial-recursive-tco
+factorial-non-recursive
 *.hi
 *.o
 *.s
