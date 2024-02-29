@@ -50,6 +50,8 @@ apt-get install cl-quicklisp
 (asdf:load-system :tailrec-lisp)
 (asdf:test-system :tailrec-lisp)
 (tailrec-lisp:two-power-of 3)
+(format t "Factorial of 5 is ~a" (tailrec-lisp:factorial 5))
+(format t "Factorial of 5 is ~a" (tailrec-lisp:factorial-iter 5))
 (quit)
 ```
 
