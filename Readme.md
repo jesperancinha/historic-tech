@@ -36,6 +36,7 @@ Finally, please remember to stay up to dat to the changes on this repo on: [Log 
 -   [Scheme Projects](./fortran-projects) -  All projects implemented with the LISP language (the language started in the late 1970's)
 -   [COBOL Projects](./cobol-projects) - Irrelevant today, but it is here to highlight its historic significance
 -   [Fortran Projects](./fortran-projects) - Irrelevant today, but it is here to highlight its historic significance
+-   [Haskell Projects](./haskell-projects) - Haskell Projects
 
 ## Setup
 
