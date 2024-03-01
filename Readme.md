@@ -40,6 +40,7 @@ Finally, please remember to stay up to dat to the changes on this repo on: [Log 
 -   [SML Projects](sml-projects) - ML Projects for [SML](https://www.smlnj.org/sml.html)
 -   [Erlang Projects](./erlang-projects) - [Erlang](https://www.erlang.org/) Projects
 -   [Clojure Projects](./clojure-projects) - [Clojure](https://clojure.org/) Projects
+-   [Scala Projects](./scala-projects) - [Scala](https://scala-lang.org/) Projects
 
 ## Setup
 
