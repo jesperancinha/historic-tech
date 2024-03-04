@@ -1,5 +1,5 @@
-install-all:
-	curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+include ../Makefile.mk
+
 start:
 	ghci
 run-demo-profile:
