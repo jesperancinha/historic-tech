@@ -1,2 +1,1 @@
-install-all:
-	sdk install scala
+include Makefile.mk
