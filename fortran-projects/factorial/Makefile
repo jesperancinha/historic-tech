@@ -1,5 +1,5 @@
-install-all:
-	sudo apt-get install gfortran
+include ../Makefile.mk
+
 run-demo:
 	gfortran -c factorial-iterative.f90
 	gfortran factorial-iterative.f90

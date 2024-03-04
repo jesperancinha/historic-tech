@@ -1,5 +1,5 @@
-install-all:
-	sudo apt-get install gfortran
+include ../Makefile.mk
+
 run-demo-fast:
 	gfortran -c fibonacci-iterative.f90
 	gfortran fibonacci-iterative.f90

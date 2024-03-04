@@ -1,2 +1,1 @@
-install-all:
-	sudo apt-get install gfortran
+include Makefile.mk
