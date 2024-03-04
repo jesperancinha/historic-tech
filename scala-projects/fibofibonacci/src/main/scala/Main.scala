@@ -34,9 +34,32 @@ object Fibonacci {
     fibHelper(n, 0.0, 1.0)
   }
 
+
+  def fibonacciTailRecManualTCO(n: Double): Double = {
+    def fibHelper(n: Double, a: Double, b: Double): Double = {
+
+      var a = 0f
+      var b = 1f
+      var i = 0f
+      while (i < n) {
+        val temp = b
+        b = a + b
+        a = temp
+        i += 1
+      }
+      a
+
+      if (n == 0.0) a
+      else fibHelper(n - 1.0, b, a + b)
+    }
+
+    fibHelper(n, 0.0, 1.0)
+  }
+
+
   /**
    * @annotation.tailrec only marks a function to be optimized for the compiler
-   * The compiler, however will optimize this function regardless
+   * The compiler, will however, optimize this function regardless
    * @param n
    * @return
    */

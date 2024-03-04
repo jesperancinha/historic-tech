@@ -1,4 +1,6 @@
 fibonacci-recursive
 fibonacci-tail-recursive
+fibonacci50s
+fibonacci50s-recursive
 *.o
 *.out
