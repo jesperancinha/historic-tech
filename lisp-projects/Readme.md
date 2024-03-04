@@ -12,6 +12,8 @@ apt-get install rlwrap
 apt-get install cl-quicklisp
 ```
 
+Or you can just run `Make install-all`
+
 ## Quick Lisp Loading and installation
 
 ```common lisp

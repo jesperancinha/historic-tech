@@ -31,7 +31,7 @@ apt-get install cl-quicklisp
 (require "asdf")
 (load (merge-pathnames "~/quicklisp/setup.lisp" (uiop:getcwd)))
 (ql:quickload '("str" "cl-ppcre" "alexandria" "cl-project" "rove"))
-(cl-project:make-project #P"./tailrec-lisp-tco")
+(cl-project:make-project #P"./tailrec-lisp")
 (in-package :tailrec-lisp)
 (asdf:test-system :tailrec-lisp)
 (pushnew "./tailrec-lisp" asdf:*central-registry* :test #'equal)
@@ -52,6 +52,7 @@ apt-get install cl-quicklisp
 (tailrec-lisp:two-power-of 3)
 (format t "Factorial of 5 is ~a" (tailrec-lisp:factorial 5))
 (format t "Factorial of 5 is ~a" (tailrec-lisp:factorial-iter 5))
+(format t "Fibonacci of 100 is ~a" (tailrec-lisp:fibonacci-iterative 100))
 (quit)
 ```
 

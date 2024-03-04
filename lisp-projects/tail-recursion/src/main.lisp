@@ -3,7 +3,8 @@
    (:export
      #:two-power-of
      #:factorial
-     #:factorial-iter)
+     #:factorial-iter
+     #:fibonacci-iterative)
   )
 (in-package :tailrec-lisp)
 
@@ -23,7 +24,18 @@
             for result = 1 then (* result i)
             finally (return result))))
 
+(defun fibonacci-iterative (n)
+  (if (<= n 1)
+      n
+      (fib-iter 0 1 n)))
+
+(defun fib-iter (a b count)
+  (if (= count 0)
+      a
+      (fib-iter b (+ a b) (- count 1))))
+
 ;; How to use
 (tailrec-lisp:two-power-of 3)
 (format t "Factorial of 5 is ~a" (tailrec-lisp:factorial 5))
 (format t "Factorial of 5 is ~a" (tailrec-lisp:factorial-iter 5))
+(format t "Fibonacci of 100 is ~a" (tailrec-lisp:fibonacci-iterative 100))
