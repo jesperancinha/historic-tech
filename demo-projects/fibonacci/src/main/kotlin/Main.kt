@@ -29,14 +29,24 @@ class Main {
             return b
         }
 
-        fun fibonacciRecursive(n: Int): Double {
-            return if (n <= 1) n.toDouble() else fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
-        }
+        fun fibonacciRecursive(n: Int): Double =
+            if (n <= 1) n.toDouble()
+            else
+                fibonacciRecursive(n - 1) +
+                        fibonacciRecursive(n - 2)
 
-        private tailrec fun fibonacciTailRecursiveTCO(n: Int, a: Double = 0.0, b: Double = 1.0): Double = if (n == 0) a
+        private tailrec fun fibonacciTailRecursiveTCO(
+            n: Int,
+            a: Double = 0.0,
+            b: Double = 1.0
+        ): Double = if (n == 0) a
         else fibonacciTailRecursiveTCO(n - 1, b, a + b)
 
-        private fun fibonacciTailRecursive(n: Int, a: Double = 0.0, b: Double = 1.0): Double = if (n == 0) a
+        private fun fibonacciTailRecursive(
+            n: Int,
+            a: Double = 0.0,
+            b: Double = 1.0
+        ): Double = if (n == 0) a
         else fibonacciTailRecursive(n - 1, b, a + b)
     }
 }
