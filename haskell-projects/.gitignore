@@ -1,7 +1,7 @@
 factorial/factorial-recursive
 factorial/factorial-recursive-tco
 factorial/factorial-non-recursive
-fibonacci
+fibonacci-recursive
 fibonacci-iterative
 fibonacci-tail-rec
 *.hi
