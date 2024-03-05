@@ -6,3 +6,5 @@ run-example:
 	./factorial-iterative
 	cobc -x -free factorial-recursive.cob
 	./factorial-recursive
+	cobc -x -free fibonacci-iterative.cob
+	./fibonacci-iterative
