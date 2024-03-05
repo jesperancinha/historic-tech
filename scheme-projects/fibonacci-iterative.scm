@@ -4,4 +4,4 @@
       b
       (fib-iter (+ a b) a (- count 1))))
   (fib-iter 1 0 n))
-(display (fibonacci 100)) ; Output: 0
+(display (fibonacci 100))
