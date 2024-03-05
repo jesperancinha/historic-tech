@@ -11,9 +11,9 @@ SML is long not used massively, but this is a project to place it in history
 
 ```
 use "factorial-recursive.sml";
-factorial(5)
+factorial(5);
 use "factorial-recursive-tco.sml";
-factorial(5)
+factorial(5);
 ```
 
 ## Notes
