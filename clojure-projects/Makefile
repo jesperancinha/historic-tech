@@ -1,2 +1,1 @@
-install-all:
-	sdk install leiningen
+include Makefile.mk

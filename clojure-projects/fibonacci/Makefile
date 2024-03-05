@@ -1,3 +1,5 @@
+include Makefile.mk
+
 run-demo-fast:
 	lein run -m fibonacci.core/calculate-factorial 5
 	lein run -m fibonacci.core/calculate-all-fibonacci 1000
