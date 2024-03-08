@@ -68,11 +68,5 @@
       (println "The result is:" result)))
 
 (defn calculate-all-slow-fibonacci [n]
-  (let [result (fibonacci-tail-rec n)]
-    (println "The result is:" result))
   (let [result (fibonacci-recursive n)]
-    (println "The result is:" result)))
-
-(defn calculate-all-slow-single-fibonacci [n]
-  (let [result (fibonacci-tail-rec n)]
     (println "The result is:" result)))
