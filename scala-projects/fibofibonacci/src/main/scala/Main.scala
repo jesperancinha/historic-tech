@@ -1,5 +1,5 @@
 object Fibonacci {
-  def fibonacciIterative(n: Double): Double = {
+  def fibonacciIterative(n: Int): Double = {
     var a = 0f
     var b = 1f
     var i = 0f
@@ -17,26 +17,26 @@ object Fibonacci {
    * The compiler only applies optimizations in this case only if this function matches the criteria of a tail recursive functions.
    * @param n
    */
-  def fibonacciRecursive(n: Double): Double = {
+  def fibonacciRecursive(n: Int): Double = {
     if (n <= 1f) {
       n
     } else {
-      fibonacciRecursive(n - 1f) + fibonacciRecursive(n - 2f)
+      fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
     }
   }
 
-  def fibonacciTailRec(n: Double): Double = {
-    def fibHelper(n: Double, a: Double, b: Double): Double = {
+  def fibonacciTailRec(n: Int): Double = {
+    def fibHelper(n: Int, a: Double, b: Double): Double = {
       if (n == 0.0) a
-      else fibHelper(n - 1.0, b, a + b)
+      else fibHelper(n - 1, b, a + b)
     }
 
     fibHelper(n, 0.0, 1.0)
   }
 
 
-  def fibonacciTailRecManualTCO(n: Double): Double = {
-    def fibHelper(n: Double, a: Double, b: Double): Double = {
+  def fibonacciTailRecManualTCO(n: Int): Double = {
+    def fibHelper(n: Int, a: Double, b: Double): Double = {
 
       var a = 0f
       var b = 1f
@@ -48,9 +48,6 @@ object Fibonacci {
         i += 1
       }
       a
-
-      if (n == 0.0) a
-      else fibHelper(n - 1.0, b, a + b)
     }
 
     fibHelper(n, 0.0, 1.0)
@@ -63,11 +60,11 @@ object Fibonacci {
    * @param n
    * @return
    */
-  def fibonacciTailRecTCO(n: Double): Double = {
+  def fibonacciTailRecTCO(n: Int): Double = {
     @annotation.tailrec
-    def fibHelper(n: Double, a: Double, b: Double): Double = {
+    def fibHelper(n: Int, a: Double, b: Double): Double = {
       if (n == 0f) a
-      else fibHelper(n - 1f, b, a + b)
+      else fibHelper(n - 1, b, a + b)
     }
 
     fibHelper(n, 0f, 1f)
@@ -90,41 +87,41 @@ object Fibonacci {
 //    factorialHelper(n)
 //  }
 
-  def factorialUnMarkedTailRecTCO(n: Double): Double = {
-    def factorialHelper(n: Double): Double = {
+  def factorialUnMarkedTailRecTCO(n: Int): Double = {
+    def factorialHelper(n: Int): Double = {
       if (n <= 1f) 1f
-      else n * factorialHelper(n - 1f)
+      else n * factorialHelper(n - 1)
     }
 
     factorialHelper(n)
   }
 
   def main(args: Array[String]): Unit = {
-    val n = 100f
+    val n = 100
     fibonacciIterativeRun(n)
 //    fibonacciRecursiveRun(n)
-    fibonacciTailRecRun(n)
     fibonacciTailRecTCORun(n)
-    val factN = 100f
+    fibonacciTailRecRun(n)
+    val factN = 100
 //    factorialMarkedTailRecTCORun(factN)
     factorialUnMarkedTailRecTCORun(factN)
   }
 
-  def fibonacciIterativeRun(n: Double): Unit = {
+  def fibonacciIterativeRun(n: Int): Unit = {
     val result = fibonacciIterative(n)
     println(s"The $n-th Fibonacci number is: $result")
   }
 
-  def fibonacciRecursiveRun(n: Double): Unit = {
+  def fibonacciRecursiveRun(n: Int): Unit = {
     val result = fibonacciRecursive(n)
     println(s"The $n-th Fibonacci number is: $result")
   }
 
-  def fibonacciTailRecRun(n: Double): Unit = {
+  def fibonacciTailRecRun(n: Int): Unit = {
     val result = fibonacciTailRec(n)
     println(s"The $n-th Fibonacci number is: $result")
   }
-  def fibonacciTailRecTCORun(n: Double): Unit = {
+  def fibonacciTailRecTCORun(n: Int): Unit = {
     val result = fibonacciTailRecTCO(n)
     println(s"The $n-th Fibonacci number is: $result")
   }
@@ -133,7 +130,7 @@ object Fibonacci {
 //    println(s"The $n-th Factorial number is: $result")
 //  }
 
-  def factorialUnMarkedTailRecTCORun(n: Double): Unit = {
+  def factorialUnMarkedTailRecTCORun(n: Int): Unit = {
     val result = factorialUnMarkedTailRecTCO(n)
     println(s"The $n-th Factorial number is: $result")
   }
