@@ -11,6 +11,7 @@ run-demo-fast:
 					--eval '(tailrec-lisp:two-power-of 3)' \
 					--eval '(format t "Factorial of 5 is ~a" (tailrec-lisp:factorial 5))' \
    					--eval '(format t "Factorial of 5 is ~a" (tailrec-lisp:factorial-iter 5))' \
+   					--eval '(format t "Fibonacci of 100 is ~a" (tailrec-lisp:fibonacci-tail-recursive 100))' \
    					--eval '(format t "Fibonacci of 100 is ~a" (tailrec-lisp:fibonacci-iterative 100))' \
    					--eval '(quit)'
 run-demo-slow:
@@ -23,6 +24,5 @@ run-demo-slow:
 					--eval '(asdf:test-system :tailrec-lisp)' \
 					--eval '(tailrec-lisp:two-power-of 3)' \
    					--eval '(format t "Fibonacci of 100 is ~a" (tailrec-lisp:fibonacci-recursive 100))' \
-   					--eval '(format t "Fibonacci of 100 is ~a" (tailrec-lisp:fibonacci-tail-recursive 100))' \
    					--eval '(quit)'
 run-demo: run-demo-fast run-demo-slow
