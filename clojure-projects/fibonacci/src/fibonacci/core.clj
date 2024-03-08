@@ -11,15 +11,18 @@
       (recur (dec n) (* acc n)))))
   )
 
+
 (defn fibonacci-iterative [n]
-  (if (<= n 1)
-    n
-    (loop [a 0
-           b 1
-           i 1]
-      (if (= i n)
-        (+ a b)
-        (recur b (+ a b) (inc i))))))
+      (let [n (if (instance? String n)
+                    (Double/parseDouble n)
+                    n)]
+  (loop [a 0N
+         b 1N
+         count n]
+    (if (<= count 0)
+      a
+      (recur b (+' a b) (dec count)))))
+)
 
 (defn fibonacci-recursive [n]
   (let [n (if (instance? String n)
