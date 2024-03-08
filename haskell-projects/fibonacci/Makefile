@@ -3,6 +3,8 @@ include ../Makefile.mk
 start:
 	ghci
 run-demo-profile:
+	ghc -v -O -O2 -prof -fprof-auto fibonacci-tail-rec.hs -o fibonacci-recursive-tail-rec
+	./fibonacci-recursive-tail-rec +RTS -p -RTS
 	ghc -v -O -O2 -prof -fprof-auto fibonacci-recursive.hs -o fibonacci-recursive
 	./fibonacci-recursive +RTS -p -RTS
 run-demo: run-demo-fast

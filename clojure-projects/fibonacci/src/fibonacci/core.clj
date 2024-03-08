@@ -12,13 +12,14 @@
   )
 
 (defn fibonacci-iterative [n]
-  (let [n (if (instance? String n)
-              (Double/parseDouble n)
-              n)]
   (if (<= n 1)
     n
-    (let [fib-seq (take (+ 1 n) (iterate (fn [[a b]] [b (+ a b)]) [0.0 1.0]))]
-      (first (last fib-seq))))))
+    (loop [a 0
+           b 1
+           i 1]
+      (if (= i n)
+        (+ a b)
+        (recur b (+ a b) (inc i))))))
 
 (defn fibonacci-recursive [n]
   (let [n (if (instance? String n)
