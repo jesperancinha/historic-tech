@@ -1,9 +1,12 @@
-    fun fibonacci n =
-        let
-            fun fibIter(a, b, count) =
-                if count = 0 then b
-                else fibIter(b, a + b, count - 1)
-        in
-            fibIter(0, 1, n)
-        end;
-    x
+structure IntInf = IntInf
+
+fun fibonacci n =
+  let
+    fun fibIter n a b =
+      if n = 0 then
+        a
+      else
+        fibIter (n - 1) b (IntInf.+(a, b))
+  in
+    fibIter n 0 1
+  end;
