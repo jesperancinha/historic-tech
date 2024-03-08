@@ -1,4 +1,4 @@
-print ("Fibonacci of 100: " ^ IntInf.toString result ^ "\n");
+structure IntInf = IntInf
 
 fun fibonacci n =
     if n < 2 then n
