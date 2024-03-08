@@ -18,7 +18,7 @@ run-dumps: run-intermediate-dump run-assembly-dump
 run-intermediate-dump:
 	ghc -O2 -ddump-simpl fibonacci.hs
 run-intermediate-dump-tco:
-	ghc -O2 -ddump-simpl fibonacci-tco.hs
+	ghc -O2 -ddump-simpl fibonacci-tail-rec.hs
 run-assembly-dump:
 	ghc -O2 -S fibonacci.hs
 run-assembly-dump-tco:
