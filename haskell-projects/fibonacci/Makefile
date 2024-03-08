@@ -9,8 +9,6 @@ run-demo: run-demo-fast
 	ghc fibonacci-recursive.hs -o fibonacci-recursive
 	./fibonacci-recursive
 run-demo-fast:
-	ghc fibonacci-iterative.hs -o fibonacci-iterative
-	./fibonacci-iterative
 	ghc fibonacci-tail-rec.hs -o fibonacci-tail-rec
 	./fibonacci-tail-rec
 run-dumps: run-intermediate-dump run-assembly-dump
