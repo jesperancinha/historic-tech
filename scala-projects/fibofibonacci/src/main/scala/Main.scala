@@ -87,7 +87,7 @@ object Fibonacci {
 //    factorialHelper(n)
 //  }
 
-  def factorialUnMarkedTailRecTCO(n: Int): Double = {
+  def factorialUnMarked(n: Int): Double = {
     def factorialHelper(n: Int): Double = {
       if (n <= 1f) 1f
       else n * factorialHelper(n - 1)
@@ -131,7 +131,7 @@ object Fibonacci {
 //  }
 
   def factorialUnMarkedTailRecTCORun(n: Int): Unit = {
-    val result = factorialUnMarkedTailRecTCO(n)
+    val result = factorialUnMarked(n)
     println(s"The $n-th Factorial number is: $result")
   }
 }
