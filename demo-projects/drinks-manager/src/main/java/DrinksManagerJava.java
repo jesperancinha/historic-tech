@@ -26,5 +26,7 @@ public class DrinksManagerJava {
         checkCoolerState(coldDrinksService);
         checkResistenceState(genericDrinksService);
         checkCoolerState(genericDrinksService);
+
+        DrinksServiceJava<? super WarmDrink, ? extends Box> drinksFamilyBoxService = new DrinksServiceJava<Drink, FamilyBox>();
     }
 }

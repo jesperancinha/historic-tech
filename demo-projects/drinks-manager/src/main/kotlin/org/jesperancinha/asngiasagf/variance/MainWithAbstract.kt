@@ -54,6 +54,20 @@ fun checkCoolerState(drinksService: DrinksService<ColdDrink, Box>) {
 
 }
 
+
+open class ColdDrinksFamilyBoxService : DrinksService<ColdDrink, FamilyBox>() {
+    override fun getBox(): FamilyBox = FamilyBox(requireNotNull(database.remove(database.keys.last())))
+}
+
+open class ColdDrinksDeluxeBoxService : DrinksService<ColdDrink, DeluxeBox>() {
+    override fun getBox(): DeluxeBox = DeluxeBox(requireNotNull(database.remove(database.keys.last())))
+}
+
+open class ColdDrinksBoxService : DrinksService<ColdDrink, Box>() {
+    override fun getBox(): DeluxeBox = DeluxeBox(requireNotNull(database.remove(database.keys.last())))
+}
+
+
 fun main(args: Array<String>) {
     val coldDrinksService = ColdDrinksService()
     coldDrinksService.sendDrink(Lemonade())
@@ -74,5 +88,28 @@ fun main(args: Array<String>) {
     checkResistenceState(genericDrinksService)
     checkCoolerState(genericDrinksService)
 
+    val coldDrinksDeluxeBoxService = ColdDrinksDeluxeBoxService()
+
+    val coldDrinksBoxService:  DrinksService<ColdDrink, Box> = object: DrinksService<ColdDrink, FamilyBox>() {
+        override fun getBox(): FamilyBox {
+            TODO("Not yet implemented")
+        }
+    }
+//    val coldDrinksFamilyBoxService:  DrinksService<ColdDrink, FamilyBox> = object: DrinksService<ColdDrink, Box>() {
+//        override fun getBox(): Box {
+//            TODO("Not yet implemented")
+//        }
+//    }
+
+    val drinksFamilyBoxService:  DrinksService<ColdDrink, FamilyBox> = object : DrinksService<Drink, FamilyBox>() {
+        override fun getBox(): FamilyBox {
+            TODO("Not yet implemented")
+        }
+    }
+//    val coldDrinksFamilyBoxService:  DrinksService<Drink, FamilyBox> = object : DrinksService<ColdDrink, FamilyBox>() {
+//        override fun getBox(): FamilyBox {
+//            TODO("Not yet implemented")
+//        }
+//    }
     DrinksManagerJava.main(args)
 }

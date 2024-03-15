@@ -64,4 +64,6 @@ fun main(args: Array<String>) {
 
     DrinksManagerJava.main(args)
     org.jesperancinha.asngiasagf.variance.main(args)
+
+    println("Done!")
 }
