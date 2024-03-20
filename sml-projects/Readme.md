@@ -19,3 +19,7 @@ factorial(5);
 ## Notes
 
 Use Ctr-D to exit the console.
+
+## About me
+
+[![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=for-the-badge&logo=github&color=grey "GitHub")](https://github.com/jesperancinha)

@@ -10,3 +10,7 @@ For more information on the sbt-dotty plugin, see the
 ## Opening
 
 If you are opening this project in Intellij or another IDE, please open this separately from the root of the project
+
+## About me
+
+[![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=for-the-badge&logo=github&color=grey "GitHub")](https://github.com/jesperancinha)

@@ -24,3 +24,7 @@ Do not forget the dot! `.`
 ## Notes
 
 To exit the console just press `Ctr-C` multiple times.
+
+## About me
+
+[![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=for-the-badge&logo=github&color=grey "GitHub")](https://github.com/jesperancinha)
