@@ -2,16 +2,11 @@ version: 2
 updates:
 
   - package-ecosystem: "gradle"
-    directory: "/talks"
+    directory: "/"
     schedule:
       interval: "daily"
 
   - package-ecosystem: "gradle"
-    directory: "/demo-projects"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "gradle"
-    directory: "/experiments"
+    directory: "/experiments/dokka-multilevel"
     schedule:
       interval: "daily"
