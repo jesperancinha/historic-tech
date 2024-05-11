@@ -1,4 +1,4 @@
-include ../../Makefile.mk
+include ../Makefile.mk
 
 
 SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \

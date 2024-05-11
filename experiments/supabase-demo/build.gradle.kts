@@ -21,3 +21,9 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = gradleSysVersion
+}

@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
     application
+    jacoco
 }
 
-group = "org.example"
+group = "org.jesperancinha"
 version = "1.0-SNAPSHOT"
 
 repositories {

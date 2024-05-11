@@ -32,7 +32,7 @@ class AnnotationsDemoApplicationTests @Autowired constructor(
             ratePerWeek = BigDecimal(100),
             ratePerMonth = BigDecimal(8000),
             isGood = true,
-            10
+            amount = 10
         )
         perfectInfo.modernizeWork()
         mockMvc.perform(
@@ -44,7 +44,7 @@ class AnnotationsDemoApplicationTests @Autowired constructor(
             .response
             .contentAsString
             .should {
-                val value = objectMapper.readValue(it, PerfectInfo::class.java)
+                val value = objectMapper.readValue(it.replace("wow","amount"), PerfectInfo::class.java)
                 value.isGood.shouldBeTrue()
                 value.ratePerProject shouldBe RATE_PER_PROJECT
             }

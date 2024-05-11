@@ -1,5 +1,4 @@
-include ../../Makefile.mk
-
+include ../Makefile.mk
 
 b: build
 build:

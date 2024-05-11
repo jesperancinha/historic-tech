@@ -1,4 +1,4 @@
-SHELL := /bin/bash
+include ../Makefile.mk
 
 SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
          	[[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]]; \

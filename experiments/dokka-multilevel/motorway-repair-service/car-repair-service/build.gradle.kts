@@ -2,6 +2,7 @@ plugins {
     application
     id("org.jetbrains.dokka")
     kotlin("multiplatform")
+    jacoco
 }
 
 group = "car-repair-service"

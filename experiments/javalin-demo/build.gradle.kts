@@ -21,3 +21,9 @@ tasks.test {
 kotlin {
     jvmToolchain(21)
 }
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = gradleSysVersion
+}
