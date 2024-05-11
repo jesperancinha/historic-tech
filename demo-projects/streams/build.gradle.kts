@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	alias(libs.plugins.spring.boot)
-	id("io.spring.dependency-management") version "1.1.0"
+	alias(libs.plugins.spring.dependency.management)
 	jacoco
 	alias(libs.plugins.kotlin.jvm)
 	alias(libs.plugins.kotlin.spring)

@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	alias(libs.plugins.spring.boot)
-	id("io.spring.dependency-management") version "1.1.0"
+	alias(libs.plugins.spring.dependency.management)
 	alias(libs.plugins.kotlin.jvm)
 	alias(libs.plugins.kotlin.spring)
 	jacoco
@@ -37,7 +37,7 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-val gradleSysVersion = System.getenv("GRADLE_VERSION")
+val gradleSysVersion: String = System.getenv("GRADLE_VERSION")
 
 tasks.register<Wrapper>("wrapper") {
 	gradleVersion = gradleSysVersion

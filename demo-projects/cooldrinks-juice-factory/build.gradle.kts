@@ -35,7 +35,7 @@ application {
     mainClass.set("MainKt")
 }
 
-val gradleSysVersion = System.getenv("GRADLE_VERSION")
+val gradleSysVersion: String = System.getenv("GRADLE_VERSION")
 
 tasks.register<Wrapper>("wrapper") {
     gradleVersion = gradleSysVersion
