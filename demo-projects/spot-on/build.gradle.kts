@@ -10,7 +10,7 @@ plugins {
 
 group = "org.jesperancinha"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_19
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
 	mavenCentral()
@@ -32,7 +32,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "19"
+		jvmTarget = "21"
 	}
 }
 
@@ -53,7 +53,7 @@ tasks.withType<Test> {
 }
 
 kotlin {
-	jvmToolchain(19)
+	jvmToolchain(21)
 }
 val gradleSysVersion = System.getenv("GRADLE_VERSION")
 
