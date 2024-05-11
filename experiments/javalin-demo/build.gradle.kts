@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.javalin:javalin:5.6.3")
+    implementation("io.javalin:javalin:6.1.4")
     implementation("org.slf4j:slf4j-simple:2.0.7")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
