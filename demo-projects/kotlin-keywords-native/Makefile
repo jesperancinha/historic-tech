@@ -1,4 +1,4 @@
-SHELL := /bin/bash
+include ../Makefile.mk
 
 build: build-jar build-lib-linux
 b: build

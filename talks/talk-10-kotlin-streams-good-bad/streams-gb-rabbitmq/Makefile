@@ -1,3 +1,5 @@
+include ../Makefile
+
 b: build-gradle-report
 build-gradle:
 	./gradlew build test

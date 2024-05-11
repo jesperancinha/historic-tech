@@ -6,7 +6,8 @@ val kotest_version:String by project
 plugins {
 	id("org.springframework.boot") version "3.2.5"
 	id("io.spring.dependency-management") version "1.1.5"
-	kotlin("jvm") version "1.9.24"
+	alias(libs.plugins.kotlin.jvm)
+	jacoco
 	// Removed on purpose because we want to check what happens behind the scenes without the plugin
 	// kotlin("plugin.spring") version "1.9.21"
 }
@@ -42,4 +43,10 @@ kotlin {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+	gradleVersion = gradleSysVersion
 }

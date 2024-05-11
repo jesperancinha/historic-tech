@@ -1,4 +1,4 @@
-b: buildw
+b: wrapper-gradle buildw
 generate-dokka:
 	gradle dokkaHtmlMultiModule
 list-tasks-gradle:

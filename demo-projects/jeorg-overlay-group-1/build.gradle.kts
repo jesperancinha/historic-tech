@@ -5,13 +5,13 @@ allprojects {
 }
 
 plugins {
-    id("com.google.devtools.ksp") version "1.9.21-1.0.15"
+    alias(libs.plugins.ksp)
 //    id("io.arrow-kt.analysis.kotlin") version "2.0.2"
-    kotlin("jvm") version "1.9.21"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.jesperancinha.omni)
     application
     idea
-    id("jacoco")
-    id("org.jesperancinha.plugins.omni") version "0.3.1"
+    jacoco
 }
 
 idea {
@@ -53,3 +53,8 @@ kotlin {
     jvmToolchain(19)
 }
 
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = gradleSysVersion
+}

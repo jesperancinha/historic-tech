@@ -1,9 +1,8 @@
+include ../Makefile.mk
+
 b: build-gradle-report
 build-gradle: build-dll
 	./gradlew build test
-build-gradle-report: build-dll
-	gradle wrapper; \
-	./gradlew clean build test jacocoTestReport -i
 build-wrapper:
 	gradle wrapper;
 build-dll:

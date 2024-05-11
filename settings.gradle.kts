@@ -14,6 +14,8 @@ include("demo-projects:jeorg-overlay-group-1")
 include("demo-projects:jeorg-overlays-group-1-spring")
 include("demo-projects:coroutines-demo")
 include("demo-projects:crac-service")
+include("experiments:javalin-demo")
+include("experiments:channels")
 include("experiments:coroutine-builders")
 include("experiments:annotations-demo")
 include("demo-projects:k2-compiler")
@@ -24,5 +26,3 @@ include("experiments:koin-example")
 findProject(":experiments:koin-example")?.name = "koin-example"
 include("experiments:supabase-demo")
 findProject(":experiments:supabase-demo")?.name = "supabase-demo"
-//include("experiments:dokka-multilevel")
-//findProject(":experiments:dokka-multilevel")?.name = "dokka-multilevel"

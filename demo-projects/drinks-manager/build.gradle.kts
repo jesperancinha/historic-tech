@@ -1,9 +1,10 @@
 plugins {
-    kotlin("jvm") version "1.9.21"
+    alias(libs.plugins.kotlin.jvm)
     application
+    jacoco
 }
 
-group = "org.example"
+group = "org.jesperancinha"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -24,4 +25,10 @@ kotlin {
 
 application {
     mainClass.set("MainKt")
+}
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = gradleSysVersion
 }
