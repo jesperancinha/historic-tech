@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id ("org.springframework.boot") version "3.2.0"
-	id ("io.spring.dependency-management") version "1.1.0"
-	id ("org.jetbrains.kotlin.jvm") version "1.9.21"
-	id ("org.jetbrains.kotlin.plugin.spring") version "1.9.21"
+	alias(libs.plugins.spring.boot)
+	alias(libs.plugins.spring.dependency.management)
+	alias(libs.plugins.kotlin.jvm)
+	alias(libs.plugins.kotlin.spring)
 	jacoco
 }
 

@@ -5,7 +5,7 @@ val kotest_version:String by project
 
 plugins {
 	alias(libs.plugins.spring.boot)
-	id("io.spring.dependency-management") version "1.1.5"
+	alias(libs.plugins.spring.dependency.management)
 	alias(libs.plugins.kotlin.jvm)
 	jacoco
 	// Removed on purpose because we want to check what happens behind the scenes without the plugin

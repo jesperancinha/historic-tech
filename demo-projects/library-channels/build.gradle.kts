@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	alias(libs.plugins.spring.boot)
-	id("io.spring.dependency-management") version "1.1.2"
+	alias(libs.plugins.spring.dependency.management)
 	alias(libs.plugins.kotlin.jvm)
 	alias(libs.plugins.kotlin.spring)
 }
