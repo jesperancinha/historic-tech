@@ -2,9 +2,9 @@ val kotlin_version: String by project
 
 plugins {
     application
-    kotlin("jvm") version "1.9.21"
+    alias(libs.plugins.kotlin.jvm)
     id("io.ktor.plugin") version "2.3.2"
-    id("jacoco")
+    jacoco
 }
 
 group = "org.jesperancinha"
@@ -37,4 +37,10 @@ tasks.withType<Test> {
 
 kotlin {
     jvmToolchain(19)
+}
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = gradleSysVersion
 }

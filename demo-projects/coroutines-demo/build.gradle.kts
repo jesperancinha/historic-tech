@@ -3,9 +3,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.0.4"
 	id("io.spring.dependency-management") version "1.1.0"
-	kotlin("jvm") version "1.9.21"
+	alias(libs.plugins.kotlin.jvm)
 	kotlin("plugin.spring") version "1.9.21"
-	id("jacoco")
+	jacoco
 }
 
 group = "org.jesperancinha.coroutines"
@@ -35,4 +35,10 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+	gradleVersion = gradleSysVersion
 }

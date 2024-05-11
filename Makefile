@@ -1,5 +1,5 @@
-SHELL := /bin/bash
-GRADLE_VERSION ?= 8.5
+include Makefile.mk
+
 PARENT_MODULES := talks demo-projects-sessions
 MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 					talks/talk-10-kotlin-streams-good-bad/streams-gb-rabbitmq \

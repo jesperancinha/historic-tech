@@ -1,3 +1,0 @@
-
-rootProject.name = "drinks-manager"
-

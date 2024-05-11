@@ -1,4 +1,6 @@
-b: build
+include ../Makefile.mk
+
+b?: build
 build:
 	for d in *; do \
 		if [ -d $$d ]; then \

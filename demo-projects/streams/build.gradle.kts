@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.0.4"
 	id("io.spring.dependency-management") version "1.1.0"
-	id("jacoco")
-	kotlin("jvm") version "1.9.21"
+	jacoco
+	alias(libs.plugins.kotlin.jvm)
 	kotlin("plugin.spring") version "1.9.21"
 }
 
@@ -54,4 +54,10 @@ tasks.withType<Test> {
 
 kotlin {
 	jvmToolchain(19)
+}
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+	gradleVersion = gradleSysVersion
 }

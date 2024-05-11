@@ -1,4 +1,5 @@
-SHELL := /bin/bash
+include ../../Makefile.mk
+
 
 b: build
 build:

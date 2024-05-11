@@ -6,7 +6,7 @@ val kotest_version:String by project
 plugins {
 	id("org.springframework.boot") version "3.2.5"
 	id("io.spring.dependency-management") version "1.1.5"
-	kotlin("jvm") version "1.9.24"
+	alias(libs.plugins.kotlin.jvm)
 	// Removed on purpose because we want to check what happens behind the scenes without the plugin
 	// kotlin("plugin.spring") version "1.9.21"
 }
