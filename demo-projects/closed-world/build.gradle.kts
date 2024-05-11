@@ -26,7 +26,7 @@ sourceSets {
 
 dependencies {
     testImplementation(kotlin("test"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
+    testImplementation(libs.junit.jupiter)
 }
 
 

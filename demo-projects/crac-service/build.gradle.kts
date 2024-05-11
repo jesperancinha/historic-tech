@@ -2,10 +2,10 @@ import org.gradle.api.JavaVersion.VERSION_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.2.5"
-	id("io.spring.dependency-management") version "1.1.4"
+	alias(libs.plugins.spring.boot)
+	alias(libs.plugins.spring.dependency.management)
 	alias(libs.plugins.kotlin.jvm)
-	kotlin("plugin.spring") version "1.9.21"
+	alias(libs.plugins.kotlin.spring)
 }
 
 group = "org.jesperancinha"

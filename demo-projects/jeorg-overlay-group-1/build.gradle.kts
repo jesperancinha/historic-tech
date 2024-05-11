@@ -25,9 +25,8 @@ idea {
 val arrowVersion = "1.1.5"
 
 dependencies {
-    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.9.2")
-    testImplementation ("org.junit.jupiter:junit-jupiter-engine:5.9.2")
-
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
 }
 
 kotlin {
