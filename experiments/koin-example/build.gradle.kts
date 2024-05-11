@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    val koin_version = "3.5.0"
+    val koin_version = "3.5.6"
     implementation("io.insert-koin:koin-core:$koin_version")
     val gsonVersion = "2.10.1"
     implementation("com.google.code.gson:gson:$gsonVersion")
