@@ -5,7 +5,7 @@ val logback_version: String by project
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
-    id("io.ktor.plugin") version "2.3.2"
+    alias(libs.plugins.ktor)
     jacoco
 }
 
@@ -25,11 +25,11 @@ repositories {
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
+    api(libs.logback.classic)
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     testImplementation("org.junit.platform:junit-platform-launcher:1.9.3")
-    testImplementation(libs.junit.jupiter)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
 }
 
 tasks.jacocoTestReport {
