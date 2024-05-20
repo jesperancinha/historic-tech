@@ -13,7 +13,7 @@ repositories {
 dependencies {
     val koin_version = "3.5.6"
     implementation("io.insert-koin:koin-core:$koin_version")
-    val gsonVersion = "2.10.1"
+    val gsonVersion = "2.11.0"
     implementation("com.google.code.gson:gson:$gsonVersion")
     testImplementation(platform("org.junit:junit-bom:5.10.2"))
     testImplementation(libs.junit.jupiter)
