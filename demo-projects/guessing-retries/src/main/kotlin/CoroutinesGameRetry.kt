@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.retry
 import kotlinx.coroutines.runBlocking
 import java.util.concurrent.atomic.AtomicLong
-import kotlin.math.max
 import kotlin.time.Duration.Companion.milliseconds
 
 class CoroutinesGameRetry(guessingService: CommonGuessingGameService) : Retry<Result<GameOutput>>(guessingService) {

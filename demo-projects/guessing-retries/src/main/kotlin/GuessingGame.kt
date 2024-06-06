@@ -1,7 +1,7 @@
 package org.jesperancinha.asnsei.guessing
 
 
-import java.util.Random
+import java.util.*
 
 data class GameFailedException(val gameResult: GameOutput) : RuntimeException()
 
