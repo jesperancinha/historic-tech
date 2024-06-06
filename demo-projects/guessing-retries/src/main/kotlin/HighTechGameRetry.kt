@@ -11,6 +11,7 @@ class HighTechGameRetry(guessingService: CommonGuessingGameService) : Retry<Resu
             guessingService.checkIfRandomNumberMatchesInput(inputNumber)
         }
     }
+
     private suspend fun runCatching(
         atomicAccountRecord: AtomicLong,
         inputNumber: Long,
@@ -20,8 +21,7 @@ class HighTechGameRetry(guessingService: CommonGuessingGameService) : Retry<Resu
         return runCatching {
             f()
         }.onFailure { _ ->
-            atomicAccountRecord.takeIf { it.get() == 0L }?.let {
-            } ?: delay(delayMillis.milliseconds).also {
+            atomicAccountRecord.takeIf { it.get() == 0L } ?: delay(delayMillis.milliseconds).also {
                 runCatching(atomicAccountRecord, inputNumber, f)
             }
         }.run {
