@@ -23,3 +23,5 @@ kotest-core = { group = "io.kotest", name = "kotest-assertions-core-jvm", versio
 resilience4j = { group = "io.github.resilience4j", name = "resilience4j-retry", version = "1.7.1" }
 resilience4j-retry = { group = "io.github.resilience4j", name = "resilience4j-retry", version = "1.7.1" }
 resilience4j-kotlin = { group = "io.github.resilience4j", name = "resilience4j-kotlin", version = "1.7.1" }
+arrow-core = { group = "io.arrow-kt", name = "arrow-core", version = "1.1.2" }
+arrow-fx-coroutines = { group = "io.arrow-kt", name = "arrow-fx-coroutines", version = "1.1.2" }

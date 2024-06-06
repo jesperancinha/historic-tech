@@ -20,7 +20,7 @@ class Resilience4JGameRetry(guessingService: CommonGuessingGameService) :
         val retry = retryRegistry.retry("retryExample")
         val gameOutput = runBlocking {
             runCatching {
-                val result = retry.executeSuspendFunction {
+                 retry.executeSuspendFunction {
                     atomicAccountRecord.incrementAndGet()
                     guessingService.checkIfRandomNumberMatchesInput(inputNumber)
                 }

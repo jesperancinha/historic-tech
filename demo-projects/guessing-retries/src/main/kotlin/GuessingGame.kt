@@ -9,5 +9,6 @@ open class CommonGuessingGameService {
     private fun createRandomNumber() = Random().nextLong()
     open fun assertResult(inputNumber: Long) = inputNumber == createRandomNumber()
     open fun checkIfRandomNumberMatchesInput(inputNumber: Long) =
-        (assertResult(inputNumber)).takeIf { it } ?: throw RuntimeException("Failed Attempt")
+        (checkIfRandomNumberMatchesAssertion(inputNumber)).takeIf { it } ?: throw RuntimeException("Failed Attempt")
+    open fun checkIfRandomNumberMatchesAssertion(inputNumber: Long) = assertResult(inputNumber)
 }
