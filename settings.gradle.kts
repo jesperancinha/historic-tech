@@ -26,3 +26,5 @@ include("experiments:koin-example")
 findProject(":experiments:koin-example")?.name = "koin-example"
 include("experiments:supabase-demo")
 findProject(":experiments:supabase-demo")?.name = "supabase-demo"
+include("demo-projects:guessing-retries")
+findProject(":demo-projects:guessing-retries")?.name = "guessing-retries"
