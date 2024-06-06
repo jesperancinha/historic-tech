@@ -1,5 +1,6 @@
 package org.jesperancinha.asnsei.guessing
 
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
@@ -7,6 +8,7 @@ import kotlinx.coroutines.flow.retry
 import kotlinx.coroutines.runBlocking
 import java.util.concurrent.atomic.AtomicLong
 import kotlin.math.max
+import kotlin.time.Duration.Companion.milliseconds
 
 class CoroutinesGameRetry(guessingService: CommonGuessingGameService) : Retry<Result<GameOutput>>(guessingService) {
     override fun checkNumber(inputNumber: Long): Result<GameOutput> = runBlocking {
@@ -20,6 +22,7 @@ class CoroutinesGameRetry(guessingService: CommonGuessingGameService) : Retry<Re
             true
         }.catch { _ ->
             println("Failed after ${atomicAccountRecord.get()} attempts")
+            delay(delayMillis.milliseconds)
         }.firstOrNull()
 
         if (result != null) {

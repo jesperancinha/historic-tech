@@ -12,8 +12,8 @@ class Resilience4JGameRetry(guessingService: CommonGuessingGameService) :
     val atomicAccountRecord = AtomicLong()
     override fun checkNumber(inputNumber: Long): Result<GameOutput> {
         val retryConfig = RetryConfig.custom<String>()
-            .maxAttempts(3)
-            .waitDuration(Duration.ofSeconds(1))
+            .maxAttempts(maxAttempts.toInt())
+            .waitDuration(Duration.ofMillis(delayMillis))
             .retryExceptions(Exception::class.java)
             .build()
         val retryRegistry = RetryRegistry.of(retryConfig)

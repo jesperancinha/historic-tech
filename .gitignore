@@ -58,3 +58,7 @@ gradle/wrapper/gradle-wrapper.jar
 # Lein
 .lsp
 .clj-kondo
+
+Kotlin
+kotlin-compiler*
+
