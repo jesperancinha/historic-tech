@@ -19,3 +19,4 @@ log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-i
 slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version = "2.0.13" }
 javalin = { group = "io.javalin", name = "javalin", version = "6.1.6" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.8.1" }
+kotest-core = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "5.9.0" }

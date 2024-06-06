@@ -16,3 +16,8 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+dependencies {
+    api(libs.kotlinx.coroutines.core)
+    testImplementation(libs.kotest.core)
+}
