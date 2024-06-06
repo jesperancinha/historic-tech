@@ -19,7 +19,7 @@ class HighTechGameRetry(guessingService: CommonGuessingGameService) : Retry<Resu
         atomicAccountRecord.decrementAndGet()
         return runCatching {
             f()
-        }.onFailure { ex ->
+        }.onFailure { _ ->
             atomicAccountRecord.takeIf { it.get() == 0L }?.let {
             } ?: delay(delayMillis.milliseconds).also {
                 runCatching(atomicAccountRecord, inputNumber, f)
