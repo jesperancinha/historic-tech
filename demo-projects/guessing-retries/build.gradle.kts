@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.0.0"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.jesperancinha.omni)
 }
 
 group = "org.jesperancinha.asnsei.guessing"
@@ -19,5 +20,8 @@ tasks.test {
 
 dependencies {
     api(libs.kotlinx.coroutines.core)
+    api(libs.resilience4j)
+    api(libs.resilience4j.retry)
+    api(libs.resilience4j.kotlin)
     testImplementation(libs.kotest.core)
 }

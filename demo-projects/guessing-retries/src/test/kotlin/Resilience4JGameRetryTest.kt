@@ -2,16 +2,16 @@ import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.shouldBe
 import org.jesperancinha.asnsei.guessing.CommonGuessingGameService
-import org.jesperancinha.asnsei.guessing.CoroutinesGameRetry
 import org.jesperancinha.asnsei.guessing.GameFailedException
+import org.jesperancinha.asnsei.guessing.Resilience4JGameRetry
 import org.jesperancinha.asnsei.guessing.TraditionalGameRetry
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 
-class CoroutinesGameRetryTest {
+class Resilience4JGameRetryTest {
     val game by lazy {
-        CoroutinesGameRetry(object : CommonGuessingGameService() {
+        Resilience4JGameRetry(object : CommonGuessingGameService() {
             override fun assertResult(inputNumber: Long): Boolean {
                 return inputNumber == 100L
             }
