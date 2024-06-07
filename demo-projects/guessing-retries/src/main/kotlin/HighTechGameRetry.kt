@@ -26,14 +26,18 @@ class HighTechGameRetry(guessingService: CommonGuessingGameService) : Retry<Resu
             }
         }.run {
             if (isFailure) {
-                Result.failure(
-                    GameFailedException(
-                        GameOutput.failedAttempts(
-                            inputNumber,
-                            maxAttempts - atomicAccountRecord.get()
+                if (atomicAccountRecord.get() > 0) {
+                    Result.success(GameOutput.success(inputNumber, maxAttempts - atomicAccountRecord.get()))
+                } else {
+                    Result.failure(
+                        GameFailedException(
+                            GameOutput.failedAttempts(
+                                inputNumber,
+                                maxAttempts - atomicAccountRecord.get()
+                            )
                         )
                     )
-                )
+                }
             } else {
                 Result.success(GameOutput.success(inputNumber, maxAttempts - atomicAccountRecord.get()))
             }
