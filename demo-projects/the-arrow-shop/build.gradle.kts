@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    jacoco
 }
 
 group = "org.jesperancinha"
@@ -22,3 +23,11 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+val gradleSysVersion = System.getenv("GRADLE_VERSION")
+
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = gradleSysVersion
+}
+
+tasks.register("prepareKotlinBuildScriptModel"){}
