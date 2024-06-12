@@ -32,9 +32,11 @@ fun main() {
         Arrow(15, 1)
     )
     val test = getArrowsSorted()
-    val test2 = getArrowsSorted(true)
-    val test3 = getArrowsSorted(fail2 = true)
     println(test)
+    println("***************************")
+    val test2 = getArrowsSorted(true)
     println(test2)
+    println("***************************")
+    val test3 = getArrowsSorted(fail2 = true)
     println(test3)
 }
