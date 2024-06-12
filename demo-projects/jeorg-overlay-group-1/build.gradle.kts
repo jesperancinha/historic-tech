@@ -6,7 +6,6 @@ allprojects {
 
 plugins {
     alias(libs.plugins.ksp)
-//    id("io.arrow-kt.analysis.kotlin") version "2.0.2"
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.jesperancinha.omni)
     application
@@ -22,7 +21,6 @@ idea {
             generatedSourceDirs + file("build/generated/ksp/main/kotlin") + file("build/generated/ksp/test/kotlin")
     }
 }
-val arrowVersion = "1.1.5"
 
 dependencies {
     testImplementation(libs.junit.jupiter.api)
