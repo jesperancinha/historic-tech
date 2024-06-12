@@ -28,3 +28,5 @@ include("experiments:supabase-demo")
 findProject(":experiments:supabase-demo")?.name = "supabase-demo"
 include("demo-projects:guessing-retries")
 findProject(":demo-projects:guessing-retries")?.name = "guessing-retries"
+include("demo-projects:the-arrow-shop")
+findProject(":demo-projects:the-arrow-shop")?.name = "the-arrow-shop"
