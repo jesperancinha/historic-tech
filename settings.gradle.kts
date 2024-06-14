@@ -14,6 +14,7 @@ include("demo-projects:jeorg-overlay-group-1")
 include("demo-projects:jeorg-overlays-group-1-spring")
 include("demo-projects:coroutines-demo")
 include("demo-projects:crac-service")
+include("demo-projects:arrow-books-library")
 include("experiments:javalin-demo")
 include("experiments:channels")
 include("experiments:coroutine-builders")
@@ -28,5 +29,5 @@ include("experiments:supabase-demo")
 findProject(":experiments:supabase-demo")?.name = "supabase-demo"
 include("demo-projects:guessing-retries")
 findProject(":demo-projects:guessing-retries")?.name = "guessing-retries"
-include("demo-projects:the-arrow-shop")
-findProject(":demo-projects:the-arrow-shop")?.name = "the-arrow-shop"
+include("demo-projects:arrow-shop")
+findProject(":demo-projects:arrow-shop")?.name = "arrow-shop"
