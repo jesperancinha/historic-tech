@@ -5,8 +5,18 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin.*"
+          - "com.google.devtools.ksp"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
     schedule:
       interval: "daily"
+    groups:
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin.*"
+          - "com.google.devtools.ksp"
