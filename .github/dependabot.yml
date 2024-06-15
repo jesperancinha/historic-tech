@@ -20,3 +20,18 @@ updates:
         patterns:
           - "org.jetbrains.kotlin.*"
           - "com.google.devtools.ksp"
+
+  - package-ecosystem: "maven"
+    directory: "/demo-projects/fibonacci"
+    schedule:
+      interval: "daily"
+    groups:
+      postgresql:
+        patterns:
+          - "*postgresql*"
+      maven:
+        patterns:
+          - "*maven*"
+      kotlin:
+        patterns:
+          - "*kotlin*"
