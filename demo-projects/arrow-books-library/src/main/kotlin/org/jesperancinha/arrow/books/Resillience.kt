@@ -8,17 +8,21 @@ import arrow.resilience.transact
 import kotlinx.coroutines.runBlocking
 import kotlin.time.Duration.Companion.seconds
 
-val INITIAL_VALUE = 1
+val N_SHELVED_BOOKS = 10
 
-object Counter {
-    val value = AtomicInt(INITIAL_VALUE)
+object ClassBookCounter {
+    val books = AtomicInt(N_SHELVED_BOOKS)
 
     fun increment() {
-        value.incrementAndGet()
+        books.incrementAndGet()
     }
 
     fun decrement() {
-        value.decrementAndGet()
+        books.decrementAndGet()
+    }
+
+    fun setValue (books: Int) {
+        this.books.set(books)
     }
 }
 
@@ -36,21 +40,21 @@ class Resillience {
                 runCatching {
                     println(transactionFail.transact())
                 }.onFailure { println(it) }
-                println(Counter.value)
+                println(ClassBookCounter.books)
                 printSeparator("Resillience Example 2 - Saga Success")
                 val transaction: Saga<Int> = successfulTransaction
                 println(transaction)
                 println(transaction.transact())
-                println(Counter.value)
+                println(ClassBookCounter.books)
                 printSeparator("Resillience Example 3 - Retry and Repeat")
                 val result = tryFunction {
                     runCatching {
-                        if (Counter.value.get() > 0)
-                            println(Counter.value)
-                        Counter.decrement()
+                        if (ClassBookCounter.books.get() > 0)
+                            println(ClassBookCounter.books)
+                        ClassBookCounter.decrement()
                         throw Exception()
                     }
-                    Counter.value.get()
+                    ClassBookCounter.books.get()
                 }
                 println(result)
             }
@@ -65,9 +69,9 @@ class Resillience {
 
         val failingTransaction = saga {
             saga({
-                Counter.increment()
+                ClassBookCounter.increment()
             }) {
-                Counter.decrement()
+                ClassBookCounter.decrement()
             }
             saga({
                 throw PROBLEM
@@ -75,14 +79,14 @@ class Resillience {
         }
         val successfulTransaction = saga {
             saga({
-                Counter.increment()
+                ClassBookCounter.increment()
             }) {
-                Counter.decrement()
+                ClassBookCounter.decrement()
             }
             saga({
                 println("No problem here!")
             }) {}
-            Counter.value.get()
+            ClassBookCounter.books.get()
         }
     }
 }
