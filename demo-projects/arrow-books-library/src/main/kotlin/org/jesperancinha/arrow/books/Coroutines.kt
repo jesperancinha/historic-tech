@@ -26,11 +26,11 @@ class Coroutines {
         suspend fun getClient(id: Long): Book =
             parZip(
                 { getName(id) },
-                { getTelephoneNumber(id) }
-            ) { name, telephoneNumber -> Book(name, telephoneNumber) }
+                { getBookTitle(id) }
+            ) { name, isdnNumber -> Book(name = name, isdnNumber =  isdnNumber) }
 
         fun getName(id: Long) = "client($id)-${UUID.randomUUID()}"
-        fun getTelephoneNumber(id: Long) =
+        fun getBookTitle(id: Long) =
             (1..5).map { (Random().nextLong(10) + id).toString().last() }.joinToString("").toLong()
 
         suspend fun getAssociateNames(id: Long): List<String> =
