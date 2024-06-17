@@ -29,6 +29,7 @@ class BookRepository() : Repository<Book, Int> {
         databaseBooks.put(book.id, book)
         book
     }
+
     override fun delete(t: Book) {
         TODO("Not yet implemented")
     }
@@ -41,6 +42,7 @@ open class ReservationsRepository : Repository<ReserveTicket, Int> {
         reservations.put(reserveTicket.id, reserveTicket)
         reserveTicket
     }
+
     override fun delete(reserveTicket: ReserveTicket) {
         reservations.remove(reserveTicket.id)
     }
@@ -53,6 +55,7 @@ class UserRepository : Repository<User, Int> {
         users.put(user.id, user)
         user
     }
+
     override fun delete(t: User) {
         TODO("Not yet implemented")
     }
@@ -78,6 +81,7 @@ class BookService(
         val findById = userRepository.findById(user.id)
         userRepository.save(findById.copy(bookCount = findById.bookCount - 1))
     }
+
     fun registerReservation(reserveTicket: ReserveTicket) =
         if (reserveTicket.id == -1) {
             reservationsRepository.save(reserveTicket.copy(reservations.keys.maxOrNull() ?: 0 + 1))

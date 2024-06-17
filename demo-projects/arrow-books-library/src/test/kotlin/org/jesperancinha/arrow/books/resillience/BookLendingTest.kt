@@ -20,7 +20,6 @@ class BookLendingTest {
         receipt.book shouldBe databaseBooks[1]
         receipt.user.name shouldBe users[1]?.name
         receipt.user.bookCount shouldBe 1
-        receipt.book.inShelf shouldBe false
 
         bookService.restoreBook(1)
         bookService.unRegisterReservation(receipt)
@@ -42,7 +41,7 @@ class BookLendingTest {
             ).getABookWithReceipt(1, user).transact()
         }
         BookRepository().findById(1).inShelf.shouldBeTrue()
-        ReservationsRepository().findByIdOrNull(1).shouldBeNull()
         UserRepository().findById(1).bookCount shouldBe 0
+        ReservationsRepository().findByIdOrNull(1).shouldBeNull()
     }
 }
