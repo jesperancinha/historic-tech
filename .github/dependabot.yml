@@ -10,6 +10,8 @@ updates:
         patterns:
           - "org.jetbrains.kotlin.*"
           - "com.google.devtools.ksp"
+          - "kotlin*"
+          - "*kotlin*"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -20,6 +22,8 @@ updates:
         patterns:
           - "org.jetbrains.kotlin.*"
           - "com.google.devtools.ksp"
+          - "kotlin*"
+          - "*kotlin*"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
