@@ -93,3 +93,5 @@ sdk-man-install:
     sdk install kotlin
 install:
 	sdk install kotlin
+deps-plugins-update:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/pluginUpdatesOne.sh | bash
