@@ -3,14 +3,15 @@ package org.jesperancinha.arrow.books.resilience.circuit
 import arrow.core.Either
 import arrow.resilience.CircuitBreaker
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import kotlin.time.Duration.Companion.seconds
-import kotlin.time.ExperimentalTime
 
 class UrsusService {
 
     companion object {
-        @ExperimentalTime
-        suspend fun main(): Unit {
+
+        @JvmStatic
+        fun main(args: Array<String>) = runBlocking {
             val circuitBreaker = CircuitBreaker(
                 openingStrategy = CircuitBreaker.OpeningStrategy.Count(2),
                 resetTimeout = 2.seconds,
@@ -23,7 +24,7 @@ class UrsusService {
 
             // simulate service getting overloaded
             Either.catch {
-                circuitBreaker.protectOrThrow { throw RuntimeException("Service overloaded") }
+                circuitBreaker.protectOrThrow { throw RuntimeException("I have tested it, it works perfectly and I am an angry bear and my code IS THE BEST!") }
             }.also(::println)
             Either.catch {
                 circuitBreaker.protectOrThrow { throw RuntimeException("Service overloaded") }
