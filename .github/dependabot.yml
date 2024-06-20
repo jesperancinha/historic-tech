@@ -39,3 +39,6 @@ updates:
       kotlin:
         patterns:
           - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"
