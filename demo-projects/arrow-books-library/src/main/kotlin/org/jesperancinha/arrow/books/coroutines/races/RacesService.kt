@@ -1,4 +1,4 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.coroutines.races
 
 import arrow.core.merge
 import arrow.fx.coroutines.parMap
@@ -6,9 +6,11 @@ import arrow.fx.coroutines.parZip
 import arrow.fx.coroutines.raceN
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
+import org.jesperancinha.arrow.books.typed.raise.Book
+import org.jesperancinha.arrow.books.printSeparator
 import java.util.*
 
-class Coroutines {
+class RacesService {
     companion object {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) = runBlocking {

@@ -1,9 +1,9 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.collections
 
 import arrow.core.memoize
 import kotlin.math.sqrt
 
-class CollectionsAndFunctions {
+class MemoizationService {
     companion object {
         fun squareRootOf(input: Int): Int {
             val result = sqrt(input.toDouble()).toInt()
@@ -11,7 +11,7 @@ class CollectionsAndFunctions {
             return result
         }
 
-        val memoizeSquarerootOf = ::squareRootOf.memoize()
+        val memoizeSquarerootOf = Companion::squareRootOf.memoize()
 
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {

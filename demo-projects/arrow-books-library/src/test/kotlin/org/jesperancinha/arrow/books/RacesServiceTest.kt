@@ -1,13 +1,13 @@
 package org.jesperancinha.arrow.books
 
 import kotlinx.coroutines.runBlocking
-import org.jesperancinha.arrow.books.Coroutines.Companion.fetchLetter
-import org.jesperancinha.arrow.books.Coroutines.Companion.fetchLetterFail
-import org.jesperancinha.arrow.books.Coroutines.Companion.getAssociateNames
-import org.jesperancinha.arrow.books.Coroutines.Companion.getClient
+import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.fetchLetter
+import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.fetchLetterFail
+import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.getAssociateNames
+import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.getClient
 import org.junit.jupiter.api.Test
 
-class CoroutinesTest {
+class RacesServiceTest {
 
     @Test
     fun `should run parZip`() = runBlocking {

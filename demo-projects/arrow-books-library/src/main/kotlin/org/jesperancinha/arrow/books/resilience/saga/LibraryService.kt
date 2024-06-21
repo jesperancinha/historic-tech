@@ -1,4 +1,4 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.resilience.saga
 
 import arrow.atomic.AtomicInt
 import arrow.resilience.Saga
@@ -6,6 +6,7 @@ import arrow.resilience.Schedule
 import arrow.resilience.saga
 import arrow.resilience.transact
 import kotlinx.coroutines.runBlocking
+import org.jesperancinha.arrow.books.printSeparator
 import kotlin.time.Duration.Companion.seconds
 
 val N_SHELVED_BOOKS = 10
@@ -22,13 +23,13 @@ object ClassBookCounter {
     }
 
     fun setValue (books: Int) {
-        this.books.set(books)
+        ClassBookCounter.books.set(books)
     }
 }
 
 val PROBLEM = Throwable("problem detected!")
 
-class Resillience {
+class LibraryService {
 
     companion object {
         @JvmStatic

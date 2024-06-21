@@ -1,6 +1,6 @@
-package org.jesperancinha.arrow.books.resillience
+package org.jesperancinha.arrow.books.resilience.saga
 
-import org.jesperancinha.arrow.books.Book
+import org.jesperancinha.arrow.books.typed.raise.Book
 
 val databaseBooks = mutableMapOf(
     1 to Book(

@@ -1,7 +1,6 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.immutable.optics
 
 import arrow.optics.optics
-
 
 @JvmInline
 @optics
@@ -39,7 +38,7 @@ data class Company(val name: String, val country: String) : User {
     companion object
 }
 
-class ImmutableData {
+class DefendersOfTheGalaxyAddressesService {
     companion object {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {

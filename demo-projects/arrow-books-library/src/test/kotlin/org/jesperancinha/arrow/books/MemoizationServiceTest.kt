@@ -2,11 +2,11 @@ package org.jesperancinha.arrow.books
 
 import io.kotest.matchers.longs.shouldBeBetween
 import io.kotest.matchers.shouldBe
-import org.jesperancinha.arrow.books.CollectionsAndFunctions.Companion.memoizeSquarerootOf
+import org.jesperancinha.arrow.books.collections.MemoizationService.Companion.memoizeSquarerootOf
 import org.junit.jupiter.api.Test
 import kotlin.system.measureTimeMillis
 
-class CollectionsAndFunctionsTest {
+class MemoizationServiceTest {
     @Test
     fun `should perform in around 2 seconds`() {
         measureTimeMillis {

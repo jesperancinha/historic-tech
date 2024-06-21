@@ -11,7 +11,7 @@ class UrsusService {
     companion object {
 
         @JvmStatic
-        fun main(args: Array<String>) = runBlocking {
+        fun main(args: Array<String> = emptyArray()) = runBlocking {
             val circuitBreaker = CircuitBreaker(
                 openingStrategy = CircuitBreaker.OpeningStrategy.Count(1),
                 resetTimeout = 2.seconds,

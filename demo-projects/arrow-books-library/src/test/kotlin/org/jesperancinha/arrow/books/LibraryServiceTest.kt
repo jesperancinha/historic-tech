@@ -1,24 +1,22 @@
 package org.jesperancinha.arrow.books
 
-import arrow.atomic.Atomic
-import arrow.atomic.AtomicLong
 import arrow.atomic.value
 import arrow.core.continuations.AtomicRef
 import arrow.resilience.Schedule
 import arrow.resilience.transact
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.runBlocking
-import org.jesperancinha.arrow.books.Resillience.Companion.failingTransaction
-import org.jesperancinha.arrow.books.Resillience.Companion.successfulTransaction
-import org.jesperancinha.arrow.books.Resillience.Companion.tryFunction
-import org.jesperancinha.arrow.books.Resillience.Companion.tryFunctionExponentialBackoff
+import org.jesperancinha.arrow.books.resilience.saga.ClassBookCounter
+import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.failingTransaction
+import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.successfulTransaction
+import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.tryFunction
+import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.tryFunctionExponentialBackoff
 import org.junit.jupiter.api.Test
 import java.time.Duration
 import java.time.LocalDateTime
 import kotlin.time.Duration.Companion.milliseconds
-import kotlin.time.Duration.Companion.seconds
 
-class ResillienceTest {
+class LibraryServiceTest {
 
     @Test
     fun `should reset counter after transaction fails`(): Unit = runBlocking {

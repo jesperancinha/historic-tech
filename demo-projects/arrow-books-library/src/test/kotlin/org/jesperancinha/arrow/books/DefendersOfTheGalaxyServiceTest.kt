@@ -1,11 +1,11 @@
 package org.jesperancinha.arrow.books
 
 import kotlinx.coroutines.runBlocking
-import org.jesperancinha.arrow.books.Design.Companion.suspendProgram
-import org.jesperancinha.arrow.books.Design.Companion.suspendProgramFail
+import org.jesperancinha.arrow.books.design.either.DefendersOfTheGalaxyService.Companion.suspendProgram
+import org.jesperancinha.arrow.books.design.either.DefendersOfTheGalaxyService.Companion.suspendProgramFail
 import org.junit.jupiter.api.Test
 
-class DesignTest {
+class DefendersOfTheGalaxyServiceTest {
 
     @Test
     fun `should run the design suspend over IO correctly`(): Unit = runBlocking {

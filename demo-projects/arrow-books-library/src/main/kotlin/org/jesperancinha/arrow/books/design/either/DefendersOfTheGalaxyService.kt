@@ -1,4 +1,4 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.design.either
 
 import arrow.core.Either
 import arrow.core.raise.either
@@ -10,7 +10,7 @@ class Id(val id: Long)
 data class Gebruiker(val email: String, val name: String)
 
 
-class Design {
+class DefendersOfTheGalaxyService {
     companion object {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {
