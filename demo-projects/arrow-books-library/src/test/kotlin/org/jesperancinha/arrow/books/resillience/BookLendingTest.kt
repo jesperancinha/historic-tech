@@ -7,7 +7,6 @@ import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.resilience.saga.*
-import org.jesperancinha.arrow.books.resillience.saga.*
 import org.junit.jupiter.api.Test
 
 class BookLendingTest {
@@ -32,7 +31,7 @@ class BookLendingTest {
     fun `should create reservation but fail for book 1`(): Unit = runBlocking {
         val user = UserRepository().findById(1)
         runCatching {
-            val receipt = BookService(
+            BookService(
                 BookRepository(),
                 object : ReservationsRepository() {
                     override fun save(reserveTicket: ReserveTicket): ReserveTicket {
