@@ -1,9 +1,14 @@
 package org.jesperancinha.arrow.books.coroutines.races
 
+import arrow.core.Either
+import arrow.core.NonEmptyList
 import arrow.core.merge
+import arrow.core.raise.either
 import arrow.fx.coroutines.parMap
+import arrow.fx.coroutines.parMapOrAccumulate
 import arrow.fx.coroutines.parZip
 import arrow.fx.coroutines.raceN
+import jdk.internal.misc.Signal.raise
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.typed.raise.Book
@@ -20,16 +25,35 @@ class RacesService {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) = runBlocking {
             val id = randomId
-            printSeparator("Coroutines Test 1 - parZip")
 
+            printSeparator("Coroutines Test 1.1 - parZip")
             measureTimeMillis {
                 println(createBook(id))
-            }.run { println("It took $this seconds to read the client") }
+            }.run { println("It took $this milliseconds to create a book") }
 
-            printSeparator("Coroutines Test 2 - parMap")
+            runCatching {
+                printSeparator("Coroutines Test 1.2 - parZip")
+                measureTimeMillis {
+                    println(tryTocreateBook(id))
+                }.run { println("It took $this milliseconds to create a book") }
+            }.onFailure { it }
+
+
+            printSeparator("Coroutines Test 1.3 - parZip")
             measureTimeMillis {
-                println(getAssociateNames(id))
-            }.run { println("It took $this seconds to read the associates") }
+                println(tryTocreateEitherBook(id))
+            }.run { println("It took $this milliseconds to try to create a book") }
+
+
+            printSeparator("Coroutines Test 2.1 - parMap")
+            measureTimeMillis {
+                println(getAssociatedTitles(id))
+            }.run { println("It took $this milliseconds to read the associates") }
+
+            printSeparator("Coroutines Test 2.2 - parMap cumulative")
+            measureTimeMillis {
+                println(getAssociatedCumulativeFailTitles(id))
+            }.run { println("It took $this milliseconds to read the associates") }
 
             printSeparator("Coroutines Test 3 - raceN")
             println((1..10).map { fetchLetter() }.joinToString(","))
@@ -50,13 +74,49 @@ class RacesService {
                 }
             ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
 
+        suspend fun tryTocreateEitherBook(id: Long)= either {
+            parZip(
+                {
+                    delay(1.seconds)
+                    raise("Cannot get name!")
+                },
+                {
+                    delay(1.seconds)
+                    getBookTitle(id)
+                }
+            ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
+        }
+        suspend fun tryTocreateBook(id: Long): Book =
+            parZip(
+                {
+                    delay(1.seconds)
+                    getName(id)
+                    throw RuntimeException()
+                },
+                {
+                    delay(1.seconds)
+                    getBookTitle(id)
+                    throw RuntimeException()
+
+                }
+            ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
+
         fun getName(id: Long) = "Book-$id-${UUID.randomUUID()}".replace("--", "-")
 
         fun getBookTitle(id: Long) =
             (1..5).map { (Random().nextLong(10) + id).toString().last() }.joinToString("").toLong()
 
-        suspend fun getAssociateNames(id: Long): List<String> =
-            getAssociates(id).parMap { getName(it) }
+        suspend fun getAssociatedTitles(id: Long): List<String> =
+            getAssociates(id).parMap {
+                delay(1000)
+                getName(it)
+            }
+        suspend fun getAssociatedCumulativeFailTitles(id: Long): Either<NonEmptyList<String>, List<String>> =
+            getAssociates(id).parMapOrAccumulate{
+                delay(1000)
+                raise("Cannot get name!")
+                getName(it)
+            }
 
         private fun getAssociates(id: Long): List<Long> {
             return (1..5).map { Random().nextLong() + id }
