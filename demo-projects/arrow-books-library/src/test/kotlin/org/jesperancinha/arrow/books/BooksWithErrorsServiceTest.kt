@@ -13,7 +13,7 @@ class BooksWithErrorsServiceTest {
 
     @Test
     fun `should make tests about example 1`() {
-        Book(isdnNumber = -1).isValid() shouldBe BookNotFound("A telephone can only be a positive number!!!!: -1").left()
+        Book(isdnNumber = -1).isValid() shouldBe BookNotFound("A book can only be a positive number!!!!: -1").left()
 
         fold(
             { isValid(Book(isdnNumber = 1)) },
