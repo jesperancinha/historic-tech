@@ -9,29 +9,49 @@ import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.typed.raise.Book
 import org.jesperancinha.arrow.books.printSeparator
 import java.util.*
+import kotlin.system.measureTimeMillis
+import kotlin.time.Duration.Companion.seconds
 
 class RacesService {
     companion object {
+        val randomId
+            get() = (1..4).map { Random().nextLong(10) }.joinToString("").toLong()
+
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) = runBlocking {
+            val id = randomId
             printSeparator("Coroutines Test 1 - parZip")
-            println(getClient(1000))
-            printSeparator("Coroutines Test 2 - parMap")
-            println(getAssociateNames(1000))
-            printSeparator("Coroutines Test 2 - raceN")
-            println(fetchLetter())
-            printSeparator("Coroutines Test 2 - raceN - Both Fail")
-            println(fetchLetterFail())
 
+            measureTimeMillis {
+                println(createBook(id))
+            }.run { println("It took $this seconds to read the client") }
+
+            printSeparator("Coroutines Test 2 - parMap")
+            measureTimeMillis {
+                println(getAssociateNames(id))
+            }.run { println("It took $this seconds to read the associates") }
+
+            printSeparator("Coroutines Test 3 - raceN")
+            println((1..10).map { fetchLetter() }.joinToString(","))
+
+            printSeparator("Coroutines Test 4 - raceN - Both Fail")
+            println((1..10).map { fetchLetterFail() }.joinToString(","))
         }
 
-        suspend fun getClient(id: Long): Book =
+        suspend fun createBook(id: Long): Book =
             parZip(
-                { getName(id) },
-                { getBookTitle(id) }
-            ) { name, isdnNumber -> Book(name = name, isdnNumber =  isdnNumber) }
+                {
+                    delay(1.seconds)
+                    getName(id)
+                },
+                {
+                    delay(1.seconds)
+                    getBookTitle(id)
+                }
+            ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
 
-        fun getName(id: Long) = "client($id)-${UUID.randomUUID()}"
+        fun getName(id: Long) = "Book-$id-${UUID.randomUUID()}".replace("--", "-")
+
         fun getBookTitle(id: Long) =
             (1..5).map { (Random().nextLong(10) + id).toString().last() }.joinToString("").toLong()
 
@@ -45,24 +65,40 @@ class RacesService {
 
         suspend fun fetchLetter() =
             raceN(
-                { getA() },
-                { getB() }
+                { getBookFromLibraryGouda() },
+                { getBookFromLibraryOlhao() }
             ).merge()
 
         suspend fun fetchLetterFail() = runCatching {
             raceN(
                 {
-                    getA()
-                    throw RuntimeException("Major Fail A")
+                    getBookFromLibraryGouda()
+                    throw RuntimeException("Major Fail Gouda")
                 },
                 {
-                    getB()
-                    throw RuntimeException("Major Fail B")
+                    getBookFromLibraryOlhao()
+                    throw RuntimeException("Major Fail Olhao")
                 },
             ).merge()
         }
-        suspend fun getA() = delay(Random().nextLong(100)).run { "A" }
-        suspend fun getB() = delay(Random().nextLong(100)).run { "B" }
+
+        suspend fun getBookFromLibraryGouda() = delay(Random().nextLong(100)).run {
+            Book(
+                id = 1,
+                name = "The silence of the kittens",
+                isdnNumber = 98765432123456789,
+                library = "Solothurn"
+            )
+        }
+
+        suspend fun getBookFromLibraryOlhao() = delay(Random().nextLong(100)).run {
+            Book(
+                id = 1,
+                name = "The silence of the kittens",
+                isdnNumber = 98765432123456789,
+                library = "Olhao"
+            )
+        }
     }
 
 }

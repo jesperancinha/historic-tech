@@ -13,10 +13,11 @@ import java.util.*
 
 data class BookNotFound(val message: String? = null)
 data class Book(
-    val id: Int = -1,
+    val id: Long = -1,
     val name: String = "client${UUID.randomUUID()}",
     val isdnNumber: Long,
-    val inShelf: Boolean = true
+    val inShelf: Boolean = true,
+    val library: String? = null
 )
 
 

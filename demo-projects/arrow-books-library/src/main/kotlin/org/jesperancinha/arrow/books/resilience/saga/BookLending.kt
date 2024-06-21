@@ -22,9 +22,9 @@ interface Repository<T, ID> {
     fun delete(t: T)
 }
 
-class BookRepository() : Repository<Book, Int> {
-    override fun findByIdOrNull(id: Int): Book? = databaseBooks[id]
-    override fun findById(id: Int): Book = requireNotNull(databaseBooks[id])
+class BookRepository() : Repository<Book, Long> {
+    override fun findByIdOrNull(id: Long): Book? = databaseBooks[id]
+    override fun findById(id: Long): Book = requireNotNull(databaseBooks[id])
     override fun save(book: Book): Book = run {
         databaseBooks.put(book.id, book)
         book
@@ -66,10 +66,10 @@ class BookService(
     val reservationsRepository: ReservationsRepository,
     val userRepository: UserRepository
 ) {
-    fun pickBook(id: Int) = bookRepository.findById(id)
+    fun pickBook(id: Long) = bookRepository.findById(id)
         .let { bookRepository.save(it.copy(inShelf = false)) }
 
-    fun restoreBook(id: Int) = bookRepository.findById(id)
+    fun restoreBook(id: Long) = bookRepository.findById(id)
         .let { bookRepository.save(it.copy(inShelf = true)) }
 
     fun reserveBook(book: Book, user: User) = ReserveTicket(
@@ -91,7 +91,7 @@ class BookService(
 
     fun unRegisterReservation(reserveTicket: ReserveTicket) = reservationsRepository.delete(reserveTicket)
 
-    fun getABookWithReceipt(id: Int, user: User) = saga {
+    fun getABookWithReceipt(id: Long, user: User) = saga {
         saga({
             pickBook(id)
         }) {
