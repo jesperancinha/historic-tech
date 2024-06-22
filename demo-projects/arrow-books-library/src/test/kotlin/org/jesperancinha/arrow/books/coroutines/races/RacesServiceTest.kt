@@ -1,13 +1,22 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.coroutines.races
 
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.fetchBook
 import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.fetchBookFail
 import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.getAssociatedTitles
 import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.createBook
+import org.jesperancinha.arrow.books.coroutines.races.RacesService.Companion.fetchBookEitherFail
+import org.jesperancinha.arrow.books.printSeparator
 import org.junit.jupiter.api.Test
 
 class RacesServiceTest {
+
+
+    @Test
+    fun `should Coroutines Test 3_3 - raceN - Both Either Fail`() = runBlocking{
+        printSeparator("Coroutines Test 3.3 - raceN - Both Either Fail")
+        println((1..10).map { fetchBookEitherFail() }.joinToString(","))
+    }
 
     @Test
     fun `should run parZip`() = runBlocking {

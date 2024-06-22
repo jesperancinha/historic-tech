@@ -1,4 +1,4 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.resilience.saga
 
 import arrow.atomic.value
 import arrow.core.continuations.AtomicRef
@@ -6,7 +6,6 @@ import arrow.resilience.Schedule
 import arrow.resilience.transact
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.runBlocking
-import org.jesperancinha.arrow.books.resilience.saga.ClassBookCounter
 import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.failingTransaction
 import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.successfulTransaction
 import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.tryFunction

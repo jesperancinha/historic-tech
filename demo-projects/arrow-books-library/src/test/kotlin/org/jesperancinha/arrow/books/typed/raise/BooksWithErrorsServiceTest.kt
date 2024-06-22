@@ -1,11 +1,8 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.typed.raise
 
 import arrow.core.left
 import arrow.core.raise.fold
 import io.kotest.matchers.shouldBe
-import org.jesperancinha.arrow.books.typed.raise.Book
-import org.jesperancinha.arrow.books.typed.raise.BookNotFound
-import org.jesperancinha.arrow.books.typed.raise.isValid
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.fail
 

@@ -1,4 +1,4 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.collections
 
 import io.kotest.matchers.longs.shouldBeBetween
 import io.kotest.matchers.shouldBe

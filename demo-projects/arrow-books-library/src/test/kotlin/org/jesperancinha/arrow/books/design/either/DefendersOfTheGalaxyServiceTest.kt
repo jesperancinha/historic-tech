@@ -1,8 +1,9 @@
-package org.jesperancinha.arrow.books
+package org.jesperancinha.arrow.books.design.either
 
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.design.either.DefendersOfTheGalaxyService.Companion.suspendProgram
 import org.jesperancinha.arrow.books.design.either.DefendersOfTheGalaxyService.Companion.suspendProgramFail
+import org.jesperancinha.arrow.books.printSeparator
 import org.junit.jupiter.api.Test
 
 class DefendersOfTheGalaxyServiceTest {
