@@ -64,6 +64,9 @@ class RacesService {
 
             printSeparator("Coroutines Test 3.2 - raceN - Both Fail")
             println((1..10).map { fetchBookFail() }.joinToString(","))
+
+            printSeparator("Coroutines Test 3.3 - raceN - Both Either Fail")
+            println((1..10).map { fetchBookEitherFail() }.joinToString(","))
         }
 
         suspend fun createBook(id: Long): Book =
@@ -78,7 +81,7 @@ class RacesService {
                 }
             ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
 
-        suspend fun tryTocreateEitherBook(id: Long)= either {
+        suspend fun tryTocreateEitherBook(id: Long) = either {
             parZip(
                 {
                     delay(1.seconds)
@@ -90,6 +93,7 @@ class RacesService {
                 }
             ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
         }
+
         suspend fun tryTocreateBook(id: Long): Book =
             parZip(
                 {
@@ -115,6 +119,7 @@ class RacesService {
                 delay(1.seconds)
                 getName(it)
             }
+
         suspend fun getAssociatedFailTitles(id: Long): Either<String, List<String>> = either {
             getAssociates(id).parMap {
                 delay(1000)
@@ -124,7 +129,7 @@ class RacesService {
         }
 
         suspend fun getAssociatedCumulativeFailTitles(id: Long): Either<NonEmptyList<String>, List<String>> =
-            getAssociates(id).parMapOrAccumulate{
+            getAssociates(id).parMapOrAccumulate {
                 delay(1000)
                 raise("Cannot get name!")
                 getName(it)
@@ -153,6 +158,23 @@ class RacesService {
                 },
             ).merge()
         }
+
+        suspend fun fetchBookEitherFail(): Either<String, String> = raceN(
+            {
+                either<String, String> {
+                    getBookFromLibraryGouda()
+                    raise("Major Fail Olhao")
+                }
+            },
+            {
+                either<String, String>
+                {
+                    getBookFromLibraryOlhao()
+                    raise("Major Fail Olhao")
+
+                }
+            },
+        ).merge()
 
         suspend fun getBookFromLibraryGouda() = delay(Random().nextLong(100)).run {
             Book(
