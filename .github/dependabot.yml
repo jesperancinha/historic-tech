@@ -12,6 +12,9 @@ updates:
           - "com.google.devtools.ksp"
           - "kotlin*"
           - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -24,6 +27,9 @@ updates:
           - "com.google.devtools.ksp"
           - "kotlin*"
           - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
