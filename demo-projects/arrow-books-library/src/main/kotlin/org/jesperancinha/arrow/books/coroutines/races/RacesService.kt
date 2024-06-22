@@ -8,7 +8,6 @@ import arrow.fx.coroutines.parMap
 import arrow.fx.coroutines.parMapOrAccumulate
 import arrow.fx.coroutines.parZip
 import arrow.fx.coroutines.raceN
-import jdk.internal.misc.Signal.raise
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.typed.raise.Book
@@ -50,7 +49,12 @@ class RacesService {
                 println(getAssociatedTitles(id))
             }.run { println("It took $this milliseconds to read the associates") }
 
-            printSeparator("Coroutines Test 2.2 - parMap cumulative")
+            printSeparator("Coroutines Test 2.2 - parMap")
+            measureTimeMillis {
+                println(getAssociatedFailTitles(id))
+            }.run { println("It took $this milliseconds to read the associates") }
+
+            printSeparator("Coroutines Test 2.3 - parMap cumulative")
             measureTimeMillis {
                 println(getAssociatedCumulativeFailTitles(id))
             }.run { println("It took $this milliseconds to read the associates") }
@@ -70,7 +74,7 @@ class RacesService {
                 },
                 {
                     delay(1.seconds)
-                    getBookTitle(id)
+                    getIsdnNumber(id)
                 }
             ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
 
@@ -82,7 +86,7 @@ class RacesService {
                 },
                 {
                     delay(1.seconds)
-                    getBookTitle(id)
+                    getIsdnNumber(id)
                 }
             ) { name, isdnNumber -> Book(id = id, name = name, isdnNumber = isdnNumber) }
         }
@@ -95,7 +99,7 @@ class RacesService {
                 },
                 {
                     delay(1.seconds)
-                    getBookTitle(id)
+                    getIsdnNumber(id)
                     throw RuntimeException()
 
                 }
@@ -103,14 +107,22 @@ class RacesService {
 
         fun getName(id: Long) = "Book-$id-${UUID.randomUUID()}".replace("--", "-")
 
-        fun getBookTitle(id: Long) =
+        fun getIsdnNumber(id: Long) =
             (1..5).map { (Random().nextLong(10) + id).toString().last() }.joinToString("").toLong()
 
         suspend fun getAssociatedTitles(id: Long): List<String> =
             getAssociates(id).parMap {
-                delay(1000)
+                delay(1.seconds)
                 getName(it)
             }
+        suspend fun getAssociatedFailTitles(id: Long): Either<String, List<String>> = either {
+            getAssociates(id).parMap {
+                delay(1000)
+                raise("Cannot get name!")
+                getName(it)
+            }
+        }
+
         suspend fun getAssociatedCumulativeFailTitles(id: Long): Either<NonEmptyList<String>, List<String>> =
             getAssociates(id).parMapOrAccumulate{
                 delay(1000)
