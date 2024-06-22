@@ -59,11 +59,11 @@ class RacesService {
                 println(getAssociatedCumulativeFailTitles(id))
             }.run { println("It took $this milliseconds to read the associates") }
 
-            printSeparator("Coroutines Test 3 - raceN")
-            println((1..10).map { fetchLetter() }.joinToString(","))
+            printSeparator("Coroutines Test 3.1 - raceN")
+            println((1..10).map { fetchBook() }.joinToString(","))
 
-            printSeparator("Coroutines Test 4 - raceN - Both Fail")
-            println((1..10).map { fetchLetterFail() }.joinToString(","))
+            printSeparator("Coroutines Test 3.2 - raceN - Both Fail")
+            println((1..10).map { fetchBookFail() }.joinToString(","))
         }
 
         suspend fun createBook(id: Long): Book =
@@ -135,13 +135,13 @@ class RacesService {
         }
 
 
-        suspend fun fetchLetter() =
+        suspend fun fetchBook() =
             raceN(
                 { getBookFromLibraryGouda() },
                 { getBookFromLibraryOlhao() }
             ).merge()
 
-        suspend fun fetchLetterFail() = runCatching {
+        suspend fun fetchBookFail() = runCatching {
             raceN(
                 {
                     getBookFromLibraryGouda()
@@ -159,7 +159,7 @@ class RacesService {
                 id = 1,
                 name = "The silence of the kittens",
                 isdnNumber = 98765432123456789,
-                library = "Solothurn"
+                library = "Gouda"
             )
         }
 
