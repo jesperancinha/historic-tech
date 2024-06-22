@@ -9,7 +9,7 @@ import org.jesperancinha.arrow.books.resilience.saga.LibraryService
 import org.jesperancinha.arrow.books.typed.raise.BooksWithErrorsService
 
 fun printSeparator(title: String) =
-    "*****************************************".run { println("$this $title $this") }
+    "-------".run { println("$this $title") }
 
 fun main() {
     RacesService.main()

@@ -60,13 +60,13 @@ class RacesService {
             }.run { println("It took $this milliseconds to read the associates") }
 
             printSeparator("Coroutines Test 3.1 - raceN")
-            println((1..10).map { fetchBook() }.joinToString(","))
+            println((1..2).map { fetchBook() }.joinToString(","))
 
             printSeparator("Coroutines Test 3.2 - raceN - Both Fail")
-            println((1..10).map { fetchBookFail() }.joinToString(","))
+            println((1..2).map { fetchBookFail() }.joinToString(","))
 
             printSeparator("Coroutines Test 3.3 - raceN - Both Either Fail")
-            println((1..10).map { fetchBookEitherFail() }.joinToString(","))
+            println((1..2).map { fetchBookEitherFail() }.joinToString(","))
         }
 
         suspend fun createBook(id: Long): Book =
@@ -131,6 +131,7 @@ class RacesService {
         suspend fun getAssociatedCumulativeFailTitles(id: Long): Either<NonEmptyList<String>, List<String>> =
             getAssociates(id).parMapOrAccumulate {
                 delay(1000)
+                if(it % 2L == 0L)
                 raise("Cannot get name!")
                 getName(it)
             }
