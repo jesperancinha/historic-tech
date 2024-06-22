@@ -49,12 +49,12 @@ class RacesService {
                 println(getAssociatedTitles(id))
             }.run { println("It took $this milliseconds to read the associates") }
 
-            printSeparator("Coroutines Test 2.2 - parMap")
+            printSeparator("Coroutines Test 2.2 - parMap Fail")
             measureTimeMillis {
                 println(getAssociatedFailTitles(id))
             }.run { println("It took $this milliseconds to read the associates") }
 
-            printSeparator("Coroutines Test 2.3 - parMap cumulative")
+            printSeparator("Coroutines Test 2.3 - parMap cumulative Fail")
             measureTimeMillis {
                 println(getAssociatedCumulativeFailTitles(id))
             }.run { println("It took $this milliseconds to read the associates") }
