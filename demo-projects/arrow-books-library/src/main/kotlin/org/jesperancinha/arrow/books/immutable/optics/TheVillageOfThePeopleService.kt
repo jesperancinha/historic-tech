@@ -38,19 +38,20 @@ data class Company(val name: String, val country: String) : User {
     companion object
 }
 
-class GuardiansOfTheGalaxyAddressesService {
+class TheVillageOfThePeopleService {
     companion object {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {
-            val address = Address(Street("Indigarr Street", 1), City("Thanos place", "Indigarr"))
+            val address = Address(Street("Lady Supreme Street", 1), City("Flowerpower DC", "Holdemup"))
             val me = Person(
-                "Rocket Raccoon", Age(19),
+                "Barbara Stonewater", Age(19),
                 address
             )
             val raccoonOneYearOlder = Person.age.age.modify(me) { it + 1 }
-            val newAddress = Address(Street("Groot Street", null), City("Thanos place", "Indigarr"))
+            val newAddress = Address(Street("Emancipation Street", null), City("Flowerpower DC", "Holdemup"))
             val meAfterMoving = Person.address.set(me, newAddress)
 
+            println(me)
             println(raccoonOneYearOlder)
             println(newAddress)
             println(meAfterMoving)

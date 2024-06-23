@@ -54,6 +54,7 @@ gradle-wrapper.jar
 # Gradle
 .gradle
 gradle/wrapper/gradle-wrapper.jar
+.kotlin
 
 # Lein
 .lsp

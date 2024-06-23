@@ -10,7 +10,7 @@ class Id(val id: Long)
 data class Gebruiker(val email: String, val name: String)
 
 
-class DefendersOfTheGalaxyService {
+class TheVillageOfThePeople {
     companion object {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {
@@ -34,10 +34,10 @@ class DefendersOfTheGalaxyService {
             }
 
         suspend fun fetchUser(): Either<PersistenceError, Gebruiker> =
-            Either.Right(Gebruiker("raccoon-rocket@arrow-kt.io", "Rocket from a planet far far aways"))
+            Either.Right(Gebruiker("lady-supreme@arrow-kt.io", "Rocket from a planet far far aways"))
 
         suspend fun fetchUserFail(): Either<PersistenceError, Gebruiker> =
-            Either.Right(Gebruiker("raccoon-rocket-arrow-kt.io", "Rocket from a planet far far aways"))
+            Either.Right(Gebruiker("lady-supreme-arrow-kt.io", "Rocket from a planet far far aways"))
 
         suspend fun Gebruiker.process(): Either<PersistenceError, ProcessedUser> =
             if (email.contains(Regex("^(.+)@(.+)$"))) Either.Right(ProcessedUser(Id(1), email, name))

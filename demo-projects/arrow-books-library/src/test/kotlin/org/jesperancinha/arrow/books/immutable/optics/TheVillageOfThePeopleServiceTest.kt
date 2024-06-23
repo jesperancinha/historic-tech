@@ -5,8 +5,8 @@ import arrow.optics.Prism
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.shouldBe
-import org.jesperancinha.arrow.books.immutable.optics.GuardiansOfTheGalaxyAddressesService.Companion.happyBirthday
-import org.jesperancinha.arrow.books.immutable.optics.GuardiansOfTheGalaxyAddressesService.Companion.realHappyBirthDay
+import org.jesperancinha.arrow.books.immutable.optics.TheVillageOfThePeopleService.Companion.happyBirthday
+import org.jesperancinha.arrow.books.immutable.optics.TheVillageOfThePeopleService.Companion.realHappyBirthDay
 import org.junit.jupiter.api.Test
 
 
@@ -15,23 +15,23 @@ sealed class Account {
     data class SavingsAccount(val balance: Double, val interestRate: Double) : Account()
 }
 
-class GuardiansOfTheGalaxyAddressesServiceTest {
+class TheVillageOfThePeopleServiceTest {
 
     @Test
     fun `should process address data`() {
-        val address = Address(Street("Indigarr Street", 1), City("Thanos place", "Indigarr"))
+        val address = Address(Street("Lady Supreme Street", 1), City("Flowerpower DC", "Holdemup"))
         val me = Person(
-            "Rocket Raccoon", Age(19),
+            "Barbara Stonewater", Age(19),
             address
         )
 
-        Person.name.get(me) shouldBe "Rocket Raccoon"
+        Person.name.get(me) shouldBe "Barbara Stonewater"
         Person.address.get(me) shouldBe address
 
         val raccoonOneYearOlder = Person.age.age.modify(me) { it + 1 }
         Person.age.age.get(raccoonOneYearOlder) shouldBe 20
 
-        val newAddress = Address(Street("Groot Street", null), City("Thanos place", "Indigarr"))
+        val newAddress = Address(Street("Emancipation Street", null), City("Flowerpower DC", "Holdemup"))
         val meAfterMoving = Person.address.set(me, newAddress)
         Person.address.get(meAfterMoving) shouldBe newAddress
     }
@@ -50,8 +50,8 @@ class GuardiansOfTheGalaxyAddressesServiceTest {
             name = "me",
             age = Age(29),
             address = Address(
-                street = Street("Groot Street", null),
-                city = City("Thanos place", "Indigarr")
+                street = Street("Emancipation Street", null),
+                city = City("Flowerpower DC", "Holdemup")
             )
         )
         val newPerson1 = p.happyBirthday()
