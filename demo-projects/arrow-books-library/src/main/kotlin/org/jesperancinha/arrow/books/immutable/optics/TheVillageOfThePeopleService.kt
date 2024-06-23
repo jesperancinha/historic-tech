@@ -2,14 +2,19 @@ package org.jesperancinha.arrow.books.immutable.optics
 
 import arrow.optics.optics
 
-@JvmInline
 @optics
-value class Age(val age: Int) {
+data class Person(val name: String, val age: Age, val address: Address) : User {
     companion object
 }
 
 @optics
-data class Person(val name: String, val age: Age, val address: Address) : User {
+sealed interface User {
+    companion object
+}
+
+@JvmInline
+@optics
+value class Age(val age: Int) {
     companion object
 }
 
@@ -29,11 +34,6 @@ data class City(val name: String, val country: String) {
 }
 
 @optics
-sealed interface User {
-    companion object
-}
-
-@optics
 data class Company(val name: String, val country: String) : User {
     companion object
 }
@@ -47,14 +47,20 @@ class TheVillageOfThePeopleService {
                 "Barbara Stonewater", Age(19),
                 address
             )
+
             val barbaraOneYearOlder = Person.age.age.modify(barbara) { it + 1 }
+
             val newAddress = Address(Street("Emancipation Street", null), City("Flowerpower DC", "Holdemup"))
+
             val meAfterMoving = Person.address.set(barbara, newAddress)
+
+            val meAfterMovingStreetMutated = Person.address.street.name.setNullable(barbara,"Mutated Street")
 
             println(barbara)
             println(barbaraOneYearOlder)
             println(newAddress)
             println(meAfterMoving)
+            println(meAfterMovingStreetMutated)
         }
 
         fun List<User>.happyBirthday() =
