@@ -3,6 +3,7 @@ package org.jesperancinha.arrow.books.immutable.optics
 import arrow.core.Either
 import arrow.optics.Prism
 import io.kotest.matchers.collections.shouldHaveSize
+import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.shouldBe
 import org.jesperancinha.arrow.books.immutable.optics.TheVillageOfThePeopleService.Companion.happyBirthday
@@ -92,5 +93,13 @@ class TheVillageOfThePeopleServiceTest {
         checkingAccountPrism.getOrModify(updatedAccount).getOrNull()
             .shouldNotBeNull().balance shouldBe 200.0
 
+        val savingsAccount: Account = Account.SavingsAccount(balance = 100.0, interestRate = 2.0)
+        val savingsAccountChecked = checkingAccountPrism.getOrModify(savingsAccount)
+
+        savingsAccountChecked.getOrNull().shouldBeNull()
+        savingsAccountChecked.fold(
+            { error -> println("Error: $error") },
+            { value -> println("Success: $value")}
+        )
     }
 }
