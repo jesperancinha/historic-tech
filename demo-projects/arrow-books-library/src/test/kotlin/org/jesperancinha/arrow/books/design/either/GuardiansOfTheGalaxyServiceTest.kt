@@ -6,7 +6,7 @@ import org.jesperancinha.arrow.books.design.either.DefendersOfTheGalaxyService.C
 import org.jesperancinha.arrow.books.printSeparator
 import org.junit.jupiter.api.Test
 
-class DefendersOfTheGalaxyServiceTest {
+class GuardiansOfTheGalaxyServiceTest {
 
     @Test
     fun `should run the design suspend over IO correctly`(): Unit = runBlocking {

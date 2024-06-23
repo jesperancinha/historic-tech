@@ -38,7 +38,7 @@ data class Company(val name: String, val country: String) : User {
     companion object
 }
 
-class DefendersOfTheGalaxyAddressesService {
+class GuardiansOfTheGalaxyAddressesService {
     companion object {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {

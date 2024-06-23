@@ -5,8 +5,8 @@ import arrow.optics.Prism
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.shouldBe
-import org.jesperancinha.arrow.books.immutable.optics.DefendersOfTheGalaxyAddressesService.Companion.happyBirthday
-import org.jesperancinha.arrow.books.immutable.optics.DefendersOfTheGalaxyAddressesService.Companion.realHappyBirthDay
+import org.jesperancinha.arrow.books.immutable.optics.GuardiansOfTheGalaxyAddressesService.Companion.happyBirthday
+import org.jesperancinha.arrow.books.immutable.optics.GuardiansOfTheGalaxyAddressesService.Companion.realHappyBirthDay
 import org.junit.jupiter.api.Test
 
 
@@ -15,7 +15,7 @@ sealed class Account {
     data class SavingsAccount(val balance: Double, val interestRate: Double) : Account()
 }
 
-class DefendersOfTheGalaxyAddressesServiceTest {
+class GuardiansOfTheGalaxyAddressesServiceTest {
 
     @Test
     fun `should process address data`() {
