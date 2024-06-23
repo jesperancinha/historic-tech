@@ -164,7 +164,7 @@ class RacesService {
             {
                 either<String, String> {
                     getBookFromLibraryGouda()
-                    raise("Major Fail Olhao")
+                    raise("Major Fail Gouda")
                 }
             },
             {
