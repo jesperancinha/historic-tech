@@ -28,8 +28,8 @@ class TheVillageOfThePeopleServiceTest {
         Person.name.get(me) shouldBe "Barbara Stonewater"
         Person.address.get(me) shouldBe address
 
-        val raccoonOneYearOlder = Person.age.age.modify(me) { it + 1 }
-        Person.age.age.get(raccoonOneYearOlder) shouldBe 20
+        val barbaraOneYearOlder = Person.age.age.modify(me) { it + 1 }
+        Person.age.age.get(barbaraOneYearOlder) shouldBe 20
 
         val newAddress = Address(Street("Emancipation Street", null), City("Flowerpower DC", "Holdemup"))
         val meAfterMoving = Person.address.set(me, newAddress)

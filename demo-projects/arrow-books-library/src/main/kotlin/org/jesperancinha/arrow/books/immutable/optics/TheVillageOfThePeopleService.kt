@@ -43,16 +43,16 @@ class TheVillageOfThePeopleService {
         @JvmStatic
         fun main(args: Array<String> = emptyArray()) {
             val address = Address(Street("Lady Supreme Street", 1), City("Flowerpower DC", "Holdemup"))
-            val me = Person(
+            val barbara = Person(
                 "Barbara Stonewater", Age(19),
                 address
             )
-            val raccoonOneYearOlder = Person.age.age.modify(me) { it + 1 }
+            val barbaraOneYearOlder = Person.age.age.modify(barbara) { it + 1 }
             val newAddress = Address(Street("Emancipation Street", null), City("Flowerpower DC", "Holdemup"))
-            val meAfterMoving = Person.address.set(me, newAddress)
+            val meAfterMoving = Person.address.set(barbara, newAddress)
 
-            println(me)
-            println(raccoonOneYearOlder)
+            println(barbara)
+            println(barbaraOneYearOlder)
             println(newAddress)
             println(meAfterMoving)
         }
