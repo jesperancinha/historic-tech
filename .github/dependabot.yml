@@ -15,6 +15,10 @@ updates:
       spring:
         patterns:
           - "*spring*"
+      junit-jupiter:
+        patterns:
+          - "junit-jupiter*"
+          - "*junit-jupiter*"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -30,6 +34,10 @@ updates:
       spring:
         patterns:
           - "*spring*"
+      junit-jupiter:
+        patterns:
+          - "junit-jupiter*"
+          - "*junit-jupiter*"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
