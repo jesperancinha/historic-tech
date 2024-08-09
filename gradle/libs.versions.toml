@@ -28,4 +28,4 @@ resilience4j = { group = "io.github.resilience4j", name = "resilience4j-retry", 
 resilience4j-retry = { group = "io.github.resilience4j", name = "resilience4j-retry", version = "2.2.0" }
 resilience4j-kotlin = { group = "io.github.resilience4j", name = "resilience4j-kotlin", version = "2.2.0" }
 slf4j-api = { group = "org.slf4j", name = "slf4j-api", version = "2.0.14" }
-slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version = "2.0.14" }
+slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version = "2.0.15" }
