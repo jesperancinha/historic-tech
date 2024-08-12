@@ -21,9 +21,9 @@ updates:
           - "*junit-jupiter*"
       slf4j:
          patterns:
-           - "*slf4j*
-           - "slf4j*
-           - "*slf4j
+           - "*slf4j*"
+           - "slf4j*"
+           - "*slf4j"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -45,9 +45,9 @@ updates:
           - "*junit-jupiter*"
       slf4j:
          patterns:
-           - "*slf4j*
-           - "slf4j*
-           - "*slf4j
+           - "*slf4j*"
+           - "slf4j*"
+           - "*slf4j"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
