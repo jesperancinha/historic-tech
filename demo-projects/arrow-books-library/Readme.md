@@ -13,5 +13,9 @@ Enjoy everyone!
 
 ## Resources
 
-- [Newscast Explorer - A SAGA implementation](https://github.com/jesperancinha/news-cast-explorer)
-- [Resilience in Project Arrow - SAGA](https://arrow-kt.io/learn/resilience/saga/)
+-   [Newscast Explorer - A SAGA implementation](https://github.com/jesperancinha/news-cast-explorer)
+-   [Resilience in Project Arrow - SAGA](https://arrow-kt.io/learn/resilience/saga/)
+
+## About me
+
+[![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=for-the-badge&logo=github&color=grey "GitHub")](https://github.com/jesperancinha)
