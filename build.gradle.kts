@@ -5,8 +5,16 @@ buildscript {
     }
 }
 
-
 plugins {
     jacoco
-    id( "org.jesperancinha.plugins.omni") version "0.3.1"
+    alias(libs.plugins.jesperancinha.omni)
+    alias(libs.plugins.kotlin.jvm)
+}
+
+subprojects {
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+
+    repositories {
+        mavenCentral()
+    }
 }

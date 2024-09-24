@@ -1,4 +1,6 @@
+
 import org.gradle.api.JavaVersion.VERSION_21
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotest_version:String by project
@@ -30,12 +32,13 @@ dependencies {
 	testImplementation("io.kotest:kotest-assertions-core-jvm:$kotest_version")
 }
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs += "-Xjsr305=strict"
-		jvmTarget = "21"
+tasks.withType<KotlinCompile>().configureEach {
+	compilerOptions {
+		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
+		jvmTarget.set(JVM_21)
 	}
 }
+
 
 kotlin {
 	jvmToolchain(21)

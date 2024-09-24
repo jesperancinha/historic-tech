@@ -1,6 +1,5 @@
 plugins {
     jacoco
-    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.jesperancinha.omni)
 }

@@ -6,7 +6,6 @@ allprojects {
 
 plugins {
     alias(libs.plugins.ksp)
-    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.jesperancinha.omni)
     application
     idea
