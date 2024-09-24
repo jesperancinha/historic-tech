@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -29,10 +30,10 @@ dependencies {
 	testImplementation("io.projectreactor:reactor-test")
 }
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "21"
+tasks.withType<KotlinCompile>().configureEach {
+	compilerOptions {
+		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
+		jvmTarget.set(JVM_21)
 	}
 }
 
