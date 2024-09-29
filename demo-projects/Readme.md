@@ -46,6 +46,14 @@ sudo apt-get install gimp-gmic
 ffmpeg -framerate 60 -pattern_type glob -i '*.jpeg' -c:v libx264 -r 60 -pix_fmt yuv420p output.mp4
 ```
 
+##### Split videos
+
+```shell
+ffmpeg -i vtcc-FinalCut.mp4 2>&1 | grep Duration
+ffmpeg -i vtcc-FinalCut.mp4 -t 01:00:00 -c copy part1.mp4
+ffmpeg -i vtcc-FinalCut.mp4 -ss 01:15:00 -c copy part2.mp4
+```
+
 ## Ideal prompt with ZSH
 
 #### 1.  For videos
