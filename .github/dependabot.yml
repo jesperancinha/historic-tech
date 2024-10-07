@@ -15,10 +15,10 @@ updates:
       spring:
         patterns:
           - "*spring*"
-      junit-jupiter:
+      junit:
         patterns:
-          - "junit-jupiter*"
-          - "*junit-jupiter*"
+          - "junit*"
+          - "*junit*"
       slf4j:
          patterns:
            - "*slf4j*"
@@ -41,8 +41,8 @@ updates:
           - "*spring*"
       junit-jupiter:
         patterns:
-          - "junit-jupiter*"
-          - "*junit-jupiter*"
+          - "junit*"
+          - "*junit*"
       slf4j:
          patterns:
            - "*slf4j*"
