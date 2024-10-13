@@ -20,7 +20,11 @@ dependencies {
     implementation("io.arrow-kt:arrow-fx-coroutines")
     implementation("io.arrow-kt:arrow-resilience")
     testImplementation(kotlin("test"))
-    testImplementation(libs.kotest.assertions.core.jvm)
+    /**
+     * NOTE: Core assertions are normally part of the test scope
+     * We put them bundle together with release code because of the test nature of the project
+     */
+    api(libs.kotest.assertions.core.jvm)
 
 }
 
