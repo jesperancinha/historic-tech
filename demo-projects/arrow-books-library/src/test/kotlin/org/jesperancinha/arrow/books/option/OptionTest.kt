@@ -21,6 +21,7 @@ class OptionTest {
     fun `should test left call of Either`() {
         val optionTest = either {
             Either.Left("Test").bind()
+            Either.Right(1).bind()
         }
         optionTest shouldBe Either.Left("Test")
     }
