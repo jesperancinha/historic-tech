@@ -1,5 +1,6 @@
 package org.jesperancinha.cracservice.rest
 
+import org.crac.Core
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -13,6 +14,10 @@ class BlockerController {
 
     @GetMapping
     fun blockingStatus() = level
+
+
+    @GetMapping("/restore")
+    fun restorePoint() = Core.checkpointRestore()
 
 
     @Scheduled(fixedRate = 5000)

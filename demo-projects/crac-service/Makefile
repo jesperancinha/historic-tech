@@ -3,11 +3,11 @@ include ../Makefile.mk
 SETUP := export SDKMAN_DIR="$(HOME)/.sdkman"; \
          	[[ -s "$(HOME)/.sdkman/bin/sdkman-init.sh" ]]; \
 			source "$(HOME)/.sdkman/bin/sdkman-init.sh" ;\
-			sdk use java 21.0.1.crac-zulu
+			sdk use java 21.0.4.crac-zulu
 
 first-install:
 	$(SETUP); \
-	sdk install java 21.0.1.crac-zulu
+	sdk install java 21.0.4.crac-zulu
 jdk-setup:
 	$(SETUP); \
 	sudo chown root:root $(JAVA_HOME)/lib/criu ; \
@@ -28,10 +28,9 @@ create-checkpoint:
 	jcmd build/libs/crac-service-0.0.1-SNAPSHOT.jar JDK.checkpoint
 start-checkpoint:
 	$(SETUP); \
-	java -XX:CRaCRestoreFrom=./tmp_checkpoint
-	make cleanup
+	java -XX:CRaCRestoreFrom=./tmp_checkpoint -XX:CRaCCheckpointTo=./tmp_checkpoint2
 cleanup:
-	rm -rf tmp_checkpoint
+	if [ -d tmp_checkpoint ]; then rm -rf tmp_checkpoint; fi;
 docker-build-start:
 	docker-compose up --build
 docker-start:
