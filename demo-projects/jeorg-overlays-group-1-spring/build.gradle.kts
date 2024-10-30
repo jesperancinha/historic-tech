@@ -38,6 +38,10 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 
+kotlin {
+	jvmToolchain(21)
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }

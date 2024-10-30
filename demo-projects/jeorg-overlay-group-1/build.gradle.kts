@@ -14,10 +14,11 @@ plugins {
 
 idea {
     module {
-        sourceDirs = sourceDirs + file("build/generated/ksp/main/kotlin")
-        testSourceDirs = testSourceDirs + file("build/generated/ksp/test/kotlin")
-        generatedSourceDirs =
-            generatedSourceDirs + file("build/generated/ksp/main/kotlin") + file("build/generated/ksp/test/kotlin")
+        generatedSourceDirs.add(file("build/generated/ksp/main/kotlin"))
+        generatedSourceDirs.add(file("build/generated/ksp/test/kotlin"))
+
+        sourceDirs.add(file("build/generated/ksp/main/kotlin"))
+        testSources.from(file("build/generated/ksp/test/kotlin"))
     }
 }
 
