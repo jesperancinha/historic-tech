@@ -1,10 +1,7 @@
 package org.jesperancinha.arrow.books.resilience.saga
 
 import arrow.atomic.AtomicInt
-import arrow.resilience.Saga
-import arrow.resilience.Schedule
-import arrow.resilience.saga
-import arrow.resilience.transact
+import arrow.resilience.*
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.printSeparator
 import kotlin.time.Duration.Companion.seconds
@@ -68,7 +65,7 @@ class LibraryService {
             f()
         }
 
-        val failingTransaction = saga {
+        val failingTransaction: suspend SagaScope.() -> Nothing = saga {
             saga({
                 ClassBookCounter.increment()
             }) {

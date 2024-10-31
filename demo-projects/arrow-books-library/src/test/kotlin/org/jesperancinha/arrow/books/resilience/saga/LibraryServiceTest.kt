@@ -5,6 +5,7 @@ import arrow.core.continuations.AtomicRef
 import arrow.resilience.Schedule
 import arrow.resilience.transact
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.types.shouldBeTypeOf
 import kotlinx.coroutines.runBlocking
 import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.failingTransaction
 import org.jesperancinha.arrow.books.resilience.saga.LibraryService.Companion.successfulTransaction
@@ -20,8 +21,10 @@ class LibraryServiceTest {
     @Test
     fun `should reset counter after transaction fails`(): Unit = runBlocking {
         val initialCounter = ClassBookCounter.books.value
-        kotlin.runCatching {
-            failingTransaction.transact()
+        runCatching {
+            failingTransaction.transact<Nothing>()
+        }.onFailure {
+            it shouldBe PROBLEM
         }
         ClassBookCounter.books.value shouldBe initialCounter
     }
@@ -30,6 +33,7 @@ class LibraryServiceTest {
     fun `should increase counter after transaction succeeds`(): Unit = runBlocking {
         val initialCounter = ClassBookCounter.books.value
         successfulTransaction.transact()
+            .shouldBeTypeOf<Int>() shouldBe initialCounter + 1
         ClassBookCounter.books.value shouldBe (initialCounter + 1)
 
     }
