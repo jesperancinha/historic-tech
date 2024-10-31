@@ -3,7 +3,7 @@ val kotlin_version: String by project
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
-    id("io.ktor.plugin") version "3.0.0"
+    id("io.ktor.plugin") version "3.0.1"
     jacoco
 }
 
