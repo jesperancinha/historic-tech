@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.platform:junit-platform-launcher:1.12.1")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.12.2")
     testImplementation(libs.junit.jupiter)
 }
 
