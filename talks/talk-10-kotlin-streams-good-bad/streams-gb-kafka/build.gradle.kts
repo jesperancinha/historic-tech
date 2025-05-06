@@ -5,7 +5,7 @@ val logback_version: String by project
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
-    id("io.ktor.plugin") version "3.1.2"
+    id("io.ktor.plugin") version "3.1.3"
     jacoco
 }
 
