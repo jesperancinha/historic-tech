@@ -29,7 +29,6 @@ updates:
             - "arrow"
             - "*arrow"
             - "arrow*
-            - "*arrow*"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -59,7 +58,6 @@ updates:
             - "arrow"
             - "*arrow"
             - "arrow*
-            - "*arrow*"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
@@ -83,4 +81,3 @@ updates:
           - "arrow"
           - "*arrow"
           - "arrow*
-          - "*arrow*"
