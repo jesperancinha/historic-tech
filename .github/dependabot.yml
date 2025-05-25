@@ -24,6 +24,12 @@ updates:
            - "*slf4j*"
            - "slf4j*"
            - "*slf4j"
+      arrow:
+          patterns:
+            - "arrow"
+            - "*arrow"
+            - "arrow*
+            - "*arrow*"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -48,6 +54,12 @@ updates:
            - "*slf4j*"
            - "slf4j*"
            - "*slf4j"
+      arrow:
+          patterns:
+            - "arrow"
+            - "*arrow"
+            - "arrow*
+            - "*arrow*"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
@@ -66,3 +78,9 @@ updates:
       spring:
         patterns:
           - "*spring*"
+      arrow:
+        patterns:
+          - "arrow"
+          - "*arrow"
+          - "arrow*
+          - "*arrow*"
