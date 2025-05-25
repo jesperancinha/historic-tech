@@ -28,7 +28,8 @@ updates:
           patterns:
             - "arrow"
             - "*arrow"
-            - "arrow*
+            - "arrow*"
+            - "arrow*"
 
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
@@ -57,7 +58,8 @@ updates:
           patterns:
             - "arrow"
             - "*arrow"
-            - "arrow*
+            - "arrow*"
+            - "*arrow*"
 
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
@@ -80,4 +82,5 @@ updates:
         patterns:
           - "arrow"
           - "*arrow"
-          - "arrow*
+          - "arrow*"
+          - "*arrow*"
