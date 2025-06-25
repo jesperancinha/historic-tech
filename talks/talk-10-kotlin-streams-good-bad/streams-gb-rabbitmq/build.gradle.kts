@@ -28,8 +28,8 @@ dependencies {
     api(libs.logback.classic)
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
-    testImplementation("org.junit.platform:junit-platform-launcher:1.13.1")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.1")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.2")
 }
 
 tasks.jacocoTestReport {
