@@ -8,7 +8,7 @@ buildscript {
 
 plugins {
     jacoco
-    id( "org.jesperancinha.plugins.omni") version "0.3.1"
+    alias(libs.plugins.jesperancinha.omni)
 }
 
 val gradleSysVersion = System.getenv("GRADLE_VERSION")

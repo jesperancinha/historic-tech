@@ -1,10 +1,12 @@
+[versions]
+junit-platform = "1.10.1"
+
 [plugins]
-google-ksp = { id = "com.google.devtools.ksp", version = "2.2.0-2.0.2" }
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
-kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.0" }
-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.0" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.0" }
-ksp = { id = "com.google.devtools.ksp", version = "2.2.0-2.0.2" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.0.0" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.0.0" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.0" }
+ksp = { id = "com.google.devtools.ksp", version = "2.1.21-2.0.2" }
 ktor = { id = "io.ktor.plugin", version = "3.2.0" }
 protobuf = { id = "com.google.protobuf", version = "0.9.5" }
 spring-boot = { id = "org.springframework.boot", version = "3.5.3" }
@@ -19,6 +21,8 @@ javalin = { group = "io.javalin", name = "javalin", version = "6.7.0" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version = "5.13.2" }
 junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version = "5.13.2" }
 junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version = "5.13.2" }
+junit-platform-engine = { module = "org.junit.platform:junit-platform-engine", version.ref = "junit-platform" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform" }
 kotest-core = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "5.9.1" }
 kotest-assertions-core-jvm = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "5.9.1" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.10.2" }

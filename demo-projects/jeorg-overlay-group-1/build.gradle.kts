@@ -25,6 +25,8 @@ idea {
 dependencies {
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.engine)
+    testImplementation(libs.junit.platform.engine)
+    testImplementation(libs.junit.platform.launcher)
 }
 
 kotlin {

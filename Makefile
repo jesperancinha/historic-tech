@@ -26,10 +26,10 @@ MODULE_LOCATIONS := talks/talk-10-kotlin-streams-good-bad/streams-gb-kafka \
 b: buildw
 build: buildw
 buildw:
-	@for location in $(MODULE_LOCATIONS); do \
-  		export CURRENT=$(shell pwd); \
-  		echo "Building $$location..."; \
-		pwd; \
+	@set -e; \
+	for location in $(MODULE_LOCATIONS); do \
+		export CURRENT=$$(pwd); \
+		echo "Building $$location..."; \
 		cd $$location; \
 		pwd; \
 		make b; \
@@ -41,7 +41,7 @@ upgrade:
   		export CURRENT=$(shell pwd); \
   		echo "Upgrading $$location..."; \
 		cd $$location; \
-		gradle wrapper --gradle-version $(GRADLE_VERSION); \
+		gradle wrapper; \
 		cd $$CURRENT; \
 	done
 build-local: build-talks build-youtube
