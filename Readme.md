@@ -1,6 +1,6 @@
-# A Suitable Nice Software Engineer In The Right Working Age Forever
+# Historic Tech
 
-[![historic-tech Build](https://github.com/jesperancinha/historic-tech/actions/workflows/historic-tech.yml/badge.svg)](https://github.com/jesperancinha/historic-tech/actions/workflows/historic-tech.yml)
+[![historic-tech Build](https://github.com/jesperancinha/historic-tech/actions/workflows/build.yml/badge.svg)](https://github.com/jesperancinha/historic-tech/actions/workflows/historic-tech.yml)
 
 [![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/historic-tech.svg)](https://github.com/jesperancinha/historic-tech)
 [![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/historic-tech.svg)](https://github.com/jesperancinha/historic-tech)
@@ -8,21 +8,7 @@
 
 ## Introduction
 
-This repo serves to support all the code to back up all my talks and videos (there has been no successful application yet, so they are all preparation materials at this point).
-
-Have a look at the submodules for more info
- 
-How you can read this repo:
-
--   A Suitable Nice Software Engineer In The Right Working Age Forever
-
-For short:
-
--   historic-tech (Asnsei The Right Waf)
-
-> Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
-
-Finally, please remember to stay up to dat to the changes on this repo on: [Log Book](./LogBook.md).
+Please remember to stay up to dat to the changes on this repo on: [Log Book](./LogBook.md).
 
 ## Structure
 
