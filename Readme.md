@@ -30,12 +30,6 @@ Please remember to stay up to dat to the changes on this repo on: [Log Book](./L
 
 Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints&Tricks.md) for details on how to setup java versions
 
-## These projects have been moved
-
--   [kotlin-keywords-app](https://github.com/jesperancinha/historic-tech-android/tree/main/kotlin-keywords-app)
--   [test-app](https://github.com/jesperancinha/historic-tech-android/tree/main/test-app)
--   [test-app-2](https://github.com/jesperancinha/historic-tech-android/tree/main/test-app-2)
-
 ## Source materials
 
 <details>
