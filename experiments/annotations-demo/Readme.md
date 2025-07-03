@@ -1,4 +1,4 @@
-# asnsei-the-right-waf Exploring annotations in Kotlin
+# historic-tech Exploring annotations in Kotlin
 
 ## Introduction
 

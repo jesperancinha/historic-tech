@@ -1,18 +1,16 @@
 # A Suitable Nice Software Engineer In The Right Working Age Forever
 
-[![asnsei-the-right-waf Build](https://github.com/jesperancinha/asnsei-the-right-waf/actions/workflows/asnsei-the-right-waf.yml/badge.svg)](https://github.com/jesperancinha/asnsei-the-right-waf/actions/workflows/asnsei-the-right-waf.yml)
+[![historic-tech Build](https://github.com/jesperancinha/historic-tech/actions/workflows/historic-tech.yml/badge.svg)](https://github.com/jesperancinha/historic-tech/actions/workflows/historic-tech.yml)
 
-[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/asnsei-the-right-waf.svg)](https://github.com/jesperancinha/asnsei-the-right-waf)
-[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/asnsei-the-right-waf.svg)](https://github.com/jesperancinha/asnsei-the-right-waf)
-[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/asnsei-the-right-waf.svg)](https://github.com/jesperancinha/asnsei-the-right-waf)
+[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/historic-tech.svg)](https://github.com/jesperancinha/historic-tech)
+[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/historic-tech.svg)](https://github.com/jesperancinha/historic-tech)
+[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/historic-tech.svg)](https://github.com/jesperancinha/historic-tech)
 
 ## Introduction
 
 This repo serves to support all the code to back up all my talks and videos (there has been no successful application yet, so they are all preparation materials at this point).
 
 Have a look at the submodules for more info
-
-Read the [Inspiration](Inspiration.md) file for a small tale about the name of this project.
  
 How you can read this repo:
 
@@ -20,7 +18,7 @@ How you can read this repo:
 
 For short:
 
--   asnsei-the-right-waf (Asnsei The Right Waf)
+-   historic-tech (Asnsei The Right Waf)
 
 > Although WAF can stand for Web Application Firewall, it actually stands for Working Age Forever.
 
@@ -48,9 +46,9 @@ Please check help file [Hints&Tricks](https://github.com/jesperancinha/project-s
 
 ## These projects have been moved
 
--   [kotlin-keywords-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/kotlin-keywords-app)
--   [test-app](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app)
--   [test-app-2](https://github.com/jesperancinha/asnsei-the-right-waf-android/tree/main/test-app-2)
+-   [kotlin-keywords-app](https://github.com/jesperancinha/historic-tech-android/tree/main/kotlin-keywords-app)
+-   [test-app](https://github.com/jesperancinha/historic-tech-android/tree/main/test-app)
+-   [test-app-2](https://github.com/jesperancinha/historic-tech-android/tree/main/test-app-2)
 
 ## Source materials
 

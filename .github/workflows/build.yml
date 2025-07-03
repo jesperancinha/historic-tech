@@ -1,16 +1,11 @@
-name: asnsei-the-right-waf Pull Request
+name: historic-tech Build
 
 on:
-  create:
-    branches:
-      - '**'
-  push:
-    branches:
-      - '**'
-      - '!main'
   pull_request:
-    branches:
-      - '**'
+    types:
+      - closed
+  push:
+    branches: [ main ]
 
 jobs:
   build:

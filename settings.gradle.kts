@@ -1,4 +1,4 @@
-rootProject.name = "asnsei-the-right-waf"
+rootProject.name = "historic-tech"
 include("talks:talk-10-kotlin-streams-good-bad:streams-gb-kafka")
 include("talks:talk-10-kotlin-streams-good-bad:streams-gb-rabbitmq")
 include("talks:talk-10-kotlin-streams-good-bad:streams-gb-single")
