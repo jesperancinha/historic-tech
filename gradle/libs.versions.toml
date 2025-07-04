@@ -1,5 +1,5 @@
 [versions]
-junit-platform = "1.10.1"
+junit-platform = "1.13.2"
 
 [plugins]
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
