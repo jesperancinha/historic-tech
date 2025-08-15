@@ -14,10 +14,10 @@ spring-boot = "3.5.4"
 
 [plugins]
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
-kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.0.21" }
-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.0.21" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.21" }
-ksp = { id = "com.google.devtools.ksp", version = "2.0.21-1.0.28" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.10" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.10" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.10" }
+ksp = { id = "com.google.devtools.ksp", version = "2.2.10-2.0.2" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 protobuf = { id = "com.google.protobuf", version = "0.9.5" }
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
