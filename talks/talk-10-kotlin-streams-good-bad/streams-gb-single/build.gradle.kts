@@ -1,9 +1,7 @@
-val kotlin_version: String by project
-
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
-    id("io.ktor.plugin") version "3.2.3"
+    alias(libs.plugins.ktor)
     jacoco
 }
 
@@ -21,7 +19,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.platform:junit-platform-launcher:1.13.4")
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.junit.platform.launcher)
     testImplementation(libs.junit.jupiter)
 }
 
