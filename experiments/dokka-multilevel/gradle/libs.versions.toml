@@ -1,5 +1,4 @@
 [plugins]
-google-ksp = { id = "com.google.devtools.ksp", version = "2.2.10-2.0.2" }
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
 kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.10" }
 kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.10" }
