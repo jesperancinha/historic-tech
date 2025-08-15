@@ -19,12 +19,11 @@ tasks.test {
 }
 
 dependencies {
-    api(libs.kotlinx.coroutines.core)
-    api(libs.resilience4j)
-    api(libs.resilience4j.retry)
-    api(libs.resilience4j.kotlin)
-    api(libs.arrow.core)
-    api(libs.arrow.fx.coroutines)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.resilience4j.retry)
+    implementation(libs.resilience4j.kotlin)
+    implementation(libs.arrow.core)
+    implementation(libs.arrow.fx.coroutines)
     testImplementation(libs.kotest.core)
 }
 

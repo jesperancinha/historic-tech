@@ -14,10 +14,10 @@ spring-boot = "3.5.4"
 
 [plugins]
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
-kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.0" }
-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.0" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.0" }
-ksp = { id = "com.google.devtools.ksp", version = "2.2.0-2.0.2" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.0.21" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.0.21" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.21" }
+ksp = { id = "com.google.devtools.ksp", version = "2.0.21-1.0.28" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 protobuf = { id = "com.google.protobuf", version = "0.9.5" }
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
@@ -46,6 +46,8 @@ junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engi
 junit-platform-engine = { module = "org.junit.platform:junit-platform-engine", version.ref = "junit-platform" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform" }
 kotest-core = { group = "io.kotest", name = "kotest-assertions-core-jvm", version.ref = "kotest" }
+# Accessor libs.kotest.assertions.core.jvm
+kotest-assertions-core-jvm = { group = "io.kotest", name = "kotest-assertions-core-jvm", version.ref = "kotest" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
 log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version.ref = "log4j" }

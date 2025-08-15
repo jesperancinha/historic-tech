@@ -25,8 +25,10 @@ dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation(libs.logback.classic)
-    testImplementation("io.ktor:ktor-server-tests-jvm")
+    testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation(kotlin("test-junit"))
+    testImplementation(libs.junit.platform.launcher)
+    testImplementation(libs.junit.jupiter)
 }
 
 kotlin {
