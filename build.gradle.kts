@@ -17,4 +17,10 @@ subprojects {
     repositories {
         mavenCentral()
     }
+
+    tasks.withType<org.gradle.api.tasks.testing.Test> {
+        // Use JUnit Platform for all test tasks and avoid failing when no tests are discovered
+        useJUnitPlatform()
+        failOnNoDiscoveredTests = false
+    }
 }

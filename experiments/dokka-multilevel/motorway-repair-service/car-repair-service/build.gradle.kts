@@ -1,5 +1,4 @@
 plugins {
-    application
     id("org.jetbrains.dokka")
     kotlin("multiplatform")
     jacoco
@@ -10,8 +9,6 @@ version = "0.0.0"
 
 kotlin {
     jvm {
-        jvmToolchain(21)
-        withJava()
         testRuns.named("test") {
             executionTask.configure {
                 useJUnitPlatform()
@@ -31,13 +28,4 @@ kotlin {
         val jvmMain by getting
         val jvmTest by getting
     }
-}
-
-application {
-    mainClass.set("...")
-}
-
-tasks.named<JavaExec>("run") {
-    dependsOn(tasks.named<Jar>("jvmJar"))
-    classpath(tasks.named<Jar>("jvmJar"))
 }
