@@ -1,36 +1,58 @@
 [versions]
 junit-platform = "1.13.4"
+junit = "5.13.4"
+arrow = "2.1.2"
+ktor = "3.2.3"
+kotest = "5.9.1"
+coroutines = "1.10.2"
+slf4j = "2.0.17"
+log4j = "2.25.1"
+resilience4j = "2.3.0"
+logback = "1.5.18"
+crac = "1.5.0"
+spring-boot = "3.5.4"
 
 [plugins]
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
-kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.0" }
-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.0" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.0" }
-ksp = { id = "com.google.devtools.ksp", version = "2.2.0-2.0.2" }
-ktor = { id = "io.ktor.plugin", version = "3.2.3" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.10" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.10" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.10" }
+ksp = { id = "com.google.devtools.ksp", version = "2.2.10-2.0.2" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 protobuf = { id = "com.google.protobuf", version = "0.9.5" }
-spring-boot = { id = "org.springframework.boot", version = "3.5.4" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
 spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.7" }
 
 [libraries]
-arrow-core = { group = "io.arrow-kt", name = "arrow-core", version = "2.1.2" }
-arrow-fx-coroutines = { group = "io.arrow-kt", name = "arrow-fx-coroutines", version = "2.1.2" }
-arrow-optics-ksp-plugin = { group = "io.arrow-kt", name = "arrow-optics-ksp-plugin", version = "2.1.2" }
-arrow-stack = { group = "io.arrow-kt", name = "arrow-stack", version = "2.1.2" }
+# BOMs
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+kotest-bom = { module = "io.kotest:kotest-bom", version.ref = "kotest" }
+ktor-bom = { module = "io.ktor:ktor-bom", version.ref = "ktor" }
+slf4j-bom = { module = "org.slf4j:slf4j-bom", version.ref = "slf4j" }
+log4j-bom = { module = "org.apache.logging.log4j:log4j-bom", version.ref = "log4j" }
+resilience4j-bom = { module = "io.github.resilience4j:resilience4j-bom", version.ref = "resilience4j" }
+kotlinx-coroutines-bom = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-bom", version.ref = "coroutines" }
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+arrow-stack = { group = "io.arrow-kt", name = "arrow-stack", version.ref = "arrow" }
+
+# Libraries
+arrow-core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
+arrow-fx-coroutines = { group = "io.arrow-kt", name = "arrow-fx-coroutines", version.ref = "arrow" }
+arrow-optics-ksp-plugin = { group = "io.arrow-kt", name = "arrow-optics-ksp-plugin", version.ref = "arrow" }
 javalin = { group = "io.javalin", name = "javalin", version = "6.7.0" }
-junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version = "5.13.4" }
-junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version = "5.13.4" }
-junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version = "5.13.4" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
 junit-platform-engine = { module = "org.junit.platform:junit-platform-engine", version.ref = "junit-platform" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform" }
-kotest-core = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "5.9.1" }
-kotest-assertions-core-jvm = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "5.9.1" }
-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.10.2" }
-logback-classic = { group = "ch.qos.logback", name = "logback-classic", version = "1.5.18" }
-log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version = "2.25.1" }
-resilience4j = { group = "io.github.resilience4j", name = "resilience4j-retry", version = "2.3.0" }
-resilience4j-retry = { group = "io.github.resilience4j", name = "resilience4j-retry", version = "2.3.0" }
-resilience4j-kotlin = { group = "io.github.resilience4j", name = "resilience4j-kotlin", version = "2.3.0" }
-slf4j-api = { group = "org.slf4j", name = "slf4j-api", version = "2.0.17" }
-slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version = "2.0.17" }
-crac = { group = "org.crac", name = "crac", version = "1.5.0" }
+kotest-core = { group = "io.kotest", name = "kotest-assertions-core-jvm", version.ref = "kotest" }
+# Accessor libs.kotest.assertions.core.jvm
+kotest-assertions-core-jvm = { group = "io.kotest", name = "kotest-assertions-core-jvm", version.ref = "kotest" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version.ref = "log4j" }
+resilience4j-retry = { group = "io.github.resilience4j", name = "resilience4j-retry", version.ref = "resilience4j" }
+resilience4j-kotlin = { group = "io.github.resilience4j", name = "resilience4j-kotlin", version.ref = "resilience4j" }
+slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j" }
+crac = { group = "org.crac", name = "crac", version.ref = "crac" }
