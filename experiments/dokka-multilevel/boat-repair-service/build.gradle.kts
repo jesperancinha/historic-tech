@@ -9,8 +9,6 @@ version = "0.0.0"
 
 kotlin {
     jvm {
-        jvmToolchain(21)
-        withJava()
         testRuns.named("test") {
             executionTask.configure {
                 useJUnitPlatform()

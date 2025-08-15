@@ -1,11 +1,7 @@
-val ktor_version: String by project
-val kotlin_version: String by project
-val logback_version: String by project
-
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
-    id("io.ktor.plugin") version "3.2.3"
+    alias(libs.plugins.ktor)
     jacoco
 }
 
@@ -23,11 +19,16 @@ repositories {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
-    implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-    testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    implementation(platform(libs.ktor.bom))
+    testImplementation(platform(libs.junit.bom))
+
+    implementation("io.ktor:ktor-server-core-jvm")
+    implementation("io.ktor:ktor-server-netty-jvm")
+    implementation(libs.logback.classic)
+    testImplementation("io.ktor:ktor-server-test-host-jvm")
+    testImplementation(kotlin("test-junit"))
+    testImplementation(libs.junit.platform.launcher)
+    testImplementation(libs.junit.jupiter)
 }
 
 kotlin {
