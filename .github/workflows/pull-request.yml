@@ -1,7 +1,7 @@
 name: historic-tech Pull Request
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
