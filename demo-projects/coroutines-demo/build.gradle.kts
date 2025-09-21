@@ -11,7 +11,7 @@ plugins {
 
 group = "org.jesperancinha.coroutines"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_21
+java.sourceCompatibility = JavaVersion.VERSION_25
 
 repositories {
 	mavenCentral()
@@ -30,7 +30,7 @@ dependencies {
 tasks.withType<KotlinCompile>().configureEach {
 	compilerOptions {
 		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-		jvmTarget.set(JVM_21)
+		jvmTarget.set(JVM_25)
 	}
 }
 
