@@ -25,7 +25,7 @@ tasks.test {
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions {
         freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-        jvmTarget.set(JVM_21)
+        jvmTarget.set(JVM_25)
     }
 }
 
