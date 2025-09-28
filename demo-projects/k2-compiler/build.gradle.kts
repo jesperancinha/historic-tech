@@ -31,3 +31,15 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin { sourceSets.all { languageSettings { languageVersion = "2.0" } } }
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+    }
+}
