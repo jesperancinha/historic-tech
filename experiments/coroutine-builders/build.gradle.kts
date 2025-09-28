@@ -29,7 +29,7 @@ tasks.withType<JavaExec> {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(24)
 }
 
 application {
