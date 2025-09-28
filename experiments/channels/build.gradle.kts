@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -25,7 +25,7 @@ tasks.test {
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions {
         freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-        jvmTarget.set(JVM_21)
+        jvmTarget.set(JVM_24)
     }
 }
 

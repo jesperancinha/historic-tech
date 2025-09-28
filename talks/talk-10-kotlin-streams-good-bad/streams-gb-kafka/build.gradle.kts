@@ -32,7 +32,7 @@ dependencies {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(24)
 }
 
 val gradleSysVersion = System.getenv("GRADLE_VERSION")
