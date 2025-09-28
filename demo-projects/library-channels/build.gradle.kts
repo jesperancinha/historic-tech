@@ -1,5 +1,5 @@
 
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -13,7 +13,7 @@ group = "org.jesperancinha.library"
 version = "0.0.1-SNAPSHOT"
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_21
+	sourceCompatibility = JavaVersion.VERSION_24
 }
 
 repositories {
@@ -36,7 +36,7 @@ dependencies {
 tasks.withType<KotlinCompile>().configureEach {
 	compilerOptions {
 		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-		jvmTarget.set(JVM_25)
+		jvmTarget.set(JVM_24)
 	}
 }
 

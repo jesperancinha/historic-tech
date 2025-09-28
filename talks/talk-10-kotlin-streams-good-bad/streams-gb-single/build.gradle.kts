@@ -35,7 +35,7 @@ tasks.withType<Test> {
 }
 
 kotlin {
-    jvmToolchain(25)
+    jvmToolchain(24)
 }
 
 val gradleSysVersion = System.getenv("GRADLE_VERSION")
