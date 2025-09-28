@@ -1,6 +1,6 @@
 
-import org.gradle.api.JavaVersion.VERSION_21
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
+import org.gradle.api.JavaVersion.VERSION_24
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotest_version:String by project
@@ -18,7 +18,7 @@ group = "org.jesperancinha"
 version = "0.0.1-SNAPSHOT"
 
 java {
-	sourceCompatibility = VERSION_21
+	sourceCompatibility = VERSION_24
 }
 
 repositories {
@@ -35,13 +35,13 @@ dependencies {
 tasks.withType<KotlinCompile>().configureEach {
 	compilerOptions {
 		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-		jvmTarget.set(JVM_21)
+		jvmTarget.set(JVM_24)
 	}
 }
 
 
 kotlin {
-	jvmToolchain(21)
+	jvmToolchain(24)
 }
 
 tasks.withType<Test> {
