@@ -11,7 +11,7 @@ plugins {
 
 group = "org.jesperancinha"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_24
+java.sourceCompatibility = JavaVersion.VERSION_25
 
 repositories {
 	mavenCentral()
@@ -33,7 +33,7 @@ dependencies {
 tasks.withType<KotlinCompile>().configureEach {
 	compilerOptions {
 		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-		jvmTarget.set(JVM_24)
+		jvmTarget.set(JVM_25)
 	}
 }
 
@@ -54,7 +54,7 @@ tasks.withType<Test> {
 }
 
 kotlin {
-	jvmToolchain(24)
+	jvmToolchain(25)
 }
 val gradleSysVersion = System.getenv("GRADLE_VERSION")
 
