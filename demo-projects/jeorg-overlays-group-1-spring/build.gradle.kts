@@ -33,13 +33,13 @@ dependencies {
 tasks.withType<KotlinCompile>().configureEach {
 	compilerOptions {
 		freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-		jvmTarget.set(JVM_24)
+		jvmTarget.set(JVM_25)
 	}
 }
 
 
 kotlin {
-	jvmToolchain(24)
+	jvmToolchain(25)
 }
 
 tasks.withType<Test> {
