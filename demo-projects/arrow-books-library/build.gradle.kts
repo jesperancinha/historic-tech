@@ -32,7 +32,7 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(25)
 }
 
 val gradleSysVersion = System.getenv("GRADLE_VERSION")
