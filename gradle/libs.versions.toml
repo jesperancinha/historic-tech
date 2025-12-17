@@ -6,7 +6,7 @@ ktor = "3.3.3"
 kotest = "6.0.7"
 coroutines = "1.10.2"
 slf4j = "2.0.17"
-log4j = "2.25.2"
+log4j = "2.25.3"
 resilience4j = "2.3.0"
 logback = "1.5.22"
 crac = "1.5.0"
@@ -14,10 +14,10 @@ spring-boot = "3.5.7"
 
 [plugins]
 jesperancinha-omni = { id = "org.jesperancinha.plugins.omni", version = "0.4.5" }
-kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.2.21" }
-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.2.21" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.21" }
-ksp = { id = "com.google.devtools.ksp", version = "2.3.3" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version = "2.3.0" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "2.3.0" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.3.0" }
+ksp = { id = "com.google.devtools.ksp", version = "2.3.4" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 protobuf = { id = "com.google.protobuf", version = "0.9.5" }
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
