@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       kotlin:
         patterns:
@@ -34,7 +34,7 @@ updates:
   - package-ecosystem: "gradle"
     directory: "/experiments/dokka-multilevel"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       kotlin:
         patterns:
@@ -64,7 +64,7 @@ updates:
   - package-ecosystem: "maven"
     directory: "/demo-projects/fibonacci"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       postgresql:
         patterns:

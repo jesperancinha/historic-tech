@@ -8,6 +8,15 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            // Use the parent repository's central version catalog
+            from(files("../../gradle/libs.versions.toml"))
+        }
+    }
+}
+
 include("boat-repair-service")
 include("motorway-repair-service:car-repair-service")
 
